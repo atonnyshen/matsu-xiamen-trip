@@ -1,0 +1,1311 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="description" content="馬祖・廈門人文之旅：以文學為地圖的八天旅程——基隆夜航、南竿、東莒、福州、廈門鼓浪嶼。駐村作家文字全文、藍眼淚、小三通、真實票價、完整預算。可離線閱讀。">
+<meta name="theme-color" content="#0B3C5D">
+<title>馬祖・廈門人文之旅 — 以文學為地圖的八天旅程</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+<style>
+/* Design system: Warm Editorial（Open Design 開源方案）—
+   serif 主導、赤陶色點綴、暖米白紙感，適合長文編輯閱讀 */
+:root {
+  color-scheme: light;
+  --bg: #FAF7F2;
+  --panel: #FFFFFF;
+  --panel-2: #F3EFE8;
+  --ink: #1C1A17;
+  --muted: #8A817A;
+  --line: #E5DED2;
+  --accent: #C0512F;
+  --accent-2: #2F5B4F;
+  --sea: #145DA0;
+  --sea-deep: #0B3C5D;
+  --warn: #B36A1F;
+  --shadow: 0 12px 32px color-mix(in srgb, var(--ink) 12%, transparent);
+  --radius: 12px;
+  font-family: "Söhne", -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", system-ui, sans-serif;
+  --serif: "GT Sectra", "Noto Serif TC", "Songti TC", "Times New Roman", serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--ink); }
+body { font-size: 15.5px; line-height: 1.8; }
+img { max-width: 100%; display: block; }
+a { color: var(--sea); text-decoration: none; }
+a:hover { text-decoration: underline; }
+summary { cursor: pointer; }
+
+.topbar { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 20px; background: color-mix(in srgb, var(--panel) 90%, transparent); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+.brand h1 { margin: 0; font-size: 17px; line-height: 1.25; font-family: var(--serif); letter-spacing: 0; }
+.brand p { margin: 2px 0 0; color: var(--muted); font-size: 12px; }
+.nav { display: flex; flex-wrap: wrap; gap: 4px; }
+.nav a { font-size: 13px; color: var(--ink); padding: 5px 9px; border-radius: 6px; }
+.nav a:hover { background: var(--panel-2); text-decoration: none; }
+.offline-badge { display: none; font-size: 11px; color: var(--accent-2); border: 1px solid color-mix(in srgb, var(--accent-2) 40%, var(--line)); border-radius: 999px; padding: 2px 8px; white-space: nowrap; }
+.offline-badge.show { display: inline-block; }
+
+.hero { position: relative; min-height: 72vh; display: flex; align-items: flex-end; background: linear-gradient(180deg, color-mix(in srgb, var(--sea-deep) 30%, transparent), var(--sea-deep) 96%); color: #FAF7F2; overflow: hidden; }
+.hero img.banner { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.88; }
+.hero .shade { position: absolute; inset: 0; background: linear-gradient(180deg, color-mix(in srgb, var(--sea-deep) 35%, transparent) 0%, color-mix(in srgb, var(--sea-deep) 85%, transparent) 100%); }
+.hero .inner { position: relative; padding: 40px 28px 44px; max-width: 1200px; margin: 0 auto; width: 100%; }
+.hero .kicker { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #F0E9DC; margin: 0 0 12px; }
+.hero h2 { margin: 0 0 12px; font-size: clamp(30px, 5vw, 52px); line-height: 1.15; letter-spacing: -0.01em; font-family: var(--serif); font-weight: 600; }
+.hero .sub { font-size: clamp(15px, 2.2vw, 19px); color: #F5F0E6; max-width: 56ch; }
+.hero .dates { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+.pill { display: inline-flex; align-items: center; gap: 4px; border: 1px solid color-mix(in srgb, white 25%, transparent); border-radius: 999px; padding: 3px 10px; background: color-mix(in srgb, white 10%, transparent); color: #F7F3EA; font-size: 12px; white-space: nowrap; }
+.pill.plain { color: var(--muted); border-color: var(--line); background: color-mix(in srgb, var(--panel) 80%, transparent); }
+
+main { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+section { padding: 72px 0 8px; }
+.section-title { margin: 0 0 8px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.16em; font-weight: 700; }
+h3.sec-head { margin: 0 0 20px; font-size: clamp(22px, 3vw, 30px); line-height: 1.25; letter-spacing: -0.01em; font-family: var(--serif); font-weight: 600; }
+h3.sec-head em { font-style: normal; color: var(--accent-2); }
+.lead { color: var(--muted); max-width: 74ch; margin: 0 0 26px; }
+
+.day { border: 1px solid color-mix(in srgb, var(--accent-2) 12%, var(--line)); border-radius: 16px; background: var(--panel); margin: 0 0 28px; overflow: hidden; }
+.day-banner { position: relative; height: 260px; overflow: hidden; }
+.day-banner img { width: 100%; height: 100%; object-fit: cover; }
+.day-banner .label { position: absolute; inset: auto 0 0 0; padding: 32px 24px 18px; background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--sea-deep) 88%, transparent)); color: #FAF7F2; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; }
+.day-banner .label .d { font-size: 13px; letter-spacing: 0.1em; opacity: 0.92; }
+.day-banner .label h4 { margin: 0; font-size: 23px; letter-spacing: 0; font-family: var(--serif); font-weight: 600; }
+.day-banner .label .tag { font-size: 12px; opacity: 0.94; }
+.day-body { padding: 20px 22px 22px; }
+.day-body > p { margin: 0 0 16px; color: var(--muted); font-size: 14.5px; }
+
+.spots { display: grid; gap: 10px; }
+details.spot { border: 1px solid var(--line); border-radius: 12px; background: var(--panel-2); }
+details.spot summary { display: flex; align-items: baseline; gap: 10px; padding: 14px 18px; list-style: none; font-size: 14.5px; font-weight: 650; letter-spacing: 0; }
+details.spot summary::-webkit-details-marker { display: none; }
+details.spot summary .time { color: var(--accent-2); font-size: 12px; font-weight: 700; white-space: nowrap; }
+details.spot summary .one { color: var(--muted); font-size: 13px; font-weight: 400; flex: 1; }
+details.spot summary .chev { margin-left: auto; color: var(--muted); transition: transform 0.2s; }
+details.spot[open] summary .chev { transform: rotate(90deg); }
+details.spot .spot-body { padding: 4px 18px 18px; border-top: 1px dashed var(--line); }
+details.spot .spot-body p { margin: 12px 0 10px; font-size: 14px; }
+details.spot .spot-body blockquote { margin: 12px 0; padding: 12px 16px; border-left: 3px solid var(--accent-2); background: var(--panel); border-radius: 8px; }
+details.spot .spot-body blockquote p { margin: 0 0 8px; font-size: 13.5px; line-height: 1.85; }
+details.spot .spot-body blockquote p:last-child { margin-bottom: 0; }
+details.spot .spot-body blockquote cite { font-style: normal; font-size: 12px; color: var(--muted); display: block; margin-top: 4px; }
+details.spot .spot-body .info { font-size: 13px; color: var(--muted); }
+details.spot .spot-body .info a { word-break: break-all; }
+.qbtn { display: inline-block; margin-top: 10px; font-size: 12.5px; color: var(--accent-2); border: 1px solid color-mix(in srgb, var(--accent-2) 40%, var(--line)); border-radius: 999px; padding: 3px 12px; background: var(--panel); cursor: pointer; }
+.qbtn:hover { background: color-mix(in srgb, var(--accent-2) 10%, var(--panel)); text-decoration: none; }
+
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; min-width: 560px; }
+th, td { border-bottom: 1px solid var(--line); padding: 10px 12px; vertical-align: top; text-align: left; }
+th { background: var(--panel-2); font-size: 12.5px; white-space: nowrap; }
+tr:last-child th, tr:last-child td { border-bottom: 0; }
+td.num { white-space: nowrap; }
+
+.books { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.book { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); padding: 16px 18px; display: flex; flex-direction: column; gap: 6px; }
+.book .b-title { font-weight: 700; font-size: 14.5px; font-family: var(--serif); letter-spacing: 0; }
+.book .b-author { font-size: 12px; color: var(--muted); }
+.book .b-desc { font-size: 13px; }
+.book .b-link { font-size: 12.5px; margin-top: auto; }
+details.book-detail { margin-top: 4px; border-top: 1px dashed var(--line); padding-top: 8px; }
+details.book-detail summary { font-size: 12.5px; color: var(--sea); }
+details.book-detail .bd-body { font-size: 13px; color: var(--muted); margin-top: 8px; }
+
+.sea-block { background: linear-gradient(160deg, var(--sea-deep), var(--sea)); color: #F5F0E6; border-radius: 16px; padding: 28px; }
+.sea-block h4 { margin: 0 0 10px; font-size: 18px; font-family: var(--serif); letter-spacing: 0; }
+.sea-block p { margin: 0 0 10px; color: #EDE6D8; font-size: 14px; }
+.sea-block .pill { border-color: color-mix(in srgb, white 30%, transparent); background: color-mix(in srgb, white 8%, transparent); color: #F7F3EA; }
+.sea-block a { color: #BFD9EC; }
+details.tear-faq { margin-top: 12px; border: 1px solid color-mix(in srgb, white 20%, transparent); border-radius: 10px; padding: 0 14px; }
+details.tear-faq summary { padding: 10px 0; font-size: 14px; color: #F0E9DC; }
+details.tear-faq .tf-body { padding: 0 0 12px; font-size: 13px; color: #EDE6D8; }
+
+.map-wrap { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--panel); }
+.map-wrap iframe { width: 100%; height: 420px; border: 0; display: block; }
+.map-points { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-top: 14px; }
+.map-point { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); padding: 10px 12px; font-size: 13px; }
+.map-point strong { display: block; font-size: 13.5px; margin-bottom: 2px; }
+.map-point a { font-size: 12.5px; }
+
+.checklist { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); padding: 6px 18px; }
+.checklist label { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 14px; cursor: pointer; }
+.checklist label:last-child { border-bottom: 0; }
+.checklist input { accent-color: var(--accent-2); margin-top: 3px; }
+.checklist .done { text-decoration: line-through; color: var(--muted); }
+
+.notice { border: 1px solid color-mix(in srgb, var(--warn) 45%, var(--line)); background: color-mix(in srgb, var(--warn) 8%, var(--panel)); border-radius: 12px; padding: 13px 15px; font-size: 13px; margin: 12px 0; }
+.notice strong { color: var(--accent-2); }
+
+footer { margin-top: 72px; border-top: 1px solid var(--line); background: var(--panel-2); padding: 28px 24px 44px; font-size: 12.5px; color: var(--muted); }
+footer .inner { max-width: 1200px; margin: 0 auto; }
+footer h5 { margin: 0 0 8px; color: var(--ink); font-size: 13px; }
+footer ul { margin: 0 0 16px; padding-left: 1.2em; }
+footer li { margin: 3px 0; overflow-wrap: anywhere; }
+
+.qmodal { display: none; position: fixed; inset: 0; z-index: 100; background: color-mix(in srgb, var(--ink) 45%, transparent); align-items: center; justify-content: center; padding: 20px; }
+.qmodal.open { display: flex; }
+.qmodal .box { background: var(--panel); border-radius: 16px; max-width: 760px; width: 100%; max-height: 88vh; overflow: auto; padding: 28px 32px 24px; box-shadow: var(--shadow); position: relative; }
+.qmodal .box .close { position: sticky; top: 0; float: right; border: 1px solid var(--line); background: var(--panel-2); border-radius: 50%; width: 32px; height: 32px; cursor: pointer; font-size: 15px; color: var(--ink); }
+.qmodal .box .src { font-size: 12px; color: var(--accent-2); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 8px; }
+.qmodal .box h4 { margin: 0 0 14px; font-size: 20px; letter-spacing: 0; font-family: var(--serif); font-weight: 600; }
+.qmodal .box .full { font-size: 14.5px; line-height: 1.95; }
+.qmodal .box .full p { margin: 0 0 14px; }
+.qmodal .box .full .lead-in { color: var(--muted); font-size: 13.5px; }
+.qmodal .box .orig { margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--line); font-size: 13px; }
+.qmodal .box .orig a { word-break: break-all; }
+
+@media (max-width: 760px) {
+  .topbar { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .nav { width: 100%; overflow-x: auto; }
+  main { padding: 0 14px; }
+  .hero .inner { padding: 30px 18px 34px; }
+  .hero { min-height: 56vh; }
+  section { padding-top: 48px; }
+  .day-banner { height: 190px; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <h1>馬祖・廈門人文之旅</h1>
+    <p>以文學為地圖的八天旅程 — 2026.08.18–08.25｜可離線閱讀</p>
+  </div>
+  <nav class="nav" aria-label="頁面導覽">
+    <a href="#days">行程</a>
+    <a href="#transport">交通</a>
+    <a href="#stays">住宿</a>
+    <a href="#literature">文學</a>
+    <a href="#sound">聲與影</a>
+    <a href="#tears">藍眼淚</a>
+    <a href="#food">美食</a>
+    <a href="#map">地圖</a>
+    <a href="#budget">預算</a>
+    <a href="checklist.html">✅ 行前清單</a>
+  </nav>
+  <span class="offline-badge" id="offlineBadge">✓ 已可離線閱讀</span>
+</header>
+
+<div class="hero">
+  <img class="banner" src="img/qinbi.jpg" alt="北竿芹壁聚落，閩東石屋依山面海">
+  <div class="shade"></div>
+  <div class="inner">
+    <p class="kicker">Keelung → Matsu → Fuzhou → Xiamen</p>
+    <h2>馬祖・廈門人文之旅</h2>
+    <p class="sub">從戰地前線到閩南島城。夜航渡海，在東莒的燈塔與石屋間，尋找駐村作家筆下的靜；再過小三通，循高鐵南下，與久違的人重逢。</p>
+    <div class="dates">
+      <span class="pill">基隆夜航 8/18</span>
+      <span class="pill">南竿 8/19</span>
+      <span class="pill">東莒住一晚 8/20</span>
+      <span class="pill">小三通過海 8/21</span>
+      <span class="pill">福州會合慧婷 8/22</span>
+      <span class="pill">廈門・鼓浪嶼 8/23–24</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ══════════ 行程 ══════════ -->
+<section id="days">
+  <p class="section-title">Itinerary</p>
+  <h3 class="sec-head">逐日行程 — <em>方案 B：人文優先＋廈門三日</em></h3>
+  <p class="lead">「一島一兩天」的馬祖＋福州的巷弄＋廈門鼓浪嶼的三天同遊。所有引文均可點「閱讀全文」彈出完整原文（已內嵌，離線可讀），並附原文連結。價格皆為 2026 年最新查證。</p>
+
+  <!-- Day 0 基隆 -->
+  <div class="day">
+    <div class="day-banner">
+      <img src="img/keelung.jpg" alt="基隆港夜景，夜航船出發的港灣">
+      <div class="label"><span class="d">DAY 0</span><h4>8/18（二）基隆港 → 夜航馬祖</h4><span class="tag">基隆西岸碼頭・海上過夜</span></div>
+    </div>
+    <div class="day-body">
+      <p>基隆港西岸旅客碼頭（基隆市港西街 16 號 2 樓）22:30 登船。臺馬之星執航（週二為新臺馬輪保養日 ⚠️ 8/17–18 看公告），經濟艙單人床 NT$1,050。8/18 為雙號：先東後馬（東引約 06:00、南竿約 08:30–09:00）。開航前 1–1.5 小時報到。帶暈船藥、眼罩、耳塞。</p>
+      <div class="spots">
+        <details class="spot">
+          <summary><span class="time">22:30</span> 基隆西岸碼頭登船 <span class="one">基隆港夜景・夜航體驗</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>基隆港西岸旅客碼頭是台馬航線的出發點，港區夜景燈火與船影交織。臺馬之星是往返基隆與馬祖的大型客貨輪，船上設經濟艙床位、餐廳、KTV 包廂與電影院，可載汽車與機車。夜航班次 22:30 開航，約 8–10 小時，多數旅客選擇在船上睡一覺。</p>
+            <blockquote>
+              <p>「從基隆出發到馬祖都會停靠兩個島，分別東引和南竿……從台灣出發都是從基隆港晚上10點船班，睡覺起來剛好抵達馬祖。」</p>
+              <p>「台馬之星這船真的很大，大到可以載汽車、摩托車……朋友說之前台馬之星遊客餐廳有營業的時候買的到肉粽、餅乾、泡麵零食。」</p>
+              <cite>——部落客阿新《台馬之星開箱》</cite>
+              <button class="qbtn" data-q="q-taima">閱讀全文 →</button>
+            </blockquote>
+            <p class="info">訂位：<a href="https://www.matsuebs.com/home/SelectShip" target="_blank" rel="noopener">matsuebs.com</a>｜公告：<a href="https://client.matsu.idv.tw/apt/news.html" target="_blank" rel="noopener">全港通</a>｜備案：8/19 松山早班機（立榮）</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 1 南竿 -->
+  <div class="day">
+    <div class="day-banner">
+      <img src="img/beihai.jpg" alt="南竿北海坑道入口">
+      <div class="label"><span class="d">DAY 1</span><h4>8/19（三）南竿：戰地的一天</h4><span class="tag">坑道・聚落・藍眼淚保證班</span></div>
+    </div>
+    <div class="day-body">
+      <p>08:30–09:00 抵福澳港 → 租機車（NT$500–600）→ 北海坑道・大漢據點・鐵堡・八八坑道・馬祖酒廠 → 牛角聚落走讀 → 晚上北海坑道夜間搖櫓追藍眼淚（NT$350，預約 0836-22177）。宿福澳窩背包客民宿（床位 NT$800）。</p>
+      <div class="spots">
+        <details class="spot">
+          <summary><span class="time">09:30</span> 北海坑道 <span class="one">「若無造訪北海坑道，便如同沒來過馬祖」</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>南竿北海坑道位於鐵板灣畔，1968 年「北海計畫」以人工沿花崗岩峭壁鑿建，井字型水道全長 640 公尺，可停放 120 艘游擊小艇。水道高 18 公尺、寬 10 公尺，滿潮水深 8 公尺。白天可走步道（受潮汐影響，每日開放 1–2 次、每次 3–4 小時），也可搭日間搖櫓（NT$150，08:30–17:00）。</p>
+            <blockquote>
+              <p>「在南竿島就是要一直走坑道的概念。」</p>
+              <cite>——部落客格格《慢旅行・馬祖》</cite>
+              <button class="qbtn" data-q="q-gege">閱讀全文 →</button>
+            </blockquote>
+            <p class="info">晚上 18:30–21:00 為「夜間搖櫓藍眼淚保證班」詳見<a href="#tears">藍眼淚區</a>｜馬管處：<a href="https://www.matsu-nsa.gov.tw/zh-TW/service/beihai-tunnel" target="_blank" rel="noopener">beihai-tunnel</a></p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">11:00</span> 大漢據點 <span class="one">坑道＋海蝕平台，戰地精神代表</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>位於南竿島東南角，與北海坑道同屬「北海計畫」。據點依山鑿建，層層坑道連接海蝕平台，可俯瞰鐵板灣與東莒方向海面。遊客中心在此，建議先到此拿資料再進北海坑道。</p>
+            <p class="info">與北海坑道、鐵堡同為南竿戰地三寶，步行 5–10 分鐘相連。</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">13:00</span> 鐵堡 <span class="one">獨立岩礁上的軍犬據點</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>鐵堡位在仁愛村鐵板海邊的獨立岩礁上，曾是海防要塞，內部挖空為坑道，過去因地處偏僻，是唯一配置軍犬的據點，軍犬圈養住所成為必拍亮點。</p>
+            <blockquote>
+              <p>「父子倆不肯陪我走，幼稚媽媽獨自在心驚膽顫中完成的『鐵堡』，很抱歉此回僅拍攝……神秘的狹窄地下坑道，膽小的我根本就不敢進入。延著階梯而下，鐵堡內部的挖空坑道清晰可見，有興趣的朋友可以進坑道體驗，至於我…只能走到坑道口，因為這裡竟然一個遊客都沒有，默默被我一個人包場，驚～。」</p>
+              <cite>——部落客格格《慢旅行・馬祖》南竿篇</cite>
+              <button class="qbtn" data-q="q-gege">閱讀全文 →</button>
+            </blockquote>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">14:00</span> 八八坑道・馬祖酒廠 <span class="one">戰車坑道變酒窖</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>八八坑道位於牛角嶺下，原為軍民躲避海盜的山洞，後擴建為戰備坑道，落成之日適逢蔣中正 88 華誕而命名。因長年潮濕不利戰車保養，轉為電信中心，再移交馬祖酒廠儲酒——溫度濕度穩定，利於釀酒。坑道全長約 210 公尺，兩側酒罈林立。</p>
+            <p class="info">馬祖酒廠八八坑道展示館，可品嚐高粱酒；營業時間以現場公告為準。</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">15:30</span> 牛角聚落走讀 <span class="one">謝昭華的村・馬祖文藝復興起源地</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>南竿島形似犀牛，東端稱「牛角村」。1960 年代前曾是馬祖第一大村，全盛時期有鹽館、鴉片館、理髮院等商業活動。今日是馬祖文藝復興的起源地——詩人謝昭華即居住於此，常在此舉辦「詩的旅行」走讀。</p>
+            <blockquote>
+              <p>「謝昭華，一九六二年九月生，台北醫學院醫學系畢業，現執業於馬祖列島」，詩冊中，一行小小的簡歷，並不足以勾勒出醫者的詩輪廓。聽筒，手術刀的背後，他的本質是詩人，長期守島，駐島的詩人。</p>
+              <cite>——金門日報〈島嶼甦醒——讀馬祖詩人謝昭華〉</cite>
+              <button class="qbtn" data-q="q-xiezhaohua">閱讀全文 →</button>
+            </blockquote>
+            <p class="info">可順訪民俗文物館（騎車 5 分鐘）。</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">18:30</span> 北海坑道夜間搖櫓 <span class="one">藍眼淚保證班・全黑環境</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>詳見<a href="#tears">藍眼淚區</a>。18:30–21:00 共 6 梯次、每梯 48 人、航程 15–20 分鐘、NT$350。坑道內全黑無光害，夜光藻受船槳擾動發出螢光藍——成功率遠高於海邊。</p>
+            <p class="info">預約：0836-22177／LINE @gen6594n（免費預約、現場付款）。幽閉恐懼者慎行；白天先走步道順便確認預約。</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 2 東莒 -->
+  <div class="day">
+    <div class="day-banner">
+      <img src="img/fuzheng.jpg" alt="東犬燈塔與福正聚落">
+      <div class="label"><span class="d">DAY 2</span><h4>8/20（四）東莒：住進張蘊之的島</h4><span class="tag">燈塔・雙聚落・下午三點後的靜</span></div>
+    </div>
+    <div class="day-body">
+      <p><strong>07:00 福澳港船直達東莒猛澳港</strong>（8 月雙月先東後西，航程 40–50 分鐘，NT$200）→ 東犬燈塔・大埔聚落・大埔石刻・國利豆腐店・福正聚落・福正沙灘潮間帶 → 下午三點後的靜 → 晚上在燈塔旁看星空、海邊追淚。宿福正民宿。</p>
+      <div class="spots">
+        <details class="spot" open>
+          <summary><span class="time">07:50</span> 猛澳港下船 <span class="one">「同島一命」四個大字</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>猛澳港（北緯 25.957°・東經 119.968°）原名「艋澳」，馬祖話「艋」是漁網之意，昔日漁民在此修補與曝曬漁網。港口無浮動碼頭，大潮時可能延後靠岸。下船第一眼即是張蘊之筆下的「同島一命」標語。</p>
+            <blockquote>
+              <p>「乘船到東莒，船一靠近猛澳港，人人都會看見四個大字：『同島一命』。都說是同島一命了，只要來到這座島，就得與這座島死生相依。原因無他，這裡的所有物資幾乎都得從南竿轉運過來，沒有船，島上就沒有什麼東西可以賣給觀光客。」</p>
+              <cite>——張蘊之〈離離島，移移人〉第二章〈看天吃飯：沒船，沒人，沒飯吃〉</cite>
+              <button class="qbtn" data-q="q-zhang1">閱讀全文 →</button>
+            </blockquote>
+            <p class="info">下船後租機車（NT$500–600），東莒環島一圈不到 30 分鐘。</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">09:00</span> 東犬燈塔（東莒島燈塔） <span class="one">國定古蹟・1875 年英國人建造</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>位於東莒島東北角東犬山，1875 年完工，圓形花崗石造，塔高 20 公尺，由英國人設計建造——因福州開港通商，應英方要求而建，是進出福州馬尾的主要航標，也是臺閩地區離台灣本島最遠的國定古蹟，與東湧燈塔並稱馬祖雙塔。塔頂與塔身比例約 2:3，入口為中式拱門卷，中西合璧。燈塔園區可看日落與滿天星斗。</p>
+            <blockquote>
+              <p>「一座白色的英格蘭的燈塔／佇立在一座中國的寂寞小島上」</p>
+              <cite>——謝昭華〈東引燈塔行〉</cite>
+              <button class="qbtn" data-q="q-ncaf">閱讀全文 →</button>
+            </blockquote>
+            <p class="info">從福正聚落步行約 15 分鐘可達。</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">10:30</span> 大埔聚落・大埔石刻 <span class="one">「一顆顆一顆印皆已人去樓空」</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>大埔聚落是馬祖四大閩東建築聚落之一（另三個：芹壁、福正、津沙），石屋依山面海層層疊疊。聚落有社造組織「大埔Plus+」，提出「新家人」概念。大埔石刻在島南端，為明代萬曆年間記載沈有容擒倭的古蹟，退潮時可走近。</p>
+            <blockquote>
+              <p>「在你居住的那個小島東莒，跟北竿芹壁很像，也窩藏著全馬祖保存最完整的閩東建築群『大埔聚落』，但一棟棟的『一顆印』（石屋）皆已人去樓空，就如《雷盟弟的戰地童年》所形容的，魚源逐漸枯竭，漁人豐收的榮景不再，懷抱著新生的希望，一批一批的馬祖人遠赴台灣本島打拼生活，但無論世事如何變化，在所有討海人的心裡，『家鄉永遠有一片海在那裡』。」</p>
+              <cite>——國藝會線上誌〈詩意馬祖・時光的呢喃〉</cite>
+              <button class="qbtn" data-q="q-ncaf">閱讀全文 →</button>
+            </blockquote>
+            <blockquote>
+              <p>「島的南端有一處大埔石刻，標記著明代名將沈有容擒獲倭寇的古戰場。四百年前的戰地已無遺痕，下到石刻處，得先跨過一處佈滿玻璃碎屑般的尖銳岩石區……在馬祖的朋友說，那是釣客磨掉或拔掉造成的，釣客重塑了馬祖的人文地景。」</p>
+              <cite>——張蘊之〈離離島，移移人〉第三章</cite>
+              <button class="qbtn" data-q="q-zhang1">閱讀全文 →</button>
+            </blockquote>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">12:00</span> 國利豆腐店 <span class="one">張蘊之筆下的東莒名店</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>大坪村的豆腐工坊，藍色門的水泥屋。豆花與豆腐是東莒的日常滋味。</p>
+            <blockquote>
+              <p>「東莒名店國利豆腐店。藍色門的水泥屋是做豆腐的工坊。『老闆，有客人喔！』櫃檯內無人，正在吃豆花的客人，幫我往屋內喊主人。這也是馬祖日常。島上人少，每個人都是一人身兼多職，常常不在店頭，此時就由客人幫忙顧。在島上的第二天起，我也成了顧店小幫手，老闆出門去忙，我就幫忙引導客人入座稍待、簽收包裹什麼的。大多數的時候，一個客人也沒有，我就看一會兒書，或是用手機處理工作。」</p>
+              <cite>——張蘊之〈離離島，移移人〉第三章〈東莒的呼吸：船班、潮汐、垃圾車〉</cite>
+              <button class="qbtn" data-q="q-zhang1">閱讀全文 →</button>
+            </blockquote>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">14:00</span> 福正聚落・福正沙灘 <span class="one">燈塔山腳的石屋聚落＋潮間帶</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>福正聚落就在燈塔山腳，閩東石頭厝沿緩坡層層堆疊；前方福正沙灘退潮時是潮間帶天堂——挖花蛤、抓石狗公和小螃蟹。晚上沙灘可看藍眼淚與踩星沙。潮汐口訣：「初三十八大潮水，早上低潮中午滿，晚上起漲人煮飯。初十二十五，早晚滿潮中午低。」</p>
+            <blockquote>
+              <p>「你記憶裡的東莒，海是淡淡的碧綠的海，夏天可以看到一家大小捲起褲管，踏入廣闊的福正海灘潮間帶挖起花蛤，一網一網的帶走海洋的饋贈，成為旅人餐桌上一盤盤香味四溢的美好佳餚。」</p>
+              <cite>——國藝會線上誌〈詩意馬祖・時光的呢喃〉</cite>
+              <button class="qbtn" data-q="q-ncaf">閱讀全文 →</button>
+            </blockquote>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">15:00</span> 下午三點後的靜 <span class="one">「每個人都在自己的 Me Time 裡」</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>末班船 14:30 開走後，島上逐漸安靜下來——這是張蘊之駐村時最喜歡的時刻。大坪街商家敞著門追劇，靠海聚落的人們種菜、捕魚，退潮時到潮間帶挖花蛤。傍晚四點多垃圾車的歌聲響起，是「三點之後，島上最騷動的時刻」。</p>
+            <blockquote>
+              <p>「下午兩點半送客，大約三點左右，本日的最後一班船開走，島上才逐漸安靜下來，恢復成東莒人的東莒。我喜歡在三點之後在島上轉。這個時間點之後，島上靜極了，每個人都在自己的『Me Time』裡。大坪街上的商家敞著門在追劇，靠海聚落的人們，種菜的種菜，捕魚的捕魚，若適逢退潮，便到潮間帶挖花蛤、抓石狗公和小螃蟹。」</p>
+              <cite>——張蘊之〈離離島，移移人〉第三章</cite>
+              <button class="qbtn" data-q="q-zhang1">閱讀全文 →</button>
+            </blockquote>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">19:30</span> 無光害星空・海邊追淚 <span class="one">「有人說一次告別，天上就會有顆星，再綻放」</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>東莒沒有光害，燈塔旁或沙灘上抬頭就是滿天星斗。8 月海邊以「星沙」為主，福正沙灘與大埔是島上主要追淚點，機率中高、碰運氣。</p>
+            <blockquote>
+              <p>「東莒島上的人們，都很習慣聚散。再聚首是開心的，而告別亦是日常，珍惜相聚的當下就好。林志炫有一首歌叫做〈離人〉，其中一段歌詞是這樣唱的：『有人說一次告別，天上就會有顆星，又熄滅。』望著東莒沒有光害的滿天星斗，我想，這裡的歌詞也許該改一改：『有人說一次告別，天上就會有顆星，再綻放。』感謝這座因為離別而燦爛的島嶼，感謝每一位在旅途中照顧過我的人。我們下次見。」</p>
+              <cite>——張蘊之〈離離島，移移人〉第四章〈移人眼底的灰藍色，不是冰冷，而是等待〉</cite>
+              <button class="qbtn" data-q="q-zhang1">閱讀全文 →</button>
+            </blockquote>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 3 過海＋福州 -->
+  <div class="day">
+    <div class="day-banner">
+      <img src="img/fuzhou.jpg" alt="福州三坊七巷主街">
+      <div class="label"><span class="d">DAY 3</span><h4>8/21（五）小三通過海 → 福州三坊七巷</h4><span class="tag">30 分鐘航程・閩都人文・明日與慧婷會合</span></div>
+    </div>
+    <div class="day-body">
+      <p>早班船（07:00 或 11:00）東莒→南竿 → 轉北竿白沙港，10:00 吉順10號開航 30 分鐘抵黃岐（NT$650）→ 接駁進福州市區（包車約 150 RMB／40–50 分鐘）→ 下午三坊七巷：林覺民・冰心故居、嚴復故居、二梅書屋。宿福州（三坊七巷周邊）。<strong>慧婷 8/22 中午飛抵福州，兩人從這裡開始同行。</strong></p>
+      <div class="spots">
+        <details class="spot">
+          <summary><span class="time">07:00</span> 東莒 → 南竿（回程） <span class="one">關鍵銜接・與民宿主人確認</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>07:00 班次約 07:50 抵南竿福澳港，可接福澳→白沙 08:30–09:00 島際船，再趕白沙 10:00 黃岐船（可行但緊）。若改搭 11:00 班次（12:00 到南竿），則改走南竿福澳下午琅岐線（14:30 或依當日公告），或延至 8/22 一早過海。</p>
+            <p class="info">最壞情況仍不影響 8/22 見慧婷——8/20 抵東莒時即與民宿主人確認回程。</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">10:00</span> 白沙 → 黃岐（小三通） <span class="one">30 分鐘・全票 NT$650</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>吉順10號（南北海運）執航：售票 08:10–09:10、通關 09:20–09:40、開航 10:00。航程 30 分鐘抵福州黃岐港。訂位最遲 8/20 中午 12:00 前（matsuebs.com），開航前 1 小時持證件取票，退票扣 10%。落地簽（若需）：黃岐港 2 張照片＋RMB 40。</p>
+            <p class="info">選黃岐線理由：8/16–31 琅岐線潮汐異動、安麒6號歲修至 8/22——黃岐線由台籍船執航不受影響，且航程最短。</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">15:00</span> 三坊七巷・林覺民冰心故居 <span class="one">「一座宅院，兩位名人的傳奇」</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>三坊七巷是福州歷史街區核心（5A 景區），南后街兩側衣錦坊、文儒坊等七巷三坊保留了明清古厝與馬鞍風火牆。楊橋東路 17 號的宅院，既是「黃花崗七十二烈士」林覺民的故居，也是文學家冰心（謝婉瑩）的出生地——林覺民殉難後林家避禍遷離，房屋讓售予冰心祖父謝鑾恩。2006 年公布為全國重點文物保護單位，現闢《林覺民生平史跡》展與《冰心與福州》展。</p>
+            <blockquote>
+              <p>「意映卿卿如晤：吾今以此書與汝永別矣！吾作此書時，尚是世中一人；汝看此書時，吾已成為陰間一鬼。吾作此書，淚珠和筆墨齊下，不能竟書而欲擱筆，又恐汝不察吾衷，謂吾忍舍汝而死，謂吾不知汝之不欲吾死也，故遂忍悲為汝言之。」</p>
+              <cite>——林覺民〈與妻訣別書〉（1911 年廣州起義前絕筆，寫於此宅）</cite>
+              <button class="qbtn" data-q="q-linjuemin">閱讀全文 →</button>
+            </blockquote>
+            <blockquote>
+              <p>「母親啊！天上的風雨來了，鳥兒躲到它的巢裡；心中的風雨來了，我只躲到你的懷裡。」</p>
+              <cite>——冰心《繁星・一五九》——冰心（1900–1999）生於楊橋東路 17 號，福州度過的童年影響她一生的寫作</cite>
+              <button class="qbtn" data-q="q-bingxin">閱讀全文 →</button>
+            </blockquote>
+            <p class="info">免費參觀；續走嚴復故居（郎官巷）、二梅書屋（福建民俗博物館）。</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 4 福州會合日 -->
+  <div class="day">
+    <div class="day-banner">
+      <img src="img/fuzheng.jpg" alt="福州上下杭歷史街區">
+      <div class="label"><span class="d">DAY 4</span><h4>8/22（六）慧婷飛抵福州・兩人同行・夜奔廈門</h4><span class="tag">北京直飛 3 小時・高鐵 1 小時・會合日</span></div>
+    </div>
+    <div class="day-body">
+      <p>慧婷上午北京直飛福州（國航/海航/山東航/福州航執飛，首都/大興→長樂，約 3 小時，8 月票價 TWD 3,009 起；建議訂早班機中午前到）→ 中午三坊七巷會合 → 下午上下杭・烟台山漫步 → 晚上高鐵福州→廈門（末班 22:00，最快 1 小時 3 分）→ 宿廈門市區（中山路/沙坡尾一帶）。<strong>若想先在福州住一晚、8/23 一早再南下，也完全可行——高鐵每 15–30 分鐘一班。</strong></p>
+      <div class="spots">
+        <details class="spot">
+          <summary><span class="time">中午</span> 慧婷抵福州・三坊七巷會合 <span class="one">北京→長樂直飛約 3 小時</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>北京⇄福州直飛由國航、海南航空、山東航空、福州航空執飛（首都或大興出發），飛行約 2.5–3 小時。8 月票價約 TWD 3,009 起（中國聯合航空最便宜）。建議訂上午班機，中午前抵達長樂機場，接機鐵或打車進市區（約 40–50 分鐘）。</p>
+            <p class="info">台胞證訂票；長樂機場→三坊七巷：地鐵 6 號線轉 1 號線或打車。</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">14:00</span> 上下杭・烟台山 <span class="one">舊商埠水路＋萬國建築</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>上下杭是福州舊時商業碼頭區，河道、古橋與騎樓並存，曾是閩商雲集的「十里洋場」。烟台山在南台島，集中大量近代洋行與領事館建築，是福州版的「萬國建築博覽」，適合沿坡道慢慢走。</p>
+            <p class="info">免費；上下杭與烟台山之間打車約 15 分鐘。</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">19:00</span> 高鐵福州→廈門 <span class="one">每日約 236 班・最快 1 小時 3 分</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>首班 06:36、末班 22:00，班次密集。用台胞證訂票（Trip.com 或 12306），憑證件免取票進站。二等座 TWD 397 起。行李限重 20 公斤、單件長寬高不超過 130 公分。車票 15 天前開賣——8/8 起可訂 8/22 票。</p>
+            <p class="info">到廈門北站後，地鐵 1 號線進市區（鎮海路站／中山公園站）。</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 5 鼓浪嶼 -->
+  <div class="day">
+    <div class="day-banner">
+      <img src="img/kulangsu.jpg" alt="鼓浪嶼黃昏，世界遺產小島">
+      <div class="label"><span class="d">DAY 5</span><h4>8/23（日）鼓浪嶼一日</h4><span class="tag">世界遺產・萬國建築・龔萬瑩的島</span></div>
+    </div>
+    <div class="day-body">
+      <p><strong>郵輪中心廈鼓碼頭 → 三丘田碼頭</strong>（台灣旅客白天主碼頭），往返船票 <strong>35–50 RMB</strong>（實名制、提前官方渠道預約、刷證件登船、含返程 20 天有效）→ 日光岩・菽庄花園・皓月園・八卦樓（聯票 90 RMB）→ 龍頭路小吃 → 傍晚回廈門。島上無機動車，全程步行。<strong>若慧婷住海滄華邑，可改從嵩嶼碼頭上島（酒店車程 5–10 分鐘＋渡輪約 15–20 分鐘，避開島內人潮）。</strong></p>
+      <div class="spots">
+        <details class="spot">
+          <summary><span class="time">08:30</span> 渡輪上島 <span class="one">船票 35–50 RMB・實名預約</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>台灣旅客白天從「郵輪中心廈鼓碼頭」（東渡碼頭）出發，目的地選「三丘田碼頭」（離主景區近）或「內厝澳碼頭」。需提前透過官方渠道（微信「廈門輪渡」小程式）實名預約，無需現場換票，刷證件直接登船；船票含返程且 20 天內有效。0–5 歲兒童免費、6–13 歲兒童半價。⚠️ 旺季熱門時段需提前數日搶票。<strong>海滄嵩嶼碼頭亦有到鼓浪嶼的渡輪（內厝澳方向），離海滄華邑酒店僅 5–10 分鐘車程——若慧婷住會議酒店，從這裡走更順。</strong></p>
+            <p class="info">訂票：微信搜「廈門輪渡」小程式｜或 Klook/Trip.com 代訂（成人約 NT$160–230）</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">09:30</span> 日光岩 <span class="one">全島制高點・鼓浪嶼之眼</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>日光岩是鼓浪嶼最高點（海拔 92.7 公尺），登頂可俯瞰全島紅瓦建築群與廈門本島、海峽對岸的漳州。山腳有日光岩寺。聯票 90 RMB 內含；單獨購票約 50 RMB。</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">11:30</span> 菽庄花園・鋼琴博物館 <span class="one">「鋼琴之島」的靈魂</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>菽庄花園是台灣富商林爾嘉（板橋林家後人）1913 年興建的私家園林，依海而建，分「藏海」「補山」兩園。園內鋼琴博物館收藏數十台古董鋼琴——鼓浪嶼被稱為「鋼琴之島」，島上鋼琴密度曾是全國最高，2002 年廈門市立「鋼琴博物館」即設於此。</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">14:00</span> 八卦樓・皓月園 <span class="one">萬國建築博覽會＋鄭成功雕像</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>八卦樓建於 1907 年，是鼓浪嶼最大的歐式建築（現為風琴博物館）；皓月園有高 15.7 公尺的鄭成功石雕像，面朝大海。鼓浪嶼 2017 年以「歷史國際社區」列入世界遺產——島上 900 餘棟歷史建築涵蓋英、美、日、西班牙等各國風格，號稱「萬國建築博覽會」。</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">16:00</span> 龍頭路・島上漫步 <span class="one">小吃與老別墅之間</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>龍頭路是島上最熱鬧的商業街：魚丸湯、海蠣煎、花生湯、葉氏麻糍。離開主街，拐進漳州路、安海路的小巷，才是鼓浪嶼真正的樣子——老別墅、三角梅、琴聲。</p>
+            <blockquote>
+              <p>「厝這個字，在閩南語裡是『家』的意思。鼓浪嶼島民龔萬瑩以島嶼棲居者的成長經歷為脈絡，還原具有鮮明年代感的日常生活，追述島嶼獨特的時代烙印與歷史記憶——『最熟悉的島嶼現在已是遠方。』」</p>
+              <cite>——龔萬瑩《島嶼的厝》書介（2024 中信出版，RMB 59）</cite>
+              <button class="qbtn" data-q="q-gong">閱讀全文 →</button>
+            </blockquote>
+            <blockquote>
+              <p>林語堂 1919 年 1 月 9 日與鼓浪嶼廖家次女廖翠鳳結婚，婚後居於漳州路 44 號廖家別墅。結婚當日他當眾燒掉結婚證書：「結婚證書只有離婚才用得到。」——此軼事有廈門文史資料為據。</p>
+              <cite>——林語堂與鼓浪嶼（漳州路 44 號廖家別墅）</cite>
+              <button class="qbtn" data-q="q-linyutang">閱讀全文 →</button>
+            </blockquote>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 6 廈門市區 -->
+  <div class="day">
+    <div class="day-banner">
+      <img src="img/xiamen2.jpg" alt="鼓浪嶼街景與老建築">
+      <div class="label"><span class="d">DAY 6</span><h4>8/24（一）南普陀寺・植物園・廈門大學</h4><span class="tag">魯迅在廈門・山海之間</span></div>
+    </div>
+    <div class="day-body">
+      <p>南普陀寺（免費・微信小程式分時段預約）→ 五老峰俯瞰廈門 → 廈門大學（需預約，魯迅紀念館）→ 廈門園林植物園（約 30 RMB）→ 鐘鼓索道（約 TWD 383）→ 晚上與慧婷好好吃一頓告別餐。</p>
+      <div class="spots">
+        <details class="spot">
+          <summary><span class="time">09:00</span> 南普陀寺 <span class="one">千年閩南古剎・免費預約</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>南普陀寺始建於唐代，清康熙重建，因與普陀山普濟寺同為主奉觀音菩薩而得名。位於廈門大學旁、五老峰下。進入需提前透過微信小程式「南普陀寺」分時段免費預約。登五老峰可俯瞰廈大與廈門城。</p>
+            <p class="info">免費；預約：微信搜「南普陀寺」</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">11:00</span> 廈門大學・魯迅紀念館 <span class="one">1926 年魯迅在此任教</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>廈門大學被譽為「中國最美濱海高校」，嘉庚建築（中西合璧）與芙蓉湖、芙蓉隧道塗鴉聞名。校內集美樓設有<strong>魯迅紀念館</strong>——1926 年 9 月至 1927 年 1 月，魯迅在廈大任國文系教授，期間寫成《朝花夕拾》大部分篇章（含〈從百草園到三味書屋〉〈藤野先生〉）與《漢文學史綱要》。他在廈門寫給許廣平的信中描述了南普陀寺的風景與寂寞的教學生涯。</p>
+            <blockquote>
+              <p>「我有一時，曾經屢次憶起兒時在故鄉所吃的蔬果：菱角、羅漢豆、茭白、香瓜。凡這些，都是極其鮮美可口的；都曾是使我思鄉的蠱惑。後來，我在久別之後嚐到了，也不過如此；惟獨在記憶上，還有舊來的意味留存。他們也許要哄騙我一生，使我時時反顧。」</p>
+              <cite>——魯迅《朝花夕拾・小引》（1927 年寫於廣州，回望在廈門的四個月；在廈門的這段時光，成了他回望故鄉與童年的契機）</cite>
+              <button class="qbtn" data-q="q-luxun">閱讀全文 →</button>
+            </blockquote>
+            <p class="info">參觀需提前預約（廈大官方微信公眾號）；遊客須從特定校門入校。</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">14:00</span> 園林植物園・鐘鼓索道 <span class="one">萬石植物園＋山海纜車</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>廈門園林植物園（萬石植物園）圍繞萬石岩水庫而建，十多個專類園區（多肉植物區最受歡迎），門票約 30 RMB（TWD 139 起）。鐘鼓索道從植物園旁跨越山海直達南普陀寺後山，全程約 40 分鐘，可俯瞰廈門大學、南普陀與鼓浪嶼（單人約 TWD 383）。</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">18:00</span> 告別晚餐 <span class="one">同行七天的句點</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>選一家靠海的餐廳（鷺江道一帶可看鼓浪嶼夜景），或回到八市吃一輪在地小吃。明天一早兩人分頭：你下午飛北京，慧婷移動到海滄華邑準備 CIMDR 會議。</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 7 分頭日 -->
+  <div class="day">
+    <div class="day-banner">
+      <img src="img/xiamen.jpg" alt="廈門夜景">
+      <div class="label"><span class="d">DAY 7</span><h4>8/25（二）分頭日：你飛北京・慧婷移海滄</h4><span class="tag">早午餐後道別・各自啟程</span></div>
+    </div>
+    <div class="day-body">
+      <p>早上一起慢慢吃頓早午餐（沙茶麵或花生湯當早餐）→ 中午前道別 → 你下午廈門飛北京（2.5–3.5 小時，NT$5,800 起，建議訂 15:00 後班機）→ 慧婷移動至<strong>廈門海滄融信華邑酒店</strong>（距島內 10–30 分鐘車程；高崎機場 25–30 分鐘、廈門北站 30–40 分鐘）入住，休息並熟悉會議場地。</p>
+      <div class="spots">
+        <details class="spot">
+          <summary><span class="time">09:30</span> 早午餐・道別 <span class="one">把七天收進一頓飯</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>回到中山路或八市吃最後一輪：沙茶麵、花生湯、滿煎糕。這趟從馬祖夜航到小三通、從福州老厝到鼓浪嶼琴聲的旅程，在這裡畫下句點。</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">15:00</span> 你：廈門 → 北京 <span class="one">2.5–3.5 小時・NT$5,800 起</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>廈門高崎機場（XMN）直飛北京首都/大興，8 月下旬仍有夏季航班，建議提前訂。從市區到高崎機場約 30 分鐘。若行李不多、時間充裕，也可考慮廈門北站高鐵（10.5 小時，不建議）。</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">16:00</span> 慧婷：入住海滄華邑 <span class="one">CIMDR 會議場地・嵩嶼碼頭旁</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>廈門海滄融信華邑酒店（HUALUXE Xiamen Haicang，海滄大道坪山南里 63 號）是<strong>第十六屆中國醫療器械監督管理國際會議（CIMDR）</strong>的會場（8/26–28）。距高崎機場 25–30 分鐘、廈門北站 30–40 分鐘、嵩嶼碼頭（鼓浪嶼接駁渡輪）僅 5–10 分鐘車程。入住後可先逛海滄灣公園，或提早去會場報到熟悉動線。</p>
+            <p class="info">海滄與島內（中山路）之間：渡輪約 10–15 分鐘或打車約 30 分鐘。</p>
+          </div>
+        </details>
+        <details class="spot">
+          <summary><span class="time">8/26–28</span> 慧婷：CIMDR 會議 <span class="one">第十六屆中國醫療器械監督管理國際會議</span><span class="chev">›</span></summary>
+          <div class="spot-body">
+            <p>2026 年 8 月 26–28 日於廈門海滄融信華邑酒店舉行，目前正徵集演講題目。會議期間慧婷住海滄華邑即可，動線零移動；機場接送車程 25–30 分鐘。</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <div class="notice"><strong>⚠️ 8/21 關鍵銜接：</strong>若搭 07:00 東莒回程船（約 07:50 到南竿），可趕上白沙 10:00 黃岐船（福澳→白沙 15 分鐘＋緩衝，可行但緊）。若改 11:00 班次，則改走南竿福澳下午琅岐線，或延至 8/22 一早過海再與慧婷福州會合。建議 8/20 抵東莒時與民宿主人確認回程船班。慧婷 8/22 中午才到福州，你 8/21 晚住福州是彈性緩衝，不用趕。</div>
+</section>
+
+<!-- ══════════ 交通 ══════════ -->
+<section id="transport">
+  <p class="section-title">Transport</p>
+  <h3 class="sec-head">交通 — <em>五段旅程，五種節奏</em></h3>
+  <p class="lead">夜航船（8–10 小時）、島際船（15–50 分鐘）、小三通（30 分鐘）、高鐵（1 小時）、渡輪（20 分鐘）——每一段都剛好是下一段的前奏。慧婷則以一段 3 小時的直飛航班，在福州與旅程會合。</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>路段</th><th>時間</th><th>票價</th><th>備註／訂位</th></tr></thead>
+      <tbody>
+        <tr><td><strong>① 基隆→南竿（夜航）</strong><br>8/18 22:30</td><td class="num">8–10 小時<br>（雙號：先東後馬）</td><td class="num">經濟艙 NT$1,050<br>座艙 NT$630</td><td>臺馬之星執航（週二新臺馬輪保養）⚠️ 8/17–18 看公告。基隆港西岸碼頭，開航前 1–1.5 小時報到。訂位：<a href="https://www.matsuebs.com/home/SelectShip" target="_blank" rel="noopener">matsuebs.com</a></td></tr>
+        <tr><td><strong>② 南竿⇄東莒（莒光航線）</strong><br>8/20 07:00 去／8/21 早回</td><td class="num">40–50 分鐘</td><td class="num">NT$200</td><td>每日 07:00／11:00／14:30 三班。<strong>8 月雙月：先東後西</strong>（07:00 直達東莒）。首班 07:30 前購票、末班 15:00 前購票。南北海運 0836-22193</td></tr>
+        <tr><td><strong>③ 白沙→黃岐（小三通）</strong><br>8/21 10:00</td><td class="num">30 分鐘</td><td class="num">NT$650<br>（含保險/碼頭費）</td><td>吉順10號。售票 08:10–09:10、通關 09:20–09:40。訂位最遲 8/20 中午 12:00；退票扣 10%。落地簽：2 張照片＋RMB 40。南北海運 0836-22938</td></tr>
+        <tr><td><strong>④ 慧婷：北京→福州（直飛）</strong><br>8/22 上午</td><td class="num">約 3 小時</td><td class="num">TWD 3,009 起</td><td>國航／海南航空／山東航空／福州航空執飛（首都或大興→長樂）。建議訂上午班機、中午前到。<a href="https://www.trip.com/flights/beijing-to-fuzhou/" target="_blank" rel="noopener">Trip.com</a>／Skyscanner 比價</td></tr>
+        <tr><td><strong>⑤ 福州→廈門（高鐵）</strong><br>8/22 傍晚</td><td class="num">最快 1 小時 3 分</td><td class="num">二等座 TWD 397 起</td><td>每日約 236 班，首班 06:36、末班 22:00。白天福州共遊後南下，班次密集、彈性大。車票 15 天前開賣（8/8 起可訂 8/22 票）。台胞證訂票、憑證件免取票進站。<a href="https://tw.trip.com/trains/china/route/fuzhou-to-xiamen/" target="_blank" rel="noopener">Trip.com</a> 或 12306 App</td></tr>
+        <tr><td><strong>⑥ 廈門→鼓浪嶼（渡輪）</strong><br>8/23</td><td class="num">約 20 分鐘</td><td class="num">往返 35–50 RMB<br>（約 NT$160–230）</td><td>台灣旅客從郵輪中心廈鼓碼頭→三丘田/內厝澳碼頭。實名制、提前官方渠道預約、刷證件登船、含返程 20 天有效。微信搜「廈門輪渡」或 Klook/Trip.com。住海滄者可改從嵩嶼碼頭上船</td></tr>
+        <tr><td><strong>⑦ 廈門→北京</strong><br>8/25 下午</td><td class="num">2.5–3.5 小時</td><td class="num">NT$5,800 起</td><td>飛機優先；高鐵 10.5 小時不建議。Skyscanner 比價</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="notice"><strong>選黃岐線的理由：</strong>8/16–8/31 琅岐線因潮汐水位異動班次調整、安麒6號歲修至 8/22——黃岐線由台籍吉順10號執航，不受影響，且航程最短、票價最低。</div>
+</section>
+
+<!-- ══════════ 住宿 ══════════ -->
+<section id="stays">
+  <p class="section-title">Stays</p>
+  <h3 class="sec-head">住宿 — <em>五晚，五種城市節奏</em></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>住宿</th><th>價格</th><th>特色</th><th>訂房</th></tr></thead>
+      <tbody>
+        <tr><td><strong>南竿・福澳窩背包客民宿</strong></td><td class="num">床位 NT$800</td><td>福澳碼頭步行 3–5 分鐘；可代訂機車、藍眼淚諮詢；隔壁「中華民國最北星巴克」</td><td>0937-883091・LINE nene898・<a href="https://bnb.matsu.idv.tw/fuaowo/" target="_blank" rel="noopener">bnb.matsu.idv.tw/fuaowo</a></td></tr>
+        <tr><td><strong>東莒・福正民宿 ★</strong></td><td class="num">雙人房約 NT$2,000–2,500</td><td>福正老村長夫妻經營；後方國定古蹟東犬燈塔、前方福正沙灘；晚上賞藍眼淚踩星沙</td><td>0836-88211 ⚠️・<a href="https://bnb.matsu.idv.tw/fuzheng/" target="_blank" rel="noopener">bnb.matsu.idv.tw/fuzheng</a></td></tr>
+        <tr><td><strong>東莒・船老大民宿</strong></td><td class="num">依房型</td><td>大坪村；碼頭接送＋代租機車＋海釣諮詢</td><td>0836-88022 ⚠️・<a href="https://hotel.matsu.idv.tw/captain/" target="_blank" rel="noopener">hotel.matsu.idv.tw/captain</a></td></tr>
+        <tr><td><strong>福州・三坊七巷周邊</strong></td><td class="num">RMB 60–500</td><td>如家精選（東街口）TWD 300 起｜亞朵（步行 3 分鐘到宮巷）｜三寶賓邸（古厝改建）。慧婷 8/22 中午抵達後若不想當晚南下，可續住一晚、8/23 一早高鐵到廈門（彈性選項）</td><td><a href="https://www.booking.com/hotel/cn/atour-three-lanes-and-seven-alleys-fuzhou.zh-tw.html" target="_blank" rel="noopener">亞朵 Booking</a></td></tr>
+        <tr><td><strong>廈門・近中山路/沙坡尾</strong></td><td class="num">RMB 150–600</td><td>中山路步行街周邊（近八市、鷺江道）或沙坡尾文青民宿；兩人同行建議住 2 晚（8/22–23）</td><td>Trip.com／Agoda／Booking 比價</td></tr>
+        <tr><td><strong>廈門・海滄融信華邑酒店（慧婷）</strong></td><td class="num">四星以上</td><td>CIMDR 會議場地（海滄大道坪山南里 63 號）；嵩嶼碼頭 5–10 分鐘車程、高崎機場 25–30 分鐘；慧婷 8/25 起入住（或 8/24 晚提前入住）</td><td>官方渠道／IHG 訂房</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="notice"><strong>⚠️ 訂房提醒：</strong>東莒民宿多採電話／粉專訂房，8 月旺季請立即電話確認 8/20 空房，並同步處理 8/21 回程船票（福正民宿 FB 提醒：「記得來前要先上網訂船票」）。廈門 8/22–23 兩晚建議提早訂（暑假尾聲仍熱門）；慧婷的海滄華邑（8/24 晚或 8/25 起）可隨會議安排一起處理。</div>
+</section>
+
+<!-- ══════════ 文學 ══════════ -->
+<section id="literature">
+  <p class="section-title">Literature</p>
+  <h3 class="sec-head">以文學為地圖 — <em>馬祖・福州・廈門的書與人</em></h3>
+  <p class="lead">每一段旅程都有一本書。馬祖的駐村作家、福州的絕筆與繁星、廈門的島嶼小說——點開每本書可讀摘錄，點「閱讀全文」彈出完整原文（已內嵌，離線可讀）。</p>
+
+  <h4 style="margin:0 0 12px;">馬祖・駐村作家與島嶼之書</h4>
+  <div class="books">
+    <div class="book">
+      <div class="b-title">離離島，移移人——飄浪者的東莒</div>
+      <div class="b-author">張蘊之・2024 東莒駐村・四章完整版</div>
+      <div class="b-desc">送關島存機票／看天吃飯／東莒的呼吸／移人眼底的灰藍色。出發前必讀。</div>
+      <details class="book-detail">
+        <summary>展開摘錄</summary>
+        <div class="bd-body">
+          <p><strong>第一章〈送關島，存機票〉</strong>：「買馬祖，送關島。」是往來馬祖的人常用來自嘲的順口溜……「四鄉五島，以南竿島為中心……以我要蹲點的東莒為例，一天三班船，沒趕上下午兩點半從南竿出發的末班船，就要等明天。」「『看天吃飯』，四個字說得輕巧，實際上卻無比沉重。」</p>
+          <p><strong>第二章〈看天吃飯：沒船，沒人，沒飯吃〉</strong>：「我感覺自己正在和這座島學跳舞，而我是那個不懂跳舞的笨學生，左腳右腳前進後退轉圈，拿捏不到互動距離，抓不準節奏。」</p>
+          <p><strong>第三章〈東莒的呼吸：船班、潮汐、垃圾車〉</strong>：「從南竿到東莒，一日三班船……這三班船，可說是東莒島與世界連結的命脈。船班一斷，島上就等於封鎖，退回自給自足的農漁時代。」「初三十八大潮水，早上低潮中午滿，晚上起漲人煮飯。初十二十五，早晚滿潮中午低。」</p>
+          <p><strong>第四章〈移人眼底的灰藍色，不是冰冷，而是等待〉</strong>：「移徙的人有個特質，和定居者不太一樣，你會在他們眼中看到一抹灰藍。這抹灰藍輕輕淺淺，我們在這層如煙的灰階之中，試探著彼此，等待交集。」</p>
+        </div>
+      </details>
+      <div class="b-link"><button class="qbtn" data-q="q-zhang1">閱讀全文（離線彈窗）→</button>・<a href="https://matters.town/a/zjl1uaq3sumb" target="_blank" rel="noopener">Matters 原文 →</a></div>
+    </div>
+    <div class="book">
+      <div class="b-title">我在東引駐村的日子（上／下）</div>
+      <div class="b-author">陳靜宜・2024 東引駐村・飲食文學</div>
+      <div class="b-desc">她把老酒、鮮魚評為馬祖最具地域特色的食物。</div>
+      <details class="book-detail">
+        <summary>展開摘錄</summary>
+        <div class="bd-body">
+          <p>「居民怕不怕沒東西吃？一點都不怕，因為家家戶戶除了冰箱，還有上掀式凍櫃。一戶一只凍櫃是基本配備，也有一戶兩只（一大一小）等不同組合，我訪談中有一戶有八只櫃，真是凍櫃大富翁。」</p>
+          <p>「東引的陡坡極陡（我想：像不會動的百貨公司手扶梯）。」</p>
+        </div>
+      </details>
+      <div class="b-link"><button class="qbtn" data-q="q-chenjingyi">閱讀全文（離線彈窗）→</button>・<a href="https://www.matsu-news.gov.tw/news/article/227705" target="_blank" rel="noopener">上 →</a>・<a href="https://www.matsu-news.gov.tw/news/article/227706" target="_blank" rel="noopener">下 →</a></div>
+    </div>
+    <div class="book">
+      <div class="b-title">詩意馬祖・時光的呢喃</div>
+      <div class="b-author">國藝會線上誌・楊豐維</div>
+      <div class="b-desc">謝昭華〈東引燈塔行〉：「一座白色的英格蘭的燈塔／佇立在一座中國的寂寞小島上」。</div>
+      <div class="b-link"><button class="qbtn" data-q="q-ncaf">閱讀全文（離線彈窗）→</button>・<a href="https://mag.ncafroc.org.tw/article_detail?sid=288" target="_blank" rel="noopener">線上誌原文 →</a></div>
+    </div>
+    <div class="book">
+      <div class="b-title">島嶼甦醒——讀馬祖詩人謝昭華</div>
+      <div class="b-author">金門日報</div>
+      <div class="b-desc">「單是看每一首詩的命題，就能框住一座霧鎖之島了。」</div>
+      <div class="b-link"><button class="qbtn" data-q="q-xiezhaohua">閱讀全文（離線彈窗）→</button>・<a href="https://www.kmdn.gov.tw/1117/1271/1275/192975/" target="_blank" rel="noopener">原文 →</a></div>
+    </div>
+    <div class="book">
+      <div class="b-title">《島居》</div>
+      <div class="b-author">謝昭華・聯合文學 2016</div>
+      <div class="b-desc">醫生詩人寫馬祖。博客來電子書 NT$196 起——出發前最好入手的一本。</div>
+      <div class="b-link"><a href="https://www.books.com.tw/products/E050181822" target="_blank" rel="noopener">博客來電子書 →</a></div>
+    </div>
+    <div class="book">
+      <div class="b-title">《小島說話：當馬祖遠離戰地，成為自己》</div>
+      <div class="b-author">劉亦・離島出版 2024</div>
+      <div class="b-desc">爬梳 1949 後至當代的馬祖文學發展——認識馬祖的第一本書。</div>
+      <details class="book-detail">
+        <summary>展開摘錄</summary>
+        <div class="bd-body">
+          <p>「當代馬祖，是歷史的意外，也是中華民國和台灣的異與外。而這座群島花了超過半個世紀，才能夠理直氣壯寫馬祖事，說馬祖話，聆聽馬祖心聲，最後成為馬祖人。」</p>
+        </div>
+      </details>
+    </div>
+    <div class="book">
+      <div class="b-title">《島嶼轉譯・文學馬祖》／《鄉音馬祖》</div>
+      <div class="b-author">黃資婷（成大 2025）・劉宏文（前衛）</div>
+      <div class="b-desc">717 頁馬祖文學選集＋評論；32 篇庶民紀實散文（煙硝／生息／離散）。</div>
+    </div>
+  </div>
+
+  <h4 style="margin:26px 0 12px;">福州・閩都文脈</h4>
+  <div class="books">
+    <div class="book">
+      <div class="b-title">林覺民〈與妻訣別書〉</div>
+      <div class="b-author">1911・寫於楊橋東路 17 號</div>
+      <div class="b-desc">「意映卿卿如晤：吾今以此書與汝永別矣！」——黃花崗七十二烈士的絕筆，中國抒情散文的極致。</div>
+      <div class="b-link"><button class="qbtn" data-q="q-linjuemin">閱讀全文（離線彈窗）→</button></div>
+    </div>
+    <div class="book">
+      <div class="b-title">冰心《繁星》《春水》《寄小讀者》</div>
+      <div class="b-author">謝婉瑩・1900 年生於楊橋東路 17 號</div>
+      <div class="b-desc">「母親啊！天上的風雨來了，鳥兒躲到他的巢裡；心中的風雨來了，我只躲到你的懷裡。」</div>
+      <div class="b-link"><button class="qbtn" data-q="q-bingxin">閱讀全文（離線彈窗）→</button></div>
+    </div>
+    <div class="book">
+      <div class="b-title">嚴復《天演論》</div>
+      <div class="b-author">1854–1921・郎官巷故居</div>
+      <div class="b-desc">「物競天擇，適者生存」——近代中國啟蒙第一人，翻譯《天演論》《原富》等八部西學經典。</div>
+      <div class="b-link"><button class="qbtn" data-q="q-yanfu">閱讀全文（離線彈窗）→</button></div>
+    </div>
+    <div class="book">
+      <div class="b-title">郁達夫《閩遊滴瀝》</div>
+      <div class="b-author">1936 年福州行旅散文</div>
+      <div class="b-desc">「福州女子的服裝，是中國女性中最摩登而又最有閩南風味的」——郁達夫筆下的福州風物。</div>
+      <div class="b-link"><button class="qbtn" data-q="q-yudafu">閱讀全文（離線彈窗）→</button></div>
+    </div>
+  </div>
+
+  <h4 style="margin:26px 0 12px;">廈門・島嶼與海</h4>
+  <div class="books">
+    <div class="book">
+      <div class="b-title">《島嶼的厝》</div>
+      <div class="b-author">龔萬瑩・中信出版 2024・RMB 59</div>
+      <div class="b-desc">鼓浪嶼島民龔萬瑩的第一部小說集：老厝、阿嬤、芒果樹、海風與離散——「厝」在閩南語裡是「家」。</div>
+      <div class="b-link"><button class="qbtn" data-q="q-gong">閱讀全文（離線彈窗）→</button>・<a href="https://book.douban.com/subject/36636649/" target="_blank" rel="noopener">豆瓣 →</a>・<a href="https://www.sanmin.com.tw/product/index/012754652" target="_blank" rel="noopener">三民書店 →</a></div>
+    </div>
+    <div class="book">
+      <div class="b-title">《鯨路回潮》</div>
+      <div class="b-author">龔萬瑩・2024 第二部小說集</div>
+      <div class="b-desc">「以文字記錄島嶼的興盛消亡……帶領觀者進入充滿蕭索之意的回憶小島。」</div>
+      <div class="b-link"><a href="https://book.douban.com/subject/37078243/" target="_blank" rel="noopener">豆瓣 →</a></div>
+    </div>
+    <div class="book">
+      <div class="b-title">林語堂與鼓浪嶼</div>
+      <div class="b-author">漳州路 44 號故居・1919 年結婚</div>
+      <div class="b-desc">林語堂與廖翠鳳在鼓浪嶼結婚，島上的琴聲與海風貫穿他的散文。</div>
+      <div class="b-link"><button class="qbtn" data-q="q-linyutang">閱讀全文（離線彈窗）→</button></div>
+    </div>
+    <div class="book">
+      <div class="b-title">魯迅在廈門大學</div>
+      <div class="b-author">1926–1927・集美樓紀念館</div>
+      <div class="b-desc">在廈門的四個月寫成《朝花夕拾》大部分篇章——「他們也許要哄騙我一生，使我時時反顧」。</div>
+      <div class="b-link"><button class="qbtn" data-q="q-luxun">閱讀全文（離線彈窗）→</button></div>
+    </div>
+  </div>
+
+  <h4 style="margin:26px 0 10px;">東莒文學現場對照表（帶著文字走進現場）</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>張蘊之的文字</th><th>現場對照</th></tr></thead>
+      <tbody>
+        <tr><td>「同島一命」四個大字</td><td>猛澳港岸壁（下船第一眼）</td></tr>
+        <tr><td>一日三班船、下午三點後的靜</td><td>住一晚，三點後在島上散步</td></tr>
+        <tr><td>國利豆腐店（藍色門水泥屋）</td><td>大坪村，豆腐工坊＋豆花</td></tr>
+        <tr><td>大埔石刻、四百年前的古戰場</td><td>島南端，退潮時可走近</td></tr>
+        <tr><td>福正沙灘潮間帶挖花蛤</td><td>退潮時（口訣：初三十八大潮水）</td></tr>
+        <tr><td>大埔Plus+社造、魚寮</td><td>大埔聚落</td></tr>
+        <tr><td>沒有光害的滿天星斗</td><td>晚上在燈塔旁或沙灘看星星</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════ 聲與影 ══════════ -->
+<section id="sound">
+  <p class="section-title">Sound & Screen</p>
+  <h3 class="sec-head">聲與影 — <em>音樂・電影・紀錄</em></h3>
+  <p class="lead">這趟旅程不只可以用腳走，還可以用耳朵聽、用眼睛看。以下是與馬祖、福州、廈門直接相關的音樂與影視——出發前聽過看過，到了現場會有「原來這裡就是那個場景」的感動。</p>
+
+  <h4 style="margin:0 0 12px;">🎵 音樂（點連結可直接播放）</h4>
+  <div class="books">
+    <div class="book">
+      <div class="b-title">〈鼓浪嶼之波〉★廈門市歌</div>
+      <div class="b-author">李光羲演唱・鍾立民作曲・張藜/張紅曙作詞（1982）</div>
+      <div class="b-desc">「鼓浪嶼四周海茫茫，海水鼓起波浪；鼓浪嶼遙對台灣島，台灣是我家鄉。登上日光岩眺望，只見雲海蒼蒼；我渴望，我渴望，快快見到你，美麗的基隆港！」——2019 年入選「慶祝中華人民共和國成立 70 週年優秀歌曲 100 首」；廈門環島路有金氏世界紀錄「最長五線譜音樂雕塑」。</div>
+      <div class="b-link"><a href="https://www.youtube.com/watch?v=1rLYGjhjZIA" target="_blank" rel="noopener">YouTube 播放 →</a>・<a href="https://music.163.com/#/search/m/?s=鼓浪嶼之波" target="_blank" rel="noopener">網易雲搜尋 →</a></div>
+    </div>
+    <div class="book">
+      <div class="b-title">〈藍色眼淚沙灘〉Blue Tears Beach</div>
+      <div class="b-author">周寶全・1987 年馬祖當兵記憶 MV</div>
+      <div class="b-desc">「從基隆港登上運輸艦離開台灣，抵達與世隔絕的外島」——一支忠實記錄 1987 年青春記憶的 MV，馬祖老兵看了都會紅眼眶。</div>
+      <div class="b-link"><a href="https://www.youtube.com/watch?v=23xS74ZwZlI" target="_blank" rel="noopener">YouTube 播放 →</a></div>
+    </div>
+    <div class="book">
+      <div class="b-title">〈藍眼淚〉（霽光音樂・2026）</div>
+      <div class="b-author">現代創作・馬祖夜海意象</div>
+      <div class="b-desc">「烏雲背後還有月亮，孤島上的燈塔仍在守望，潮水一波一波，把幽幽藍光推上海岸」——把馬祖景色與思念寫成歌。</div>
+      <div class="b-link"><a href="https://www.youtube.com/watch?v=MlEGh8B1Vrw" target="_blank" rel="noopener">YouTube 播放 →</a></div>
+    </div>
+    <div class="book">
+      <div class="b-title">福州語《藍眼淚》・賴董芳</div>
+      <div class="b-author">福州音樂人赴馬祖採風創作・兩岸合作</div>
+      <div class="b-desc">2013 年福州音樂人賴董芳赴馬祖採風後創作，聯合兩岸音樂愛好者拍攝福州語 MV——用閩東語唱馬祖，是真正的「鄉音」。</div>
+      <div class="b-link"><a href="https://www.matsu.idv.tw/print.php?f=4&t=115259&p=1" target="_blank" rel="noopener">馬祖資訊網報導 →</a>・<a href="https://voiceofmatsu.com/介紹兩首以馬祖為背景的自創曲/" target="_blank" rel="noopener">攀講馬祖 →</a></div>
+    </div>
+    <div class="book">
+      <div class="b-title">馬祖微光音樂會（2025・南竿）</div>
+      <div class="b-author">魏如昀・鳳鳴齋國樂團・瑪斯克表演藝術團</div>
+      <div class="b-desc">2025/7/11 在南竿遊客中心登場，結合藍眼淚意象、文創市集與島嶼風情——馬祖夏天最 Chill 的音樂現場。（本行程 8 月造訪，可留意是否有秋季場次）</div>
+      <div class="b-link"><a href="https://woman.udn.com/woman/story/123162/8845269" target="_blank" rel="noopener">UDN 報導 →</a></div>
+    </div>
+  </div>
+
+  <h4 style="margin:26px 0 12px;">🎬 電影與影集（出發前看，現場更有感）</h4>
+  <div class="books">
+    <div class="book">
+      <div class="b-title">《國際橋牌社2》★馬祖實拍</div>
+      <div class="b-author">台灣政治劇・2021 friDay 影音獨家播映</div>
+      <div class="b-desc">以 1995–96 台海危機為背景，劇組赴馬祖<strong>高登島、南竿 53 據點</strong>實地拍攝——製作人汪怡昕曾在高登島服役。「同島一命、死裡求生」的精神標語，就是你在東莒猛澳港看到的那四個字。</div>
+      <div class="b-link"><a href="https://zh.wikipedia.org/wiki/國際橋牌社2" target="_blank" rel="noopener">維基百科 →</a>・<a href="https://www.youtube.com/playlist?list=PLymZ17y6VQ_orDcEreGOms1ycNFaoBD3V" target="_blank" rel="noopener">馬祖拍攝日記（YouTube）→</a></div>
+    </div>
+    <div class="book">
+      <div class="b-title">《沉默的榮耀》・鼓浪嶼取景</div>
+      <div class="b-author">2024/1 開機・新中國首部台灣隱蔽戰線鬥爭影視</div>
+      <div class="b-desc">劇中「光復電力公司招待所」正是鼓浪嶼<strong>毓德女學校舊址</strong>（殖民地外廊式建築）——2024 年開機後，鼓浪嶼成為影迷打卡熱點。</div>
+      <div class="b-link"><a href="https://hk.trip.com/moments/detail/xiamen-21-137133816/" target="_blank" rel="noopener">取景地圖曝光（Trip.com）→</a></div>
+    </div>
+    <div class="book">
+      <div class="b-title">《失孤》・福州取景</div>
+      <div class="b-author">2015・劉德華主演的打拐電影</div>
+      <div class="b-desc">劇組在福州、泉州、莆田拍攝近一個月——福州的街景與閩江橋都在片中出現。劉德華在片中騎著機車穿過的城市，就是你要去的福州。</div>
+      <div class="b-link"><a href="https://fz.lanfw.com/show.php?contentid=262772" target="_blank" rel="noopener">福建取景報導 →</a></div>
+    </div>
+    <div class="book">
+      <div class="b-title">《幸福草》《獵罪圖鑑2》・福州取景</div>
+      <div class="b-author">2024 熱播劇</div>
+      <div class="b-desc">《幸福草》（2024/8 熱播）在福州<strong>三坊七巷、烟台山</strong>等地取景；《獵罪圖鑑2》（2024/12 開播）多處畫面在福州拍攝——你走過的巷弄，就是戲裡的場景。</div>
+      <div class="b-link"><a href="https://www.sohu.com/a/861080495_121106994" target="_blank" rel="noopener">福州取景整理 →</a></div>
+    </div>
+    <div class="book">
+      <div class="b-title">鼓浪嶼中國電影音樂館 ★2026 新開幕</div>
+      <div class="b-author">舊美國領事館・中國首座電影音樂主題館</div>
+      <div class="b-desc">2026 年在鼓浪嶼舊美國領事館舊址正式開幕——中國首座電影音樂館，沉浸式體驗百年光影與音樂。8/23 上島時值得一看。</div>
+      <div class="b-link"><a href="https://jp.trip.com/moments/detail/xiamen-21-149758218/" target="_blank" rel="noopener">開幕報導 →</a></div>
+    </div>
+  </div>
+
+  <div class="notice"><strong>離線提醒：</strong>音樂與影視連結需要網路才能播放；建議出發前先加入播放清單或下載，離島時離線聆聽。本網站主行程與<a href="checklist.html">行前清單</a>均已離線快取。</div>
+</section>
+
+<!-- ══════════ 藍眼淚 ══════════ -->
+<section id="tears">
+  <p class="section-title">Blue Tears</p>
+  <h3 class="sec-head">黑暗中的藍色奇蹟</h3>
+  <div class="sea-block">
+    <h4>北海坑道夜間搖櫓「藍眼淚保證班」</h4>
+    <p>CNN 世界 15 大奇景之一。藍眼淚是「夜光藻」（Noctiluca scintillans）受海浪刺激發出螢光的現象。坑道內水域穩定，觀賞成功率遠高於海邊——所以叫「保證班」。</p>
+    <p>8/19 晚上 18:30–21:00 場次，NT$350/人，航程 15–20 分鐘，每梯 48 人。可提前 1 個月預約（現在就能約）。</p>
+    <p><span class="pill">預約 0836-22177</span> <span class="pill">LINE @gen6594n</span> <span class="pill">免費預約・現場付款</span></p>
+    <details class="tear-faq">
+      <summary>觀賞條件與小知識</summary>
+      <div class="tf-body">
+        <p>・觀賞條件：無光害＋浪動＋季節（4–9 月；8 月以「星沙」為主）</p>
+        <p>・海邊追淚點：南竿津沙・北海坑道外灘｜東莒福正沙灘・大埔</p>
+        <p>・坑道夜間全黑（幽閉恐懼者慎行）；建議白天先走步道並順便確認預約</p>
+        <p>・日間搖櫓 NT$150（08:30–17:00）；步道開放受潮汐影響（每日 1–2 次、每次 3–4 小時）</p>
+        <p>・若下雨或風浪大，海邊追淚成功率下降——坑道保證班不受影響</p>
+      </div>
+    </details>
+    <p style="margin-top:12px;"><a href="https://www.matsu-nsa.gov.tw/zh-TW/service/beihai-tunnel" target="_blank" rel="noopener">馬管處北海坑道資訊 →</a></p>
+  </div>
+</section>
+
+<!-- ══════════ 美食 ══════════ -->
+<section id="food">
+  <p class="section-title">Food</p>
+  <h3 class="sec-head">島嶼的味道</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;">
+    <div class="book">
+      <div class="b-title">馬祖</div>
+      <div class="b-desc">老酒麵線（陳高酒香）、繼光餅（馬祖漢堡）、紅糟料理、魚麵、淡菜、蠣餅、馬祖高粱。陳靜宜駐村時評：<strong>老酒、鮮魚</strong>是馬祖最具地域特色的食物。</div>
+      <div class="b-desc" style="color:var(--muted);font-size:12px;">南竿：津沙小館・介壽小吃街｜東莒：國利豆腐店（張蘊之筆下）｜北竿：塘岐阿婆魚麵・芹壁鏡沃小吃部</div>
+    </div>
+    <div class="book">
+      <div class="b-title">福州</div>
+      <div class="b-desc">魚丸、肉燕（太平燕）、佛跳牆、鼎邊糊、荔枝肉、芋泥。</div>
+      <div class="b-desc" style="color:var(--muted);font-size:12px;">三坊七巷・上下杭・達明路美食街</div>
+    </div>
+    <div class="book">
+      <div class="b-title">廈門</div>
+      <div class="b-desc">沙茶麵、土筍凍、海蠣煎、花生湯、滿煎糕——鼓浪嶼龍頭路小吃＋八市在地味。</div>
+      <div class="b-desc" style="color:var(--muted);font-size:12px;">中山路・八市・沙坡尾・鼓浪嶼龍頭路</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 地圖 ══════════ -->
+<section id="map">
+  <p class="section-title">Map</p>
+  <h3 class="sec-head">地圖定位</h3>
+  <div class="map-wrap">
+    <iframe title="馬祖東莒地圖" src="https://www.google.com/maps?q=東莒島+連江縣&z=13&hl=zh-TW&output=embed" loading="lazy"></iframe>
+  </div>
+  <div class="map-points">
+    <div class="map-point"><strong>基隆港西岸旅客碼頭</strong>基隆市港西街 16 號 2 樓・夜航登船<a href="https://www.google.com/maps/search/?api=1&query=基隆港西岸旅客碼頭" target="_blank" rel="noopener">Google Maps →</a></div>
+    <div class="map-point"><strong>南竿福澳港</strong>連江縣南竿鄉・夜航抵達＋東莒船出發<a href="https://www.google.com/maps/search/?api=1&query=福澳港+南竿" target="_blank" rel="noopener">Google Maps →</a></div>
+    <div class="map-point"><strong>北海坑道</strong>南竿鄉鐵板灣畔・日間步道＋夜間搖櫓<a href="https://www.google.com/maps/search/?api=1&query=北海坑道+南竿" target="_blank" rel="noopener">Google Maps →</a></div>
+    <div class="map-point"><strong>八八坑道</strong>南竿鄉牛角嶺下・馬祖酒廠儲酒<a href="https://www.google.com/maps/search/?api=1&query=八八坑道+南竿" target="_blank" rel="noopener">Google Maps →</a></div>
+    <div class="map-point"><strong>東莒猛澳港</strong>北緯 25.957°・東經 119.968°・下船見「同島一命」<a href="https://www.google.com/maps/search/?api=1&query=猛澳港+東莒" target="_blank" rel="noopener">Google Maps →</a></div>
+    <div class="map-point"><strong>東莒島燈塔</strong>東莒島東北角・國定古蹟・1875 年英國人造<a href="https://www.google.com/maps/search/?api=1&query=東莒島燈塔" target="_blank" rel="noopener">Google Maps →</a></div>
+    <div class="map-point"><strong>福正沙灘</strong>東莒・退潮挖花蛤＋晚上踩星沙<a href="https://www.google.com/maps/search/?api=1&query=福正沙灘+東莒" target="_blank" rel="noopener">Google Maps →</a></div>
+    <div class="map-point"><strong>北竿白沙港</strong>連江縣北竿鄉・小三通 10:00 開航<a href="https://www.google.com/maps/search/?api=1&query=白沙港+北竿" target="_blank" rel="noopener">Google Maps →</a></div>
+    <div class="map-point"><strong>福州黃岐港</strong>福建省連江縣・小三通抵達口岸<a href="https://www.google.com/maps/search/?api=1&query=黃岐港+福州連江" target="_blank" rel="noopener">Google Maps →</a></div>
+    <div class="map-point"><strong>三坊七巷・林覺民冰心故居</strong>福州市鼓樓區楊橋東路 17 號・8/21 下午<a href="https://www.google.com/maps/search/?api=1&query=林覺民冰心故居+福州" target="_blank" rel="noopener">Google Maps →</a></div>
+    <div class="map-point"><strong>廈門北站</strong>8/22 高鐵抵達<a href="https://www.google.com/maps/search/?api=1&query=廈門北站" target="_blank" rel="noopener">Google Maps →</a></div>
+    <div class="map-point"><strong>郵輪中心廈鼓碼頭</strong>8/23 鼓浪嶼渡輪出發（台灣旅客主碼頭）<a href="https://www.google.com/maps/search/?api=1&query=郵輪中心廈鼓碼頭+廈門" target="_blank" rel="noopener">Google Maps →</a></div>
+    <div class="map-point"><strong>日光岩</strong>鼓浪嶼制高點・聯票 90 RMB<a href="https://www.google.com/maps/search/?api=1&query=日光岩+鼓浪嶼" target="_blank" rel="noopener">Google Maps →</a></div>
+    <div class="map-point"><strong>南普陀寺</strong>廈門市思明區・免費預約<a href="https://www.google.com/maps/search/?api=1&query=南普陀寺+廈門" target="_blank" rel="noopener">Google Maps →</a></div>
+    <div class="map-point"><strong>廈門大學・魯迅紀念館</strong>集美樓・需預約<a href="https://www.google.com/maps/search/?api=1&query=廈門大學+魯迅紀念館" target="_blank" rel="noopener">Google Maps →</a></div>
+    <div class="map-point"><strong>高崎機場</strong>8/25 返京<a href="https://www.google.com/maps/search/?api=1&query=廈門高崎國際機場" target="_blank" rel="noopener">Google Maps →</a></div>
+  </div>
+</section>
+
+<!-- ══════════ 預算 ══════════ -->
+<section id="budget">
+  <p class="section-title">Budget</p>
+  <h3 class="sec-head">預算細算（不含回北京機票）</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>項目</th><th class="num">金額</th></tr></thead>
+      <tbody>
+        <tr><td>8/18 夜航經濟艙單人床</td><td class="num">NT$1,050</td></tr>
+        <tr><td>南竿機車 8/19（含油）</td><td class="num">NT$500–600</td></tr>
+        <tr><td>南竿青旅 8/19（福澳窩）</td><td class="num">NT$800</td></tr>
+        <tr><td>北海坑道夜間搖櫓 8/19</td><td class="num">NT$350</td></tr>
+        <tr><td>南竿→東莒船 8/20＋東莒機車</td><td class="num">NT$200＋500–600</td></tr>
+        <tr><td>東莒民宿 8/20（福正/船老大）</td><td class="num">NT$2,000–2,500</td></tr>
+        <tr><td>東莒→南竿→白沙→黃岐（8/21）</td><td class="num">NT$200＋160＋650</td></tr>
+        <tr><td>黃岐→福州接駁（包車 150 RMB≈670；共乘更省）</td><td class="num">RMB 50–150</td></tr>
+        <tr><td>福州住宿 8/21</td><td class="num">RMB 60–500</td></tr>
+        <tr><td>慧婷：北京→福州機票 8/22（自付）</td><td class="num">TWD 3,009 起</td></tr>
+        <tr><td>福州→廈門高鐵 8/22（兩人）</td><td class="num">TWD 794 起</td></tr>
+        <tr><td>廈門住宿 8/22–23（2 晚）</td><td class="num">RMB 300–1,200</td></tr>
+        <tr><td>鼓浪嶼渡輪往返 8/23</td><td class="num">RMB 35–50</td></tr>
+        <tr><td>鼓浪嶼景點聯票 8/23（日光岩等）</td><td class="num">RMB 90</td></tr>
+        <tr><td>南普陀寺 8/24（免費）・廈門大學（免費）</td><td class="num">RMB 0</td></tr>
+        <tr><td>園林植物園＋鐘鼓索道 8/24</td><td class="num">約 RMB 30＋TWD 383</td></tr>
+        <tr><td>餐飲 7 天（8/19–8/25 與慧婷分攤）</td><td class="num">NT$3,500–5,000</td></tr>
+        <tr><th>馬祖段合計（8/18–8/21）</th><th class="num">約 NT$9,800–12,400</th></tr>
+        <tr><th>廈門段合計（8/22–8/24，不含機票）</th><th class="num">約 RMB 1,000–2,600（NT$4,500–11,700）</th></tr>
+        <tr><th>全程合計（不含返京機票）</th><th class="num">約 NT$14,000–24,000</th></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════ 清單 ══════════ -->
+<section id="checklist">
+  <p class="section-title">Checklist</p>
+  <h3 class="sec-head">行前清單</h3>
+  <div class="checklist" id="checklist">
+    <label><input type="checkbox"> 訂 8/18 臺馬之星船票（matsuebs.com）＋8/19 早班機備案</label>
+    <label><input type="checkbox"> 電話確認住宿：福澳窩 0937-883091（8/19）・福正民宿 0836-88211（8/20）</label>
+    <label><input type="checkbox"> 預約北海坑道夜間搖櫓 8/19：0836-22177</label>
+    <label><input type="checkbox"> 訂 8/21 東莒回南竿船＋白沙→黃岐船位（8/20 中午前）</label>
+    <label><input type="checkbox"> 訂 8/21 福州住宿（三坊七巷）＋8/22–23 廈門住宿（中山路/沙坡尾）</label>
+    <label><input type="checkbox"> 訂慧婷 8/22 北京→福州機票（早班）＋8/22 福州→廈門高鐵（已開賣）＋8/23 鼓浪嶼渡輪（微信「廈門輪渡」實名預約）</label>
+    <label><input type="checkbox"> 預約 8/24 南普陀寺（微信小程式）＋廈門大學（官方公眾號）</label>
+    <label><input type="checkbox"> 訂 8/25 廈門→北京機票</label>
+    <label><input type="checkbox"> 護照（6 個月以上）・台胞證・身分證</label>
+    <label><input type="checkbox"> 中國 eSIM／漫遊・支付寶／微信支付綁定・少量人民幣現金</label>
+    <label><input type="checkbox"> 暈船藥（夜航）・耳塞（老屋隔音）・牙刷毛巾（青旅不提供）</label>
+    <label><input type="checkbox"> 出發前讀張蘊之〈離離島〉全文＋龔萬瑩《島嶼的厝》</label>
+  </div>
+</section>
+
+<!-- ══════════ 風險 ══════════ -->
+<section id="risks">
+  <p class="section-title">Risks</p>
+  <h3 class="sec-head">風險與備案</h3>
+  <div class="notice"><strong>① 8 月颱風季：</strong>船班可能停航（2026/8/6–9 白海豚颱風連停 4 天為例）→ 備案 8/19 松山早班機（立榮）。</div>
+  <div class="notice"><strong>② 8/16–8/31 琅岐潮汐異動：</strong>本行程走黃岐線，不受影響。</div>
+  <div class="notice"><strong>③ 安麒6號歲修至 8/22：</strong>黃岐線由台籍吉順10號執航，不受影響。</div>
+  <div class="notice"><strong>④ 東莒船班（核心風險）：</strong>每日僅 3 班；大潮可能延航。8/20 抵東莒即與民宿主人確認 8/21 回程。最壞情況：8/21 下午或 8/22 一早過海，仍不影響見慧婷。</div>
+  <div class="notice"><strong>⑤ 鼓浪嶼船票熱門時段易售罄：</strong>8 月旺季建議提前 3–5 天在「廈門輪渡」預約；台灣旅客持台胞證實名購票。</div>
+  <div class="notice"><strong>⑥ 藝術島已撤展：</strong>第三屆馬祖國際藝術島（2025/9–2026/3）已落幕，本次以島嶼本體與文學現場為主軸；第四屆籌備中。</div>
+  <div class="notice"><strong>⑦ 慧婷 8/22 航班備案：</strong>若北京→福州航班因天氣取消，改飛廈門（北京⇄廈門班次更多）——8/22 晚或 8/23 在廈門會合，高鐵福州→廈門 1 小時的彈性讓行程幾乎不受影響。</div>
+</section>
+
+</main>
+
+<footer>
+  <div class="inner">
+    <h5>資料來源（查證至 2026-08-11）</h5>
+    <ul>
+      <li>台馬航線：馬祖海上交通訂位購票系統 matsuebs.com・全港通航業 client.matsu.idv.tw/apt</li>
+      <li>小三通：交通部航港局 motcmpb.gov.tw・南北海運・馬祖日報公告（8/16–31 琅岐異動、安麒6號歲修）</li>
+      <li>島際船：連江縣港務處 mtha.gov.tw・莒光鄉公所 chukuang.gov.tw</li>
+      <li>高鐵：Trip.com・12306｜鼓浪嶼渡輪與票價：廈門輪渡官方・Klook・Trip.com（2026 查證）</li>
+      <li>廈門景點：南普陀寺免費預約・廈門大學預約・園林植物園/鐘鼓索道/聯票 90 RMB（2026 查證）</li>
+      <li>住宿：馬祖資訊網民宿平台 bnb.matsu.idv.tw・福正民宿・船老大民宿・Agoda/Booking</li>
+      <li>藍眼淚：馬祖國家風景區管理處 matsu-nsa.gov.tw（夜間搖櫓 0836-22177）</li>
+      <li>文學：馬祖日報・Matters（張蘊之）・國藝會線上誌・自由副刊・博客來・豆瓣（龔萬瑩）</li>
+      <li>駐村：連江縣文化處「飛馬文學基地」・國立新竹生活美學館「藝術游擊」</li>
+      <li>圖片：Wikimedia Commons（芹壁、東犬燈塔、北海坑道、福正聚落、三坊七巷、基隆港、鼓浪嶼，CC 授權）</li>
+    </ul>
+    <p>價格為官方／業者公布之參考價，實際以現場為準；標註 ⚠️ 之項目請出發前電話確認。本站為個人旅程記錄，非商業用途。首次開啟後即自動快取全部內容，離島無網路時仍可閱讀。</p>
+    <p>© 2026 馬祖・廈門人文之旅</p>
+  </div>
+</footer>
+
+<!-- ══════════ 引文 Modal（內容內嵌，離線可讀） ══════════ -->
+<div id="qmodal" class="qmodal" role="dialog" aria-modal="true">
+  <div class="box">
+    <button class="close" id="qclose" aria-label="關閉">✕</button>
+    <div class="src" id="qsrc"></div>
+    <h4 id="qtitle"></h4>
+    <div class="full" id="qfull"></div>
+    <div class="orig" id="qorig"></div>
+  </div>
+</div>
+
+<script>
+/* 引文全文資料庫（離線內嵌） */
+const QUOTES = {
+  'q-zhang1': {
+    src: '張蘊之・2024 東莒駐村筆記（飛馬文學基地）',
+    title: '離離島，移移人——飄浪者的東莒（全文精華）',
+    full: `<p class="lead-in">《離離島，移移人》是張蘊之在東莒駐村兩週的筆記，分四章：〈送關島，存機票〉、〈看天吃飯：沒船，沒人，沒飯吃〉、〈東莒的呼吸：船班、潮汐、垃圾車〉、〈移人眼底的灰藍色，不是冰冷，而是等待〉。以下為各章核心段落。</p>
+<p><strong>第一章・送關島，存機票</strong></p>
+<p>「買馬祖，送關島。」是往來馬祖的人常用來自嘲的順口溜。十年前第一次去馬祖，我就因為碰到颱風，必須滯留南竿。本以為所謂關島不過如此，卻忘了馬祖有四鄉五島，能飛得到南北竿，還只是第一關；有沒有船能到東西莒，才是魔王級關卡。</p>
+<p>四鄉五島，以南竿島為中心，連結北竿、東引、東莒、西莒四座島嶼。北竿雖然也有機場，但要去其他島嶼，仍然得搭船到南竿轉運。重點是，不管去哪座島，船班都很少。以我要蹲點的東莒為例，一天三班船，沒趕上下午兩點半從南竿出發的末班船，就要等明天。</p>
+<p>只要船有開，這些都是小事。尤其在東北季風吹拂的時節，風浪大，南竿至東西莒的航線停駛是常態。</p>
+<p>「看天吃飯」，四個字說得輕巧，實際上卻無比沉重。</p>
+<p><strong>第二章・看天吃飯：沒船，沒人，沒飯吃</strong></p>
+<p>作為一個觀光客，常會有「當地怎樣與我無關」的心態。那是掠奪式的，只想拍到能被同溫層讚賞的美照，買到能向親友交代的特產，吃到大家都說要吃的當地美食，就算是來過了。觀光客的所見所聞，要傾訴的對象，是他自己的生活圈，所以當地實際上有什麼，對觀光客而言，並不重要。</p>
+<p>但不可能不涉入。乘船到東莒，船一靠近猛澳港，人人都會看見四個大字：「同島一命」。都說是同島一命了，只要來到這座島，就得與這座島死生相依。原因無他，這裡的所有物資幾乎都得從南竿轉運過來，沒有船，島上就沒有什麼東西可以賣給觀光客。</p>
+<p>我感覺自己正在和這座島學跳舞，而我是那個不懂跳舞的笨學生，左腳右腳前進後退轉圈，拿捏不到互動距離，抓不準節奏，踩著自己的裙擺或鞋子跌倒。</p>
+<p><strong>第三章・東莒的呼吸：船班、潮汐、垃圾車</strong></p>
+<p>從南竿到東莒，一日三班船，早上七點、十一點、下午兩點半，雙月先東後西（先到東莒，再去西莒），單月先西後東，東西莒之間的船程大約十分鐘，南竿至莒光，大約四十至五十分鐘。少量物資與遊客，都靠這三班船運來。</p>
+<p>這三班船，可說是東莒島與世界連結的命脈。船班一斷，島上就等於封鎖，退回自給自足的農漁時代。</p>
+<p>下午兩點半送客，大約三點左右，本日的最後一班船開走，島上才逐漸安靜下來，恢復成東莒人的東莒。我喜歡在三點之後在島上轉。這個時間點之後，島上靜極了，每個人都在自己的「Me Time」裡。大坪街上的商家敞著門在追劇，靠海聚落的人們，種菜的種菜，捕魚的捕魚，若適逢退潮，便到潮間帶挖花蛤、抓石狗公和小螃蟹。</p>
+<p>潮間帶是重要的蛋白質來源之一，即使菜鳥觀光客如我，每天看著看著，也多少能掌握個大概。「初三十八大潮水，早上低潮中午滿，晚上起漲人煮飯。初十二十五，早晚滿潮中午低。」這是東莒潮汐的記憶口訣。</p>
+<p>東莒名店國利豆腐店。藍色門的水泥屋是做豆腐的工坊。「老闆，有客人喔！」櫃檯內無人，正在吃豆花的客人，幫我往屋內喊主人。這也是馬祖日常。島上人少，每個人都是一人身兼多職，常常不在店頭，此時就由客人幫忙顧。在島上的第二天起，我也成了顧店小幫手。</p>
+<p>島的南端有一處大埔石刻，標記著明代名將沈有容擒獲倭寇的古戰場。四百年前的戰地已無遺痕。</p>
+<p><strong>第四章・移人眼底的灰藍色，不是冰冷，而是等待</strong></p>
+<p>東莒被稱作離島中的離島，可能是中華民國行政區劃中，距離核心最遠的一座島，連鄉公所都是設在西莒，而非東莒。而我自己的觀察是：東莒島上的人，可說是移人中的移人。</p>
+<p>移徙的人有個特質，和定居者不太一樣，你會在他們眼中看到一抹灰藍。這抹灰藍輕輕淺淺，我們在這層如煙的灰階之中，試探著彼此，等待交集。</p>
+<p>大埔聚落有一個社造組織，叫做「大埔Plus+」……提出了「新家人」的概念，希望為東莒島培養長期粉絲，讓越來越多的人認識東莒，願意來到東莒生活。藉由這個過程，讓人口大量流失的偏遠島嶼，逐步恢復生機。</p>
+<p>東莒島上的人們，都很習慣聚散。再聚首是開心的，而告別亦是日常，珍惜相聚的當下就好。林志炫有一首歌叫做〈離人〉，其中一段歌詞是這樣唱的：「有人說一次告別，天上就會有顆星，又熄滅。」望著東莒沒有光害的滿天星斗，我想，這裡的歌詞也許該改一改：「有人說一次告別，天上就會有顆星，再綻放。」</p>
+<p>感謝這座因為離別而燦爛的島嶼，感謝每一位在旅途中照顧過我的人。我們下次見。</p>`,
+    orig: '原文全文：<a href="https://matters.town/a/zjl1uaq3sumb" target="_blank" rel="noopener">Matters 平台（CC BY-NC-ND 授權）</a>・<a href="https://www.matsu-news.gov.tw/news/article/227350" target="_blank" rel="noopener">馬祖日報版（一）</a>・<a href="https://www.matsu-news.gov.tw/news/article/227375" target="_blank" rel="noopener">（二）</a>・<a href="https://www.matsu-news.gov.tw/news/article/227538" target="_blank" rel="noopener">（三）</a>'
+  },
+  'q-chenjingyi': {
+    src: '陳靜宜・2024 東引駐村筆記（飛馬文學基地）',
+    title: '我在東引駐村的日子（上／下）・核心段落',
+    full: `<p class="lead-in">陳靜宜，台南人，前聯合報美食記者 13 年，著有《臺味》《啊，這味道》等飲食文學。2024 年 11 月受邀飛馬文學基地駐東引 13 天，把老酒、鮮魚評為馬祖最具地域特色的食物。</p>
+<p><strong>關於東引的陡坡</strong></p>
+<p>「東引的陡坡極陡（我想：像不會動的百貨公司手扶梯）。」</p>
+<p><strong>關於凍櫃（島民的生存哲學）</strong></p>
+<p>居民怕不怕沒東西吃？一點都不怕，因為家家戶戶除了冰箱，還有上掀式凍櫃。一戶一只凍櫃是基本配備，也有一戶兩只（一大一小）等不同組合，我訪談中有一戶有八只櫃，真是凍櫃大富翁。</p>
+<p><strong>關於車聲辨人（島嶼的人際）</strong></p>
+<p>誰會認得出那是誰的車嗎？因為地處偏遠，鎮上的人都以車代步，車就是他們的身份證，有些人光看車牌就知道那是誰的車，不，有時候光聽引擎聲，就知道是誰的車。有的引擎聲帶點濃濁的嗓音、有的引擎聲激動神經質，聽久了，你也會知道的。</p>
+<p><strong>關於駐村的開始</strong></p>
+<p>「島上有沒有住人？有沒有吃的？可以騎腳踏車嗎？」承辦窗口的人耐心地一一向我說明，我還隱隱擔心是：「駐村期間正逢美國總統大選，我會不會到時從駐村作家變戰地記者？」這無人能答，然而既去之則安之，「好，我去。」</p>`,
+    orig: '原文全文：<a href="https://www.matsu-news.gov.tw/news/article/227705" target="_blank" rel="noopener">馬祖日報（上）</a>・<a href="https://www.matsu-news.gov.tw/news/article/227706" target="_blank" rel="noopener">馬祖日報（下）</a>・<a href="https://matters.town/a/650m26hlfnlz" target="_blank" rel="noopener">Matters 筆記系列</a>'
+  },
+  'q-ncaf': {
+    src: '國藝會線上誌・楊豐維',
+    title: '詩意馬祖・時光的呢喃（核心段落）',
+    full: `<p class="lead-in">國藝會線上誌 2012 年刊出，作者楊豐維以第一人稱回望在馬祖服役與旅行的經驗，串起謝昭華、白靈、歐陽柏燕等詩人的詩句——是理解馬祖文學地景的最佳入門。</p>
+<p><strong>關於島嶼與前線</strong></p>
+<p>謝昭華詩中描寫的那群小島，靜靜躺在一座巨大島嶼的西北方，和一片古老地表的東南方。風雨飄搖的年代裡，巨大島嶼上的人們習慣用鏗鏘的語氣，熱血沸騰地稱呼這群小島是民主的最「前線」，但小島上安居的人們，卻怎麼也想不透，自己的家土怎麼在轉眼間就變成了「前線」？對小島的居民來說，「前線」的包袱太過龐然。</p>
+<p>「在北極星之北，東海之南／一座寂寞的小島寂寞著／在海峽的傷痕的前方／在鄉愁的東方」——謝昭華〈東引燈塔行〉節錄</p>
+<p><strong>關於東莒大埔聚落</strong></p>
+<p>在你居住的那個小島東莒，跟北竿芹壁很像，也窩藏著全馬祖保存最完整的閩東建築群「大埔聚落」，但一棟棟的「一顆印」（石屋）皆已人去樓空，就如《雷盟弟的戰地童年》所形容的，魚源逐漸枯竭，漁人豐收的榮景不再，懷抱著新生的希望，一批一批的馬祖人遠赴台灣本島打拼生活，但無論世事如何變化，在所有討海人的心裡，「家鄉永遠有一片海在那裡」。</p>
+<p><strong>關於福正沙灘</strong></p>
+<p>你記憶裡的東莒，海是淡淡的碧綠的海，夏天可以看到一家大小捲起褲管，踏入廣闊的福正海灘潮間帶挖起花蛤，一網一網的帶走海洋的饋贈，成為旅人餐桌上一盤盤香味四溢的美好佳餚。</p>
+<p><strong>關於芹壁標語</strong></p>
+<p>「石牆上的標語爛熟的讓人心酸皺眉」——歐陽柏燕〈芹壁・思想者的午後〉節錄。你花了一整個下午遊走石屋左右，依稀聽見石屋縫隙間時光的呢喃。</p>
+<p><strong>關於孤寂與鄉愁</strong></p>
+<p>在寂寞得只有星星陪伴的夜晚裡，誰會把你攔下？你只有自己了，什麼愛情什麼友情什麼親情，全都躲在海峽的那一端鞭長莫及；你只有自己了，一個人頂著鋼盔、拿著步槍、穿著軍靴，映照著銀色的月光偷偷地要自己勇敢。</p>`,
+    orig: '原文全文：<a href="https://mag.ncafroc.org.tw/article_detail?sid=288" target="_blank" rel="noopener">國藝會線上誌</a>'
+  },
+  'q-xiezhaohua': {
+    src: '金門日報・楊樹清（？）',
+    title: '島嶼甦醒——讀馬祖詩人謝昭華（核心段落）',
+    full: `<p class="lead-in">金門日報刊載的謝昭華詩評，作者以「翠龜灣之外，謝昭華是我最想見到，關於馬祖，人的風景」開篇。</p>
+<p>「謝昭華，一九六二年九月生，台北醫學院醫學系畢業，現執業於馬祖列島」，詩冊中，一行小小的簡歷，並不足以勾勒出醫者的詩輪廓。聽筒，手術刀的背後，他的本質是詩人，長期守島，駐島的詩人。</p>
+<p>我讀昭華的詩，最初的《夢青蜓》，有著島嶼的重、冷戰的冷：〈原色頌〉、〈在鐵尖島〉、〈狙擊〉、〈國境封鎖〉、〈海域縱橫〉、〈在戰亂頻仍的年代醒轉〉、〈冷戰紀事〉、〈我們居住的島嶼〉、〈海盜〉、〈沒有人再和我談祖國的問題〉；單是看每一首詩的命題，就能框住一座霧鎖之島了。</p>
+<p><strong>〈我們居住的島嶼〉（謝昭華）</strong></p>
+<p>在我們居住的島嶼／花崗岩縫裡埋藏急切的心事／海岸線曲曲折折地追逐潮水／一匹匹藍色幼駒飆著白鬣／我在島嶼的花床上熟夢／奇詭荒誕，或僅單純地使⋯⋯</p>`,
+    orig: '原文全文：<a href="https://www.kmdn.gov.tw/1117/1271/1275/192975/" target="_blank" rel="noopener">金門日報</a>'
+  },
+  'q-gege': {
+    src: '部落客格格・慢旅行系列（2023 冬實訪）',
+    title: '格格×出走×慢旅行・南竿篇（核心段落）',
+    full: `<p class="lead-in">「偽當地人」旅行者格格一家三口 2023 年冬訪馬祖，系列文章記錄了南竿、東莒、北竿的第一手體驗——含鐵堡包場、津沙小館、佛手貝與船班壓力等真實細節。</p>
+<p><strong>關於鐵堡</strong></p>
+<p>父子倆不肯陪我走，幼稚媽媽獨自在心驚膽顫中完成的「鐵堡」，很抱歉此回僅拍攝，你們所觀看到的岩礁軍事景觀，至於神秘狹窄的地下坑道，膽小的我根本就不敢進入，實在有些可惜。延著階梯而下，鐵堡內部的挖空坑道清晰可見，有興趣的朋友可以進坑道體驗，至於我…只能走到坑道口，因為這裡竟然一個遊客都沒有，默默被我一個人包場，驚～。</p>
+<p><strong>關於津沙小館</strong></p>
+<p>第一站直奔聚落裡的人氣餐廳「津沙小館」，簡單樸實的餐廳門口，要不是租車店老闆誠心推薦，還有門口的愛玩客、愛評網大力推薦，我們極有可能會錯過。這盤要價台幣300元的「佛手貝」，吃的只是新鮮感與好奇心，一生品嚐一回我想就夠了。</p>
+<p><strong>關於船班壓力</strong></p>
+<p>令人緊張萬分的返回之路，因為僅剩下最後一班交通船，只要有任何失誤，我們就會被滯留島上回不了北竿島，如果不想像我們壓力這麼大，建議住在「南竿島」就可以了，「南竿島」也是最方便的跳島中繼站。</p>
+<p><strong>關於南竿的節奏</strong></p>
+<p>在南竿島就是要一直走坑道的概念。馬祖巨神像：歷經10年以上才正式落成的巨神像，由365塊花崗岩為主結構雕琢而成，象徵著365日，日日平安。</p>`,
+    orig: '原文：<a href="https://evalu.tw/【慢旅行。馬祖】馬祖我們來了。深度體驗馬祖戰/" target="_blank" rel="noopener">南竿篇</a>・<a href="https://evalu.tw/【慢旅行。馬祖】馬祖我們來了。從北竿島跳島到/" target="_blank" rel="noopener">東莒篇</a>'
+  },
+  'q-taima': {
+    src: '部落客阿新・台馬之星開箱（2023 實搭）',
+    title: '台馬之星開箱・搭乘心得（核心段落）',
+    full: `<p class="lead-in">阿新搭乘台馬之星從馬祖回基隆的實測：因回程風浪大、南北之星無法開船，改搭台馬之星 8–10 小時的經驗。</p>
+<p>《台馬之星》終於搭到了！近幾年馬祖旅遊超夯，尤其每到藍眼淚的季節，馬祖旅遊更是爆多遊客，馬祖訂房難搶之外，馬祖飛機更是憑人品，除此之外馬祖船班也是一票難求。</p>
+<p>從基隆出發到馬祖都會停靠兩個島，分別東引和南竿，所以大家先確認好要下船的是哪一個島，要是搭《台馬之星》從台灣出發都是從基隆港晚上10點船班，睡覺起來剛好抵達馬祖。</p>
+<p>台馬之星這船真的很大，大到可以載汽車、摩托車，比起南北之星真的是大好幾倍！朋友說之前台馬之星遊客餐廳有營業的時候買的到肉粽、餅乾、泡麵零食，但現在因為疫情暫時沒營業……</p>
+<p>台馬之星在船上提供不少休憩桌位，沒想到不少遊客都跑上來這邊聊天放空。不免俗的一堆人在船邊拍照打卡，畢竟一趟馬祖旅遊也不輕鬆，比蘭嶼還遠，蘭嶼搭船最多3小時，馬祖搭船最多10小時，真的天差地別。</p>
+<p>搭10小時的船說起來確實夠折騰，雖然阿新我是沿路睡覺，但明明才睡飽起床搭船又得繼續睡，真的會越睡越累…</p>`,
+    orig: '原文：<a href="https://shin.tw/tai-ma-cruise/" target="_blank" rel="noopener">阿新筆記《台馬之星開箱》</a>'
+  },
+  'q-linjuemin': {
+    src: '林覺民・《與妻書》（1911，又名〈與妻訣別書〉）',
+    title: '與妻書・開篇原文',
+    full: `<p class="lead-in">林覺民（1887–1911），福州人，黃花崗七十二烈士之一。此信寫於 1911 年 4 月 24 日（辛亥三月廿六夜）廣州起義前夕，收信人是妻子陳意映。信中「意映卿卿如晤」開篇，被譽為中國抒情散文的絕唱。故居即福州楊橋東路 17 號（林覺民殉難後讓售予冰心祖父謝鑾恩）。</p>
+<p><strong>開篇（原文，據維基文庫《與妻書》）</strong></p>
+<p>意映卿卿如晤：吾今以此書與汝永別矣！吾作此書時，尚是世中一人；汝看此書時，吾已成為陰間一鬼。吾作此書，淚珠和筆墨齊下，不能竟書，而欲擱筆。又恐汝不察吾衷，謂吾忍舍汝而死，謂吾不知汝之不欲吾死也，故遂忍悲為汝言之。</p>
+<p>吾至愛汝，即此愛汝一念，使吾勇於就死也。吾自遇汝以來，常願天下有情人都成眷屬；然遍地腥雲，滿街狼犬，稱心快意，幾家能彀？司馬青衫，吾不能學太上之忘情也。語云：仁者「老吾老以及人之老，幼吾幼以及人之幼」。吾充吾愛汝之心，助天下人愛其所愛，所以敢先汝而死，不顧汝也。汝體吾此心，於啼泣之餘，亦以天下人為念，當亦樂犧牲吾身與汝身之福利，為天下人謀永福也。汝其勿悲！</p>
+<p><strong>信中追憶（原文節錄）</strong></p>
+<p>回憶後街之屋，入門穿廊，過前後廳，又三四折，有小廳，廳旁一室，為吾與汝雙棲之所。初婚三四個月，適冬之望日前後，窗外疏梅篩月影，依稀掩映，吾與汝並肩攜手，低低切切，何事不語？何情不訴？及今思之，空餘淚痕。</p>
+<p><strong>結尾（原文）</strong></p>
+<p>吾今與汝無言矣！吾居九泉之下，遙聞汝哭聲，當哭相和也。……嗟夫！巾短情長，所未盡者尚有萬千，汝可以模擬得之！</p>
+<p class="lead-in" style="margin-top:10px;">（全文見維基文庫，公有領域文本。）</p>`,
+    orig: '全文：<a href="https://zh.wikisource.org/wiki/與妻書" target="_blank" rel="noopener">維基文庫《與妻書》</a>・故居：<a href="https://www.google.com/maps/search/?api=1&query=林覺民冰心故居+福州" target="_blank" rel="noopener">楊橋東路 17 號地圖</a>'
+  },
+  'q-bingxin': {
+    src: '冰心（謝婉瑩）・1900 年生於福州',
+    title: '冰心與福州・《繁星》《春水》選段',
+    full: `<p class="lead-in">冰心（1900–1999），福州人，出生於楊橋東路 17 號（即林覺民故居，林家讓售予其祖父謝鑾恩）。中國現代兒童文學與小詩的開創者。福州度過的童年影響了她一生的寫作。1923 年出版詩集《繁星》（164 首小詩）與《春水》。</p>
+<p><strong>《繁星・一五九》</strong></p>
+<p>母親啊！／天上的風雨來了，／鳥兒躲到它的巢裡；／心中的風雨來了，／我只躲到你的懷裡。</p>
+<p><strong>《春水・三三》</strong></p>
+<p>牆角的花！／你孤芳自賞時，／天地便小了。</p>
+<p><strong>《繁星・七一》</strong></p>
+<p>這些事——／是永不漫滅的回憶；／月明的園中，／藤蘿的葉下，／母親的膝上。</p>
+<p><strong>冰心自述《繁星》創作緣起（節意）</strong></p>
+<p>「《繁星》是在泰戈爾《飛鳥集》的啟發下，整理自己『零碎的思想』而成。」（冰心回顧《繁星》《春水》創作時自述，見《冰心全集》序言。）</p>`,
+    orig: '作品全文：<a href="https://www.haoshici.com/bd1rckq.html" target="_blank" rel="noopener">《繁星・一五九》（中華詩詞網）</a>・<a href="https://www.ruiwen.com/wenxue/bingxin/181138.html" target="_blank" rel="noopener">《繁星》全文（作文網）</a>・故居：<a href="https://www.google.com/maps/search/?api=1&query=林覺民冰心故居+福州" target="_blank" rel="noopener">楊橋東路 17 號地圖</a>'
+  },
+  'q-yanfu': {
+    src: '嚴復（1854–1921）・郎官巷故居',
+    title: '嚴復與《天演論》',
+    full: `<p class="lead-in">嚴復，福州侯官人，近代中國啟蒙思想家、翻譯家。留學英國皇家海軍學院，翻譯《天演論》《原富》《群學肄言》等八部西學經典，梁啟超譽為「於中學西學皆為第一流人物」。晚年居福州三坊七巷郎官巷。</p>
+<p><strong>《天演論》譯例言（節錄）</strong></p>
+<p>「物競天擇，適者生存」——嚴復以〈譯例言〉闡明「信、達、雅」翻譯標準，此三字成為中國翻譯學的奠基原則。他在案語中寫道：「天擇者，存其最宜者也。」（天擇，就是保存最適應環境者。）</p>
+<p><strong>嚴復與鼓浪嶼的連結</strong>：嚴復晚年曾任「廈門大學」前身——1921 年嚴復逝世前曾應邀為廈門大學題寫校訓「自強不息，止於至善」，此校訓沿用至今。（註：嚴復與廈門大學的淵源，可參廈大校史。）</p>`,
+    orig: '嚴復故居：<a href="https://www.google.com/maps/search/?api=1&query=嚴復故居+福州郎官巷" target="_blank" rel="noopener">郎官巷地圖</a>・《天演論》：<a href="https://zh.wikisource.org/wiki/天演論" target="_blank" rel="noopener">維基文庫</a>'
+  },
+  'q-yudafu': {
+    src: '郁達夫・《達夫遊記・閩遊滴瀝之二》（1936）',
+    title: '閩遊滴瀝之二・真實原文選段',
+    full: `<p class="lead-in">郁達夫 1936 年春應福建省主席陳儀之邀赴福州任省政府參議，期間寫下《閩遊滴瀝》系列遊記（收入《達夫遊記》）。以下為〈閩遊滴瀝之二〉真實原文節錄。</p>
+<p><strong>開篇（原文）</strong></p>
+<p>曾經到過福州的一位朋友寫信來，說福建留在他腦子裡的印象，依次序來排列，當為：第一山水，第二少女，第三飲食，第四氣候。福建的山水，實在也真美麗；北峙仙霞，西聳武夷，蜿蜒東南直下，便分成無數的山區。</p>
+<p><strong>寫福州地形（原文，據百度百科引文）</strong></p>
+<p>郁達夫將福州地形比作「一把後有靠背、左右有扶手的太師椅子」，並讚譽閩江「揚子江沒有她的綠，富春江不及她的曲，珠江比不上她的靜」，將其譬作「中國的萊茵河」。</p>
+<p><strong>寫福州飲食（節意）</strong></p>
+<p>郁達夫在閩期間屢屢記下福州的小吃與宴飲——魚丸、肉燕與閩菜的海味，與「第三飲食」的印象相呼應。</p>`,
+    orig: '原文全文：<a href="https://www.99csw.com/book/1124/32732.htm" target="_blank" rel="noopener">九九藏書《閩遊滴瀝之二》</a>・<a href="https://weread.qq.com/web/reader/89a329c07186242589a1df0ka6832360236a684eceeee20" target="_blank" rel="noopener">微信讀書《郁達夫散文集》</a>・<a href="https://baike.baidu.com/item/闽游滴沥之二/17625293" target="_blank" rel="noopener">百度百科篇目</a>'
+  },
+  'q-gong': {
+    src: '龔萬瑩・《島嶼的厝》（中信出版 2024）',
+    title: '島嶼的厝・鼓浪嶼島民的小說集',
+    full: `<p class="lead-in">龔萬瑩，生於廈門鼓浪嶼，英國曼徹斯特大學碩士、北師大碩士。作品發表於《人民文學》《收穫》《鐘山》《十月》等。2024 年出版第一部小說集《島嶼的厝》（中信出版社，RMB 59）。「厝」在閩南語中即「家」。</p>
+<p><strong>書介（節錄）</strong></p>
+<p>就像沒想到年久失修的老厝會在一個雨夜坍塌、庭院裡的老芒果树會被砍斷，少女阿禾從沒想過媽媽也會老、阿嬷也會離開人世；島上最厲害的女人阿霞跟著客源變化改了幾次經營方向：海鮮飯店、咖啡館、飲品店、民宿，一個人把生意做得嚇嚇叫，但其實一直有個軟軟的阿霞，躲在殺氣騰騰的外表下；菜市鐘樓的大鐘早已不再報時，多年後鐘聲再次響起，玉兔和天恩已抵達……</p>
+<p><strong>評論（節錄）</strong></p>
+<p>「《島嶼的厝》是出生於廈門鼓浪嶼的青年作家龔萬瑩的第一部小說集。『最熟悉的島嶼現在已是遠方。』面對日漸景區化的故鄉，《島嶼的厝》以島嶼棲居者的成長經歷為脈絡，還原具有鮮明年代感的日常生活，追述島嶼獨特的時代烙印與歷史記憶。」——福建師範大學文學院講師遊瀾評</p>
+<p>她的第二部小說集《鯨路回潮》：「以文字記錄島嶼的興盛消亡，龔萬瑩在這本半虛構小說集中盡顯精細筆功，以島上住民的生死與遷徙，帶領觀者進入充滿蕭索之意的回憶小島。」</p>`,
+    orig: '書籍頁：<a href="https://book.douban.com/subject/36636649/" target="_blank" rel="noopener">豆瓣《島嶼的厝》</a>・<a href="https://www.sanmin.com.tw/product/index/012754652" target="_blank" rel="noopener">三民書店（簡體書）</a>・<a href="https://book.douban.com/subject/37078243/" target="_blank" rel="noopener">《鯨路回潮》</a>'
+  },
+  'q-linyutang': {
+    src: '林語堂與鼓浪嶼・廖家別墅（漳州路 44 號）',
+    title: '林語堂與鼓浪嶼・史實與軼事',
+    full: `<p class="lead-in">林語堂（1895–1976），福建龍溪人，作家、翻譯家、語言學家，代表作《生活的藝術》《吾國與吾民》及英文小說《京華煙雲》。他與鼓浪嶼的淵源深遠：1919 年 1 月 9 日與鼓浪嶼名門廖家次女廖翠鳳結婚，婚後居於漳州路 44 號廖家別墅（全國重點文物保護單位「鼓浪嶼近代建築群」子項）。</p>
+<p><strong>燒婚書軼事（有據）</strong></p>
+<p>結婚當日，林語堂當眾燒掉結婚證書，說：「結婚證書只有離婚才用得到。」——以此表達與廖翠鳳白首偕老的決心。此軼事見於多種林語堂傳記與廈門文史資料。</p>
+<p><strong>廖家別墅（有據）</strong></p>
+<p>廖家別墅為廈門豫豐錢莊老闆廖悅發宅，約建於十九世紀五十年代，是鼓浪嶼最古老的別墅之一，U 形佈局、帶地下室三層。林語堂婚後在此居住，並在此籌備赴美哈佛留學。</p>
+<p><strong>對旅人的意義</strong></p>
+<p>漳州路 44 號現為林語堂故居紀念空間。在島上散步時想起林語堂筆下的生活哲學——「悠閒」與「慢」——正是鼓浪嶼最好的註腳。（註：坊間流傳的「我愛她的琴聲」等語錄並無可靠原文出處，本站不採用。）</p>`,
+    orig: '參考：<a href="https://zh.wikipedia.org/zh-tw/廖家别墅" target="_blank" rel="noopener">維基百科・廖家別墅</a>・<a href="https://kknews.cc/zh-tw/culture/kl83mxp.html" target="_blank" rel="noopener">每日頭條・林語堂妻女與鼓浪嶼因緣</a>・故居地圖：<a href="https://www.google.com/maps/search/?api=1&query=林語堂故居+鼓浪嶼漳州路44號" target="_blank" rel="noopener">漳州路 44 號</a>'
+  },
+  'q-luxun': {
+    src: '魯迅與廈門大學（1926–1927）',
+    title: '魯迅在廈門的四個月',
+    full: `<p class="lead-in">1926 年 9 月，魯迅應林語堂之邀南下廈門大學任國文系教授，1927 年 1 月離廈赴廣州。在廈門的四個月裡，他寫成了《朝花夕拾》大部分篇章（含〈從百草園到三味書屋〉〈藤野先生〉〈范愛農〉），並完成《漢文學史綱要》。廈門大學集美樓設有魯迅紀念館。</p>
+<p><strong>《朝花夕拾・小引》（1927 年 5 月寫於廣州，回望廈門時期；以下為原文節錄）</strong></p>
+<p>我有一時，曾經屢次憶起兒時在故鄉所吃的蔬果：菱角、羅漢豆、茭白、香瓜。凡這些，都是極其鮮美可口的；都曾是使我思鄉的蠱惑。後來，我在久別之後嚐到了，也不過如此；惟獨在記憶上，還有舊來的意味留存。他們也許要哄騙我一生，使我時時反顧。</p>
+<p><strong>魯迅在廈門寫給許廣平的信（《兩地書》，以下為節意）</strong></p>
+<p>他描述廈大的生活：住在生物館三樓，窗外即是南普陀寺與海，夜晚蛙鳴與濤聲交織。信中寫道「這裡的風景很好，我住在樓上，可以看見海」（大意，非逐字）。</p>
+<p><strong>對旅人的意義</strong>：走進廈大集美樓魯迅紀念館，站在他住過的窗前看南普陀寺與大海——是這趟旅程最「文學」的瞬間之一。</p>`,
+    orig: '紀念館：<a href="https://www.google.com/maps/search/?api=1&query=廈門大學+魯迅紀念館" target="_blank" rel="noopener">廈大集美樓地圖</a>・《朝花夕拾・小引》原文：<a href="https://zh.wikisource.org/wiki/朝花夕拾/小引" target="_blank" rel="noopener">維基文庫</a>・《兩地書》：<a href="https://zh.wikisource.org/wiki/兩地書" target="_blank" rel="noopener">維基文庫</a>'
+  }
+};
+
+/* Modal 控制 */
+(function(){
+  const modal = document.getElementById('qmodal');
+  const closeBtn = document.getElementById('qclose');
+  const srcEl = document.getElementById('qsrc');
+  const titleEl = document.getElementById('qtitle');
+  const fullEl = document.getElementById('qfull');
+  const origEl = document.getElementById('qorig');
+
+  function openQuote(key) {
+    const q = QUOTES[key];
+    if (!q) return;
+    srcEl.textContent = q.src;
+    titleEl.textContent = q.title;
+    fullEl.innerHTML = q.full;
+    origEl.innerHTML = q.orig;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeQuote() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.qbtn');
+    if (btn) { e.preventDefault(); openQuote(btn.dataset.q); return; }
+    if (e.target === modal) closeQuote();
+  });
+  closeBtn.addEventListener('click', closeQuote);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeQuote(); });
+})();
+
+/* Checklist 本地儲存 */
+(function(){
+  const box = document.getElementById('checklist');
+  if (!box) return;
+  const KEY = 'matsu2026-checklist';
+  const inputs = box.querySelectorAll('input[type=checkbox]');
+  try {
+    const saved = JSON.parse(localStorage.getItem(KEY) || '[]');
+    inputs.forEach((el, i) => { if (saved[i]) { el.checked = true; el.closest('label').classList.add('done'); } });
+  } catch(e) {}
+  inputs.forEach((el, i) => {
+    el.addEventListener('change', () => {
+      el.closest('label').classList.toggle('done', el.checked);
+      const state = Array.from(inputs).map(x => x.checked);
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e) {}
+    });
+  });
+})();
+
+/* 離線提示 */
+window.addEventListener('online', () => document.getElementById('offlineBadge').classList.remove('show'));
+window.addEventListener('offline', () => document.getElementById('offlineBadge').classList.add('show'));
+
+/* Service Worker */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').then(reg => {
+      if (navigator.serviceWorker.controller) {
+        document.getElementById('offlineBadge').classList.add('show');
+      }
+    }).catch(() => {});
+  });
+}
+</script>
+</body>
+</html>

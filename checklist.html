@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="description" content="馬祖・廈門人文之旅行前檢查清單——從證件、船票、住宿到行李、網路、金錢，小白也能照著做。每一步都有詳細說明與應變方案。可離線閱讀。">
+<meta name="theme-color" content="#0B3C5D">
+<title>行前檢查清單 — 馬祖・廈門人文之旅</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✅</text></svg>">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #FAF7F2; --panel: #FFFFFF; --panel-2: #F3EFE8;
+  --ink: #1C1A17; --muted: #8A817A; --line: #E5DED2;
+  --accent: #C0512F; --accent-2: #2F5B4F; --sea: #145DA0; --sea-deep: #0B3C5D;
+  --warn: #B36A1F; --shadow: 0 12px 32px color-mix(in srgb, var(--ink) 12%, transparent);
+  --radius: 12px;
+  font-family: "Söhne", -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", system-ui, sans-serif;
+  --serif: "GT Sectra", "Noto Serif TC", "Songti TC", "Times New Roman", serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--ink); }
+body { font-size: 15.5px; line-height: 1.8; }
+img { max-width: 100%; display: block; }
+a { color: var(--sea); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.topbar { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 20px; background: color-mix(in srgb, var(--panel) 90%, transparent); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+.brand h1 { margin: 0; font-size: 17px; font-family: var(--serif); letter-spacing: 0; }
+.brand p { margin: 2px 0 0; color: var(--muted); font-size: 12px; }
+.nav { display: flex; flex-wrap: wrap; gap: 4px; }
+.nav a { font-size: 13px; color: var(--ink); padding: 5px 9px; border-radius: 6px; }
+.nav a:hover { background: var(--panel-2); text-decoration: none; }
+.offline-badge { display: none; font-size: 11px; color: var(--accent-2); border: 1px solid color-mix(in srgb, var(--accent-2) 40%, var(--line)); border-radius: 999px; padding: 2px 8px; white-space: nowrap; }
+.offline-badge.show { display: inline-block; }
+
+.hero { position: relative; min-height: 40vh; display: flex; align-items: flex-end; background: linear-gradient(160deg, var(--sea-deep), var(--sea)); color: #FAF7F2; overflow: hidden; padding-bottom: 0; }
+.hero .inner { position: relative; padding: 40px 28px 40px; max-width: 1200px; margin: 0 auto; width: 100%; }
+.hero .kicker { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #F0E9DC; margin: 0 0 10px; }
+.hero h2 { margin: 0 0 10px; font-size: clamp(28px, 4.5vw, 44px); line-height: 1.15; font-family: var(--serif); font-weight: 600; letter-spacing: -0.01em; }
+.hero p { margin: 0; max-width: 62ch; color: #F0E9DC; }
+
+main { max-width: 960px; margin: 0 auto; padding: 0 24px 40px; }
+.progress-bar { position: sticky; top: 64px; z-index: 20; background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px; margin: 24px 0; display: flex; align-items: center; gap: 12px; box-shadow: var(--shadow); }
+.progress-bar .bar { flex: 1; height: 8px; background: var(--panel-2); border-radius: 999px; overflow: hidden; }
+.progress-bar .fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent-2), var(--accent)); transition: width 0.3s; }
+.progress-bar .pct { font-size: 13px; font-weight: 700; color: var(--accent-2); white-space: nowrap; }
+
+.intro { border: 1px solid color-mix(in srgb, var(--warn) 45%, var(--line)); background: color-mix(in srgb, var(--warn) 8%, var(--panel)); border-radius: 14px; padding: 18px 20px; margin: 20px 0 30px; }
+.intro h3 { margin: 0 0 8px; font-family: var(--serif); font-size: 17px; }
+.intro p { margin: 0 0 8px; font-size: 14px; }
+.intro p:last-child { margin-bottom: 0; }
+
+.cat { margin: 0 0 30px; }
+.cat-head { display: flex; align-items: baseline; gap: 12px; margin: 0 0 12px; }
+.cat-head .no { font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--accent); }
+.cat-head h3 { margin: 0; font-family: var(--serif); font-size: 21px; letter-spacing: 0; }
+.cat-head .hint { color: var(--muted); font-size: 13px; }
+
+.item { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); margin-bottom: 10px; overflow: hidden; }
+.item summary { display: flex; align-items: baseline; gap: 12px; padding: 13px 16px; cursor: pointer; list-style: none; }
+.item summary::-webkit-details-marker { display: none; }
+.item summary .check { width: 20px; height: 20px; border: 2px solid var(--line); border-radius: 6px; flex-shrink: 0; margin-top: 2px; position: relative; }
+.item.done summary .check { background: var(--accent-2); border-color: var(--accent-2); }
+.item.done summary .check::after { content: "✓"; color: white; font-size: 13px; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.item summary .t { font-size: 14.5px; font-weight: 650; flex: 1; }
+.item summary .when { color: var(--accent-2); font-size: 11.5px; font-weight: 700; white-space: nowrap; }
+.item summary .chev { color: var(--muted); transition: transform 0.2s; }
+.item[open] summary .chev { transform: rotate(90deg); }
+.item.done summary .t { text-decoration: line-through; color: var(--muted); }
+.item .body { padding: 0 18px 16px 48px; border-top: 1px dashed var(--line); }
+.item .body p { margin: 12px 0 8px; font-size: 13.5px; }
+.item .body ul { margin: 0 0 10px; padding-left: 1.3em; font-size: 13.5px; }
+.item .body li { margin: 4px 0; }
+.item .body .tip { border-left: 3px solid var(--warn); background: color-mix(in srgb, var(--warn) 7%, var(--panel)); padding: 8px 12px; border-radius: 0 8px 8px 0; font-size: 13px; margin-top: 8px; }
+.item .body .tip strong { color: var(--warn); }
+.item .body .link { font-size: 12.5px; }
+
+.actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0 30px; }
+.btn { border: 1px solid var(--line); border-radius: 10px; background: var(--panel); color: var(--ink); padding: 10px 18px; cursor: pointer; font-size: 14px; }
+.btn.primary { background: var(--accent-2); color: #FAF7F2; border-color: var(--accent-2); }
+.btn:hover { filter: brightness(0.97); }
+
+footer { border-top: 1px solid var(--line); background: var(--panel-2); padding: 24px 20px 36px; font-size: 12.5px; color: var(--muted); }
+footer .inner { max-width: 960px; margin: 0 auto; }
+footer p { margin: 4px 0; }
+
+@media (max-width: 760px) {
+  .topbar { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .nav { width: 100%; overflow-x: auto; }
+  main { padding: 0 14px; }
+  .item .body { padding-left: 18px; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <h1>行前檢查清單</h1>
+    <p>馬祖・廈門人文之旅 — 2026.08.18–08.25｜可離線閱讀</p>
+  </div>
+  <nav class="nav" aria-label="頁面導覽">
+    <a href="#cat1">證件</a>
+    <a href="#cat2">訂票</a>
+    <a href="#cat3">住宿</a>
+    <a href="#cat4">網路金錢</a>
+    <a href="#cat5">行李</a>
+    <a href="#cat6">健康</a>
+    <a href="#cat7">文化</a>
+    <a href="index.html">← 回主行程</a>
+  </nav>
+  <span class="offline-badge" id="offlineBadge">✓ 已可離線閱讀</span>
+</header>
+
+<div class="hero">
+  <div class="inner">
+    <p class="kicker">Pre-Trip Checklist</p>
+    <h2>行前檢查清單</h2>
+    <p>這份清單是給「第一次走這條路線」的人用的——每一步都寫了為什麼、怎麼做、沒做到會怎樣。照著順序打勾，出發那天就不會慌。</p>
+  </div>
+</div>
+
+<main>
+
+  <div class="intro">
+    <h3>🚨 出發前最重要的三件事（先讀這個）</h3>
+    <p><strong>① 這趟行程最怕什麼？——「船不開」。</strong>8 月是颱風季，馬祖的飛機和船都可能說停就停。所以我們的行程把 8/21 過海這天設計成「有彈性」：就算 8/21 沒過成海，8/22 一早再過，慧婷中午才飛到福州，兩人照樣在福州碰面。這就是為什麼清單裡要求你「先訂好備案機票」。</p>
+    <p><strong>② 這趟行程第二怕什麼？——「旺季沒房沒票」。</strong>8 月是暑假尾巴，東莒全島民宿加起來不到 20 間，鼓浪嶼船票熱門時段會售罄。所以：住宿現在就打電話、高鐵票今天訂、鼓浪嶼船票提前 3–5 天搶。</p>
+    <p><strong>③ 第三怕什麼？——「網路不通、付不了錢」。</strong>馬祖離島訊號不穩，大陸需要翻牆才能用 Google，支付寶/微信沒綁好會寸步難行。所以：這個網站要先開一次讓它存進手機（離線可讀）、人民幣現金帶足、支付工具提前綁定。</p>
+  </div>
+
+  <div class="progress-bar">
+    <span>完成度</span>
+    <div class="bar"><div class="fill" id="fill"></div></div>
+    <span class="pct" id="pct">0%</span>
+  </div>
+
+  <div class="actions">
+    <button class="btn" id="collapseAll">全部收合</button>
+    <button class="btn" id="expandAll">全部展開（閱讀模式）</button>
+    <button class="btn primary" id="resetAll">重置進度</button>
+  </div>
+
+  <!-- ═══════ 1 證件 ═══════ -->
+  <section class="cat" id="cat1">
+    <div class="cat-head"><span class="no">01</span><h3>證件與出入境</h3><span class="hint">缺一樣就出不了門，先辦這個</span></div>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">護照（效期 6 個月以上）</span><span class="when">現在檢查</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p><strong>為什麼：</strong>從台灣出境（不管搭船還是飛機）都要查驗護照。效期不足 6 個月，航空公司或船公司可能不讓你登船/登機。</p>
+        <ul>
+          <li>翻開護照看「有效日期」是否在 <strong>2027 年 2 月之後</strong>（2026/8/18 + 6 個月）</li>
+          <li>效期不足 → 立即預約外交部領事事務局換發（一般 4 個工作天，急件 2 天）</li>
+        </ul>
+        <div class="tip"><strong>小白提醒：</strong>護照照片規定嚴格（白底、露耳、不戴眼鏡），別拿舊照片賭運氣。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">台胞證（已有 → 檢查效期）</span><span class="when">現在檢查</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p><strong>為什麼：</strong>進大陸（福州、廈門）要台胞證，就像外國人進台灣要簽證。</p>
+        <ul>
+          <li>台胞證效期通常 5 年，檢查是否在有效期內</li>
+          <li>過期 → 透過旅行社或親自送件辦理（約 7–10 個工作天）</li>
+          <li>沒有台胞證 → 可在黃岐港辦「一次性落地簽」：2 張照片＋人民幣 40 元，現場排隊 1–2 小時（見下方備案）</li>
+        </ul>
+        <div class="tip"><strong>小白提醒：</strong>你有台胞證，只需確認效期。落地簽是備案不是首選——有證件走快速通道，沒證件排長隊。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">身分證（正本）</span><span class="when">現在準備</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>台灣國內線（松山→南竿）報到要身分證；訂房、租機車也可能用到。帶正本，影本無效。</p>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">證件影本＋手機拍照備份</span><span class="when">出發前 1 天</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>護照、台胞證、身分證各拍一張存在手機相簿（或雲端），再印一份紙本放行李箱底層。證件遺失時，影本是補辦和求助的關鍵。</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ═══════ 2 訂票 ═══════ -->
+  <section class="cat" id="cat2">
+    <div class="cat-head"><span class="no">02</span><h3>交通訂票（全部現在就訂）</h3><span class="hint">8 月旺季，越早越好</span></div>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">8/18 基隆→南竿 夜航船票（臺馬之星）</span><span class="when">立即</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p><strong>怎麼訂：</strong>馬祖海上交通訂位購票系統 <a class="link" href="https://www.matsuebs.com/home/SelectShip" target="_blank" rel="noopener">matsuebs.com</a>（可訂 60 天內班次）</p>
+        <ul>
+          <li>選「台馬航線・基隆→南竿」、8/18 晚間班次</li>
+          <li>艙等：經濟艙單人床 NT$1,050（推薦，可躺平睡）／經濟座艙 NT$630（坐著睡）</li>
+          <li>付款後會拿到訂位代碼；開航前 1–1.5 小時到基隆港西岸旅客碼頭（港西街 16 號 2 樓）取票報到</li>
+        </ul>
+        <div class="tip"><strong>小白提醒：</strong>週二是新臺馬輪保養日，8/18 預測由臺馬之星執航，但「開不開」要 8/17–18 看公告（<a class="link" href="https://client.matsu.idv.tw/apt/news.html" target="_blank" rel="noopener">全港通公告</a>）。若 8/18 停航 → 啟動備案：改訂 8/19 早班機。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">備案：8/19 松山→南竿 早班機（立榮）</span><span class="when">立即</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p><strong>為什麼要買備案：</strong>8 月颱風季，船可能停航。先買一張 8/19 早班機當保險——若 8/18 船有開，這張機票可退（立榮停航全額退、一般退票扣手續費）。</p>
+        <ul>
+          <li>立榮官網：<a class="link" href="https://www.uniair.com.tw/rwd/index.aspx" target="_blank" rel="noopener">uniair.com.tw</a>，松山→南竿，單程 NT$1,888 起</li>
+          <li>建議選最早班（07:00–09:00 之間發班），中午前到南竿，下午直接開玩</li>
+        </ul>
+        <div class="tip"><strong>小白提醒：</strong>先訂「可退票」艙等，別貪便宜買不可退的。這張票是保險，不是行程。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">8/20 南竿→東莒 07:00 船票（現場購票即可）</span><span class="when">8/19 到南竿後</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>南竿⇄莒光航線每日 07:00／11:00／14:30 三班，全票 NT$200，<strong>現場購票</strong>（首班 07:30 前到福澳港櫃檯）。8 月為雙月：先東後西——07:00 那班直達東莒猛澳港，不用先停西莒。</p>
+        <div class="tip"><strong>小白提醒：</strong>8/19 入住福澳窩時就跟老闆說你要搭 8/20 早班船，老闆會提醒你起床時間。東莒猛澳港無浮動碼頭，大潮時可能延後靠岸——別排太滿。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">8/21 東莒→南竿 早班船＋白沙→黃岐小三通船位</span><span class="when">8/20 中午前</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p><strong>這是全程最需要盯緊的銜接：</strong></p>
+        <ul>
+          <li>東莒→南竿：07:00 班次（約 07:50 到福澳港）——8/20 晚上跟福正民宿主人確認</li>
+          <li>白沙→黃岐：吉順10號 10:00 開航、全票 NT$650，<strong>最遲 8/20 中午 12:00 前</strong>在 <a class="link" href="https://www.matsuebs.com/home/SelectShip" target="_blank" rel="noopener">matsuebs.com</a> 訂位；開航前 1 小時（09:00 前）到白沙港取票</li>
+          <li>福澳→白沙島際船 15 分鐘、每半小時一班——08:30–09:00 之間搭都來得及</li>
+        </ul>
+        <div class="tip"><strong>小白提醒：</strong>若 07:00 東莒回程船沒搭上 → 改 11:00 班次（12:00 到南竿），白沙 10:00 船已開走 → 改走南竿福澳下午的琅岐線，或 8/22 一早再過海。結論：<strong>不管怎樣都不影響 8/22 見慧婷</strong>，只是多花點時間。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">慧婷：8/22 北京→福州 機票（她自訂，你提醒）</span><span class="when">立即</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>北京⇄福州直飛：國航／海南航空／山東航空／福州航空執飛（首都或大興→長樂），約 3 小時，8 月票價 TWD 3,009 起。</p>
+        <ul>
+          <li>建議訂上午班機、中午前到——兩人中午在三坊七巷會合</li>
+          <li>若當天北京天氣差航班取消，備案：改飛廈門（班次更多），8/22 晚或 8/23 廈門會合</li>
+        </ul>
+        <div class="tip"><strong>小白提醒：</strong>提醒慧婷台胞證號碼跟訂票一致；進大陸要台胞證，別只帶身分證。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">8/22 福州→廈門 高鐵票（已開賣，今天訂！）</span><span class="when">立即</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>福州→廈門高鐵每日約 236 班、最快 1 小時 3 分、二等座 TWD 397 起。車票 15 天前開賣（8/8 起可訂 8/22 票），熱門時段會賣完。</p>
+        <ul>
+          <li>用台胞證在 <a class="link" href="https://tw.trip.com/trains/china/route/fuzhou-to-xiamen/" target="_blank" rel="noopener">Trip.com</a> 或 12306 App 訂票</li>
+          <li>推薦班次：8/22 傍晚 19:00–21:00 之間（白天跟慧婷玩福州，晚上到廈門）</li>
+          <li>彈性：若想在福州續住一晚，改訂 8/23 上午班次</li>
+          <li>憑台胞證直接刷證進站，不用換紙本票</li>
+        </ul>
+        <div class="tip"><strong>小白提醒：</strong>台胞證號碼就是你的「車票」，訂票時姓名證號一定要跟證件一字不差，否則進不了站。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">8/23 鼓浪嶼渡輪票（提前 3–5 天搶）</span><span class="when">8/18–8/20</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>台灣旅客從<strong>郵輪中心廈鼓碼頭</strong>（東渡碼頭）出發 → 三丘田碼頭（離景區近）。往返 35–50 RMB，實名制、刷證件登船、含返程 20 天內有效。</p>
+        <ul>
+          <li>微信搜「廈門輪渡」小程式實名預約（需先有微信＋綁定支付）</li>
+          <li>或 Klook／Trip.com 代訂（成人約 NT$160–230）</li>
+        </ul>
+        <div class="tip"><strong>小白提醒：</strong>8 月旺季熱門時段（上午 9–11 點）容易售罄，建議訂 08:30 左右的早班，島上人少一點、光線也好。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">8/25 廈門→北京 機票</span><span class="when">立即</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>下午班次（2.5–3.5 小時，NT$5,800 起），早上還能跟慧婷吃早午餐。Skyscanner 比價後在官網或平台訂。慧婷當天則移動到海滄華邑酒店（CIMDR 會議場地，離島內 10–30 分鐘）。</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ═══════ 3 住宿 ═══════ -->
+  <section class="cat" id="cat3">
+    <div class="cat-head"><span class="no">03</span><h3>住宿預訂（電話確認最可靠）</h3><span class="hint">東莒民宿少，先搶先贏</span></div>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">8/19 南竿：福澳窩背包客民宿</span><span class="when">立即電話</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>床位 NT$800，福澳碼頭步行 3–5 分鐘，可代訂機車、藍眼淚諮詢。</p>
+        <ul>
+          <li>電話 <strong>0937-883091</strong>（闆娘）或 LINE：nene898</li>
+          <li>確認後 3 日內匯訂金（郵局 0002891-0241588，戶名楊真），匯完告知末 5 碼</li>
+          <li>訂房頁：<a class="link" href="https://bnb.matsu.idv.tw/fuaowo/" target="_blank" rel="noopener">bnb.matsu.idv.tw/fuaowo</a></li>
+        </ul>
+        <div class="tip"><strong>小白提醒：</strong>青旅不提供牙刷、牙膏、毛巾——自己帶。晚上 22:00 後輕聲細語。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">8/20 東莒：福正民宿（★本行重點）</span><span class="when">立即電話</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>雙人房約 NT$2,000–2,500。後方是國定古蹟東犬燈塔、前方福正沙灘，晚上賞藍眼淚踩星沙。</p>
+        <ul>
+          <li>電話 <strong>0836-88211</strong> ⚠️（旺季務必電話確認空房）</li>
+          <li>同時請老闆協助確認 8/21 回程船班——福正民宿 FB 提醒「記得來前要先上網訂船票」</li>
+          <li>訂房頁：<a class="link" href="https://bnb.matsu.idv.tw/fuzheng/" target="_blank" rel="noopener">bnb.matsu.idv.tw/fuzheng</a></li>
+        </ul>
+        <div class="tip"><strong>小白提醒：</strong>東莒全島住宿極少（福正、船老大、星宿青旅、山海一家），8 月一定滿——今天沒訂到就馬上問船老大（0836-88022）或星宿青旅。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">8/21 福州：三坊七巷周邊</span><span class="when">立即訂</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>如家精選（東街口店）TWD 300 起／亞朵酒店（步行 3 分鐘到宮巷）／三寶賓邸（古厝改建、街區核心）。Agoda／Booking／Trip.com 比價。</p>
+        <div class="tip"><strong>小白提醒：</strong>慧婷 8/22 中午到福州。若想兩人在福州多玩半天、8/22 住福州、8/23 一早高鐵南下，就先把 8/22 的福州房也訂起來——高鐵每 15–30 分鐘一班，完全彈性。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">8/22–23 廈門：中山路/沙坡尾（2 晚）</span><span class="when">立即訂</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>建議住中山路步行街周邊（近八市、鷺江道）或沙坡尾文青民宿，RMB 150–600／晚。8 月暑假尾聲仍熱門，提早訂。</p>
+        <div class="tip"><strong>小白提醒：</strong>慧婷 8/25 起住海滄華邑（CIMDR 會議場地）——8/22–23 兩晚你們一起住市區；若她想提前住會議酒店，鼓浪嶼可改從嵩嶼碼頭上船（離酒店 5–10 分鐘車程）。</div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ═══════ 4 網路金錢 ═══════ -->
+  <section class="cat" id="cat4">
+    <div class="cat-head"><span class="no">04</span><h3>網路、金錢與手機</h3><span class="hint">大陸上網要翻牆、付錢靠支付寶，先弄好</span></div>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">中國 eSIM／漫遊（出發前開通）</span><span class="when">出發前 2–3 天</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p><strong>為什麼：</strong>到了福州、廈門，台灣門號漫遊很貴；馬祖離島訊號也不穩——但本網站已做離線快取，沒網路也能讀。</p>
+        <ul>
+          <li>推薦 eSIM（免換卡）：Klook／KKday／各電信官網購買「中國 eSIM」方案，掃 QR code 即開通</li>
+          <li>台灣門號建議開「輕量漫遊」備用（收簡訊用，例如銀行驗證碼）</li>
+        </ul>
+        <div class="tip"><strong>小白提醒：</strong>在大陸 Google、Gmail、LINE 都要翻牆才能用——提前下載好 VPN App（如 NordVPN、Surfshark）並測試。支付寶/微信在高鐵站、碼頭都能連，但偏僻處訊號弱，重要時刻先截圖存證。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">支付寶／微信支付綁定</span><span class="when">出發前</span><span class="chev">›</span></summary>
+      <div class="body">
+        <ul>
+          <li>支付寶：下載 App → 實名認證（台胞證）→ 綁定信用卡（Visa/Mastercard 可）或請台灣友人轉帳</li>
+          <li>微信支付：微信 App → 我 → 服務 → 錢包 → 綁定銀行卡/信用卡（可用台胞證開通）</li>
+          <li>廈門輪渡、南普陀寺預約都走微信小程式——微信一定要先裝好</li>
+        </ul>
+        <div class="tip"><strong>小白提醒：</strong>台灣信用卡綁定支付寶可能被拒——備用方案：請大陸友人/慧婷代收轉帳，或到當地辦手機號+銀行卡（五通碼頭有台胞服務專區）。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">人民幣現金（帶足 1,500–2,500 RMB）</span><span class="when">出發前</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>台灣銀行/兆豐可線上結匯。現金用途：黃岐落地簽（40 RMB）、包車（150 RMB）、小店（魚丸攤、豆腐店）、緊急備用。大額消費（住宿、高鐵）用支付工具。</p>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">把本網站存進手機（離線快取）</span><span class="when">出發前</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p><strong>做法：</strong>在有網路的環境打開 <a class="link" href="https://atonnyshen.github.io/matsu-xiamen-trip/" target="_blank" rel="noopener">atonnyshen.github.io/matsu-xiamen-trip/</a>（主行程）和 <code>/checklist.html</code>（本頁），等左上角出現「✓ 已可離線閱讀」徽章，就代表全部內容（含圖片、引文全文）已存入手機。</p>
+        <ul>
+          <li>iPhone Safari：分享 → 加入主畫面（變成 App 圖示）</li>
+          <li>Android Chrome：選單 → 加到主畫面／安裝應用程式</li>
+        </ul>
+        <div class="tip"><strong>小白提醒：</strong>離島沒網路時，地圖 iframe 會空白——所以清單裡另外要求你「截圖重要地圖」（見行李區）。</div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ═══════ 5 行李 ═══════ -->
+  <section class="cat" id="cat5">
+    <div class="cat-head"><span class="no">05</span><h3>行李打包</h3><span class="hint">輕裝：你每天換一個地方睡</span></div>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">行李策略：後背包（7–10 公斤）</span><span class="when">打包時</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>這趟行程每天移動：船上睡→南竿→東莒（船）→福州（小三通）→廈門（高鐵）。行李箱在石階、碼頭、船上都是災難——<strong>用後背包</strong>。高鐵行李限 20 公斤、單件不超過 130 公分，後背包一定合格。</p>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">衣物：4–5 天份＋薄外套＋雨具</span><span class="when">打包時</span><span class="chev">›</span></summary>
+      <div class="body">
+        <ul>
+          <li>8 月馬祖 28–32°C 但海風大；夜航船冷氣強，帶件薄外套</li>
+          <li>東莒晚上在燈塔旁看星空會涼，長袖備一件</li>
+          <li>折疊傘或輕便雨衣（海島午後陣雨＋福州多變天氣）</li>
+          <li>防曬：帽子、防曬乳（離島太陽毒，張蘊之都寫了「日照毒烈」）</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">青旅四寶：牙刷、牙膏、毛巾、拖鞋</span><span class="when">打包時</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>福澳窩、福正民宿、星宿青旅都是環保旅館——不提供一次性盥洗用具。拖鞋（或涼鞋）在青旅和船上都好用。</p>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">夜航三寶：暈船藥、眼罩、耳塞</span><span class="when">打包時</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>8–10 小時夜航：暈船藥開航前 30 分鐘吃（藥局買，問藥師）；眼罩擋船艙燈光；耳塞擋引擎聲和打呼聲。船艙有床墊枕頭被子，不用自備睡袋。</p>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">充電三件套：行動電源＋充電線＋轉接頭</span><span class="when">打包時</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>大陸插座是兩腳扁插（A 型）與台灣相同，<strong>不需轉接頭</strong>，但電壓 220V——手機充電器都是 100–240V 通用，直接插即可。行動電源 20,000mAh 以內可上飛機。</p>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">重要地圖與憑證截圖（離線備份）</span><span class="when">出發前</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>離島網路不穩，先截圖存手機相簿：</p>
+        <ul>
+          <li>福澳港→東莒船班時刻表（07:00/11:00/14:30）</li>
+          <li>白沙港→黃岐 10:00 開航資訊＋取票時間（09:00 前）</li>
+          <li>東莒地圖（猛澳港、燈塔、大埔、福正相對位置）</li>
+          <li>鼓浪嶼碼頭位置與船班</li>
+          <li>所有訂位代碼、民宿電話</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ═══════ 6 健康 ═══════ -->
+  <section class="cat" id="cat6">
+    <div class="cat-head"><span class="no">06</span><h3>健康與保險</h3><span class="hint">離島醫療資源有限，先準備好</span></div>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">個人常備藥（慢性病藥加倍帶）</span><span class="when">打包時</span><span class="chev">›</span></summary>
+      <div class="body">
+        <ul>
+          <li>慢性病藥帶足全程＋2 天備份，隨身攜帶（不放託運）</li>
+          <li>腸胃藥（海鮮多、口味重）、感冒藥、OK 繃、防蚊液（東莒草叢）</li>
+          <li>馬祖/東莒有衛生所但無大醫院；緊急後送靠直升機/船——別冒險</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">旅遊保險（含不便險）</span><span class="when">出發前</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>8 月颱風季，<strong>旅遊不便險</strong>是重點：船班/航班延誤取消、行李遺失都有理賠。富邦、國泰、新光等線上投保，選「含旅程取消/延誤」方案，保費約 NT$300–800。</p>
+        <div class="tip"><strong>小白提醒：</strong>投保後把保單號碼截圖存手機——理賠時要附「停航證明」（船公司/航空公司開立）。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">重要緊急電話存入手機</span><span class="when">出發前</span><span class="chev">›</span></summary>
+      <div class="body">
+        <ul>
+          <li>台灣緊急：海基會大陸台胞服務 02-2533-7995（24h）／旅外國人 0800-085-095</li>
+          <li>馬祖：南北海運 0836-22193／莒光航業 0836-89121／福正民宿 0836-88211</li>
+          <li>大陸報警 110／急救 120（大陸手機直撥）</li>
+          <li>廈門台商協會／五通碼頭台胞服務專區（下船步行 3 分鐘）</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ═══════ 7 文化準備 ═══════ -->
+  <section class="cat" id="cat7">
+    <div class="cat-head"><span class="no">07</span><h3>文化與閱讀準備</h3><span class="hint">帶著文字上路，旅程深一倍</span></div>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">讀張蘊之《離離島，移移人》全文</span><span class="when">出發前 1 晚</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>主行程頁「文學」區可彈出全文（離線可讀）。讀完你會知道：猛澳港的「同島一命」、下午三點後的靜、國利豆腐店的豆花——這些都是東莒的暗號。</p>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">聽〈鼓浪嶼之波〉＋馬祖相關歌曲</span><span class="when">出發前</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>主行程頁「聲與影」區有完整播放清單：鼓浪嶼之波（廈門市歌）、馬祖藍眼淚歌曲、國際橋牌社2 主題等。先下載或加入播放清單，離島也能聽。</p>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">看一部相關影視（選一）</span><span class="when">出發前</span><span class="chev">›</span></summary>
+      <div class="body">
+        <ul>
+          <li>《國際橋牌社2》（friDay 影音）——在馬祖高登島、南竿 53 據點實拍</li>
+          <li>《沉默的榮耀》（2024）——鼓浪嶼毓德女學校舊址取景</li>
+          <li>《失孤》（2015）——劉德華，福州取景</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">準備伴手禮清單（回程）</span><span class="when">出發前</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>馬祖：老酒、高粱、魚麵、繼光餅、紅糟醬｜福州：橄欖、肉燕、脫胎漆器｜廈門：餡餅、牛軋糖、魚皮花生。回北京前在廈門一站買齊最方便。</p>
+      </div>
+    </details>
+  </section>
+
+  <div class="actions">
+    <button class="btn primary" id="toTop">回到頂部</button>
+    <a class="btn" href="index.html">← 回主行程頁</a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="inner">
+    <p>本清單與主行程頁同步，查證至 2026-08-11。價格與船班以現場/官方公告為準。</p>
+    <p>© 2026 馬祖・廈門人文之旅</p>
+  </div>
+</footer>
+
+<script>
+// 進度統計與本地儲存
+(function(){
+  const items = Array.from(document.querySelectorAll('details.item'));
+  const fill = document.getElementById('fill');
+  const pct = document.getElementById('pct');
+  const KEY = 'matsu2026-checklist2';
+
+  function update() {
+    const done = items.filter(i => i.classList.contains('done')).length;
+    const p = Math.round(done / items.length * 100);
+    fill.style.width = p + '%';
+    pct.textContent = p + '%';
+    try { localStorage.setItem(KEY, JSON.stringify(items.map(i => i.classList.contains('done')))); } catch(e) {}
+  }
+
+  // 讀取已存狀態
+  try {
+    const saved = JSON.parse(localStorage.getItem(KEY) || '[]');
+    items.forEach((el, i) => { if (saved[i]) el.classList.add('done'); });
+  } catch(e) {}
+  update();
+
+  // 點擊勾選
+  items.forEach(el => {
+    el.querySelector('summary').addEventListener('click', (e) => {
+      // 只有點到 check 區才切換完成狀態（避免與展開衝突）
+      if (e.target.classList.contains('check')) {
+        e.preventDefault();
+        el.classList.toggle('done');
+        update();
+      }
+    });
+  });
+
+  // 控制按鈕
+  document.getElementById('collapseAll').addEventListener('click', () => items.forEach(i => i.open = false));
+  document.getElementById('expandAll').addEventListener('click', () => items.forEach(i => i.open = true));
+  document.getElementById('resetAll').addEventListener('click', () => {
+    if (confirm('確定清除全部進度？')) {
+      items.forEach(i => i.classList.remove('done'));
+      update();
+    }
+  });
+  document.getElementById('toTop').addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+})();
+
+// 離線徽章
+window.addEventListener('online', () => document.getElementById('offlineBadge').classList.remove('show'));
+window.addEventListener('offline', () => document.getElementById('offlineBadge').classList.add('show'));
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').then(reg => {
+      if (navigator.serviceWorker.controller) document.getElementById('offlineBadge').classList.add('show');
+    }).catch(() => {});
+  });
+}
+</script>
+</body>
+</html>
