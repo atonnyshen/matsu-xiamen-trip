@@ -1,5 +1,5 @@
 /* 馬祖・廈門人文之旅 — Service Worker（離線優先）v2 */
-const CACHE = 'matsu2026-v7';
+const CACHE = 'matsu2026-v8';
 const ASSETS = [
   './',
   './index.html',
