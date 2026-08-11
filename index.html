@@ -30,6 +30,16 @@
   font-family: "Söhne", -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", system-ui, sans-serif;
   --serif: "GT Sectra", "Noto Serif TC", "Songti TC", "Times New Roman", serif;
 }
+/* ═══ 地域分流（大陸/台灣）═══ */
+[data-region="cn"] .region-tw { display: none !important; }
+[data-region="tw"] .region-cn { display: none !important; }
+.region-btn { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 999px; padding: 4px 12px; cursor: pointer; white-space: nowrap; }
+.region-btn:hover { background: var(--panel-2); }
+.map-cn-card { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 10px; height: 420px; padding: 28px; background: linear-gradient(160deg, var(--panel-2), var(--panel)); text-align: left; }
+.map-cn-card p { margin: 0; font-size: 14px; color: var(--muted); max-width: 46ch; }
+.map-cn-card .btn { display: inline-block; background: var(--accent-2); color: #fff; padding: 10px 18px; border-radius: 10px; font-size: 14px; }
+.map-cn-card .btn:hover { text-decoration: none; opacity: 0.92; }
+.cn-hint { font-size: 12px; color: var(--muted); margin-top: 8px; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--ink); }
@@ -39,14 +49,16 @@ a { color: var(--sea); text-decoration: none; }
 a:hover { text-decoration: underline; }
 summary { cursor: pointer; }
 
-.topbar { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 20px; background: color-mix(in srgb, var(--panel) 90%, transparent); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+.topbar { position: sticky; top: 0; z-index: 30; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding: 12px 20px; background: color-mix(in srgb, var(--panel) 90%, transparent); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
 .brand h1 { margin: 0; font-size: 17px; line-height: 1.25; font-family: var(--serif); letter-spacing: 0; }
-.brand p { margin: 2px 0 0; color: var(--muted); font-size: 12px; }
+.brand p { margin: 2px 0 0; color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 60vw; }
 .nav { display: flex; flex-wrap: wrap; gap: 4px; }
 .nav a { font-size: 13px; color: var(--ink); padding: 5px 9px; border-radius: 6px; }
 .nav a:hover { background: var(--panel-2); text-decoration: none; }
 .offline-badge { display: none; font-size: 11px; color: var(--accent-2); border: 1px solid color-mix(in srgb, var(--accent-2) 40%, var(--line)); border-radius: 999px; padding: 2px 8px; white-space: nowrap; }
 .offline-badge.show { display: inline-block; }
+.topbar .region-btn { order: 10; margin-left: auto; }
+.topbar .offline-badge { order: 11; }
 
 .hero { position: relative; min-height: 72vh; display: flex; align-items: flex-end; background: linear-gradient(180deg, color-mix(in srgb, var(--sea-deep) 30%, transparent), var(--sea-deep) 96%); color: #FAF7F2; overflow: hidden; }
 .hero img.banner { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.88; }
@@ -158,6 +170,7 @@ footer li { margin: 3px 0; overflow-wrap: anywhere; }
 @media (max-width: 760px) {
   .topbar { flex-direction: column; align-items: flex-start; gap: 8px; }
   .nav { width: 100%; overflow-x: auto; }
+  .topbar .region-btn { order: 0; margin-left: 0; }
   main { padding: 0 14px; }
   .hero .inner { padding: 30px 18px 34px; }
   .hero { min-height: 56vh; }
@@ -165,6 +178,71 @@ footer li { margin: 3px 0; overflow-wrap: anywhere; }
   .day-banner { height: 190px; }
 }
 </style>
+<script>
+/* 地域分流：依 IP 自動判斷（大陸/台灣），並提供手動切換
+   mode：使用者選擇（auto/tw/cn）；effective：實際套用（auto 時=偵測結果） */
+(function () {
+  'use strict';
+  var REGION_KEY = 'matsu-region';
+  var SAVED = null;
+  try { SAVED = localStorage.getItem(REGION_KEY); } catch (e) {}
+  var mode = (SAVED === 'tw' || SAVED === 'cn') ? SAVED : 'auto';
+  var detected = null; // 自動偵測結果
+
+  function effective() {
+    if (mode !== 'auto') return mode;
+    return detected || 'tw';
+  }
+
+  function apply() {
+    var r = effective();
+    document.documentElement.setAttribute('data-region', r);
+    var btn = document.getElementById('regionBtn');
+    if (btn) {
+      var label = mode === 'cn' ? '🇨🇳 大陸' : (mode === 'tw' ? '🇹🇼 台灣' : '🌏 自動');
+      btn.textContent = label;
+      var desc = '當前地域：' + (r === 'cn' ? '大陸' : '台灣') + '；模式：' + label + '（點擊切換）';
+      btn.setAttribute('aria-label', desc);
+      btn.setAttribute('title', desc);
+    }
+  }
+
+  function detect() {
+    if (typeof fetch !== 'function') { apply(); return; }
+    var ctrl = new AbortController();
+    var timer = setTimeout(function () { ctrl.abort(); }, 5000);
+    fetch('https://ipapi.co/json/', { mode: 'cors', cache: 'no-store', signal: ctrl.signal })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        var code = String(d.country_code || '').toUpperCase();
+        detected = (code === 'CN') ? 'cn' : 'tw';
+        apply();
+      })
+      .catch(function () {
+        // 偵測失敗：維持 tw 預設，但保留手動切換能力
+        detected = 'tw';
+        apply();
+      })
+      .finally(function () { clearTimeout(timer); });
+  }
+
+  window.__setRegion = function (r) {
+    if (r !== 'tw' && r !== 'cn') r = 'auto';
+    mode = r;
+    try { localStorage.setItem(REGION_KEY, r); } catch (e) {}
+    if (mode === 'auto' && !detected) { detect(); } else { apply(); }
+  };
+
+  window.__cycleRegion = function () {
+    // tw → cn → auto 循環（依目前 mode，不讀 data-region）
+    if (mode === 'tw') window.__setRegion('cn');
+    else if (mode === 'cn') window.__setRegion('auto');
+    else window.__setRegion('tw');
+  };
+
+  if (mode === 'auto') { apply(); detect(); } else { apply(); }
+})();
+</script>
 </head>
 <body>
 
@@ -185,6 +263,7 @@ footer li { margin: 3px 0; overflow-wrap: anywhere; }
     <a href="#budget">預算</a>
     <a href="checklist.html">✅ 行前清單</a>
   </nav>
+  <button id="regionBtn" class="region-btn" type="button" onclick="window.__cycleRegion()">🌏 自動</button>
   <span class="offline-badge" id="offlineBadge">✓ 已可離線閱讀</span>
 </header>
 
@@ -750,6 +829,18 @@ footer li { margin: 3px 0; overflow-wrap: anywhere; }
       <div class="b-author">黃資婷（成大 2025）・劉宏文（前衛）</div>
       <div class="b-desc">717 頁馬祖文學選集＋評論；32 篇庶民紀實散文（煙硝／生息／離散）。</div>
     </div>
+    <div class="book">
+      <div class="b-title">《時間的航線：馬祖國際藝術島全紀錄》</div>
+      <div class="b-author">藝術島官方出版</div>
+      <div class="b-desc">馬祖國際藝術島唯一的官方書籍化紀錄。第三屆〈拍楸〉（2025/9–2026/3，9 國 55 組藝術家）已落幕；第四屆籌備中——這本書是理解「島嶼即展場」的最佳入口。</div>
+      <div class="b-link"><a href="https://www.books.com.tw/products/0011008273" target="_blank" rel="noopener">博客來 →</a></div>
+    </div>
+    <div class="book">
+      <div class="b-title">藝術游擊・馬祖駐村（文化部）</div>
+      <div class="b-author">國立新竹生活美學館・2026 第 8 年</div>
+      <div class="b-desc">文化部「藝術游擊」駐村計畫每年送藝術家到東莒、西莒、南竿梅石——2026 年駐村期延長至 1.5 個月（9/1 起）。出發前可上官網看看當期駐村藝術家，說不定能在島上巧遇創作現場。</div>
+      <div class="b-link"><a href="https://www.nhclac.gov.tw/" target="_blank" rel="noopener">新竹生活美學館 →</a></div>
+    </div>
   </div>
 
   <h4 style="margin:26px 0 12px;">福州・閩都文脈</h4>
@@ -763,7 +854,7 @@ footer li { margin: 3px 0; overflow-wrap: anywhere; }
     <div class="book">
       <div class="b-title">冰心《繁星》《春水》《寄小讀者》</div>
       <div class="b-author">謝婉瑩・1900 年生於楊橋東路 17 號</div>
-      <div class="b-desc">「母親啊！天上的風雨來了，鳥兒躲到他的巢裡；心中的風雨來了，我只躲到你的懷裡。」</div>
+      <div class="b-desc">「母親啊！天上的風雨來了，鳥兒躲到它的巢裡；心中的風雨來了，我只躲到你的懷裡。」——《繁星・一五九》，寫盡母愛的千古名篇。</div>
       <div class="b-link"><button class="qbtn" data-q="q-bingxin">閱讀全文（離線彈窗）→</button></div>
     </div>
     <div class="book">
@@ -774,8 +865,8 @@ footer li { margin: 3px 0; overflow-wrap: anywhere; }
     </div>
     <div class="book">
       <div class="b-title">郁達夫《閩遊滴瀝》</div>
-      <div class="b-author">1936 年福州行旅散文</div>
-      <div class="b-desc">「福州女子的服裝，是中國女性中最摩登而又最有閩南風味的」——郁達夫筆下的福州風物。</div>
+      <div class="b-author">1936 年福州行旅散文・共六篇</div>
+      <div class="b-desc">「曾經到過福州的一位朋友寫信來，說福建留在他腦子裡的印象，依次序來排列，當為：第一山水，第二少女，第三飲食，第四氣候。」——郁達夫三度遊閩，為福州留下最生動的文字。</div>
       <div class="b-link"><button class="qbtn" data-q="q-yudafu">閱讀全文（離線彈窗）→</button></div>
     </div>
   </div>
@@ -829,27 +920,45 @@ footer li { margin: 3px 0; overflow-wrap: anywhere; }
 <section id="sound">
   <p class="section-title">Sound & Screen</p>
   <h3 class="sec-head">聲與影 — <em>音樂・電影・紀錄</em></h3>
-  <p class="lead">這趟旅程不只可以用腳走，還可以用耳朵聽、用眼睛看。以下是與馬祖、福州、廈門直接相關的音樂與影視——出發前聽過看過，到了現場會有「原來這裡就是那個場景」的感動。</p>
+  <p class="lead">這趟旅程不只可以用腳走，還可以用耳朵聽、用眼睛看。以下是與馬祖、福州、廈門直接相關的音樂與影視——出發前聽過看過，到了現場會有「原來這裡就是那個場景」的感動。<strong style="color:var(--accent-2);">（已依你的網路環境分流：台灣/海外自動顯示 YouTube，中國大陸自動切換網易雲與可直連來源；可用右上角按鈕手動切換。）</strong></p>
 
-  <h4 style="margin:0 0 12px;">🎵 音樂（點連結可直接播放）</h4>
+  <h4 style="margin:0 0 12px;">🎵 音樂（台灣/海外：YouTube 直連｜大陸：網易雲）</h4>
   <div class="books">
     <div class="book">
       <div class="b-title">〈鼓浪嶼之波〉★廈門市歌</div>
       <div class="b-author">李光羲演唱・鍾立民作曲・張藜/張紅曙作詞（1982）</div>
       <div class="b-desc">「鼓浪嶼四周海茫茫，海水鼓起波浪；鼓浪嶼遙對台灣島，台灣是我家鄉。登上日光岩眺望，只見雲海蒼蒼；我渴望，我渴望，快快見到你，美麗的基隆港！」——2019 年入選「慶祝中華人民共和國成立 70 週年優秀歌曲 100 首」；廈門環島路有金氏世界紀錄「最長五線譜音樂雕塑」。</div>
-      <div class="b-link"><a href="https://www.youtube.com/watch?v=1rLYGjhjZIA" target="_blank" rel="noopener">YouTube 播放 →</a>・<a href="https://music.163.com/#/search/m/?s=鼓浪嶼之波" target="_blank" rel="noopener">網易雲搜尋 →</a></div>
+      <div class="b-link"><span class="region-tw"><a href="https://www.youtube.com/watch?v=1rLYGjhjZIA" target="_blank" rel="noopener">YouTube 播放 →</a></span>・<span class="region-cn"><a href="https://music.163.com/#/search/m/?s=鼓浪嶼之波" target="_blank" rel="noopener">網易雲搜尋 →</a></span></div>
     </div>
     <div class="book">
       <div class="b-title">〈藍色眼淚沙灘〉Blue Tears Beach</div>
       <div class="b-author">周寶全・1987 年馬祖當兵記憶 MV</div>
       <div class="b-desc">「從基隆港登上運輸艦離開台灣，抵達與世隔絕的外島」——一支忠實記錄 1987 年青春記憶的 MV，馬祖老兵看了都會紅眼眶。</div>
-      <div class="b-link"><a href="https://www.youtube.com/watch?v=23xS74ZwZlI" target="_blank" rel="noopener">YouTube 播放 →</a></div>
+      <div class="b-link"><span class="region-tw"><a href="https://www.youtube.com/watch?v=23xS74ZwZlI" target="_blank" rel="noopener">YouTube 播放 →</a></span><span class="region-cn">（MV 僅於 YouTube 播出）</span></div>
+    </div>
+    <div class="book">
+      <div class="b-title">馬祖藍眼淚・放鬆音樂</div>
+      <div class="b-author">Blue Tears Bioluminescent Sea（Matsu, Taiwan）</div>
+      <div class="b-desc">以馬祖夜海藍光為靈感的環境音樂——戴上耳機閉上眼，先讓耳朵到馬祖，8/19 東莒海邊追淚時更有感覺。</div>
+      <div class="b-link"><span class="region-tw"><a href="https://www.youtube.com/watch?v=twsq4ynXZMU" target="_blank" rel="noopener">YouTube 播放 →</a></span></div>
+    </div>
+    <div class="book">
+      <div class="b-title">〈愛拼才會贏〉★閩南精神</div>
+      <div class="b-author">葉啟田演唱・陳百潭詞曲（1988）</div>
+      <div class="b-desc">「三分天註定，七分靠打拼」——閩南語歌的終極代表。廈門是閩南語標準音所在地，從鼓浪嶼到八市，這首歌是理解閩南人性格的鑰匙。</div>
+      <div class="b-link"><span class="region-tw"><a href="https://www.youtube.com/watch?v=rBiE1dNaSqg" target="_blank" rel="noopener">YouTube 播放 →</a></span>・<span class="region-cn"><a href="https://music.163.com/#/search/m/?s=愛拼才會贏" target="_blank" rel="noopener">網易雲搜尋 →</a></span></div>
+    </div>
+    <div class="book">
+      <div class="b-title">福州語《閩都別戀》</div>
+      <div class="b-author">賴董芳・福州語歌曲代表</div>
+      <div class="b-desc">福州語歌曲最重要的推手賴董芳的作品——用閩都（福州）方言唱福州風情。與網站收錄的另一首福州語《藍眼淚》同一創作者，聽完就懂「鄉音」的力量。</div>
+      <div class="b-link"><span class="region-tw"><a href="https://www.youtube.com/watch?v=pQNG0ClDP3A" target="_blank" rel="noopener">YouTube 播放 →</a></span>・<span class="region-cn"><a href="https://music.163.com/#/search/m/?s=閩都別戀" target="_blank" rel="noopener">網易雲搜尋 →</a></span></div>
     </div>
     <div class="book">
       <div class="b-title">〈藍眼淚〉（霽光音樂・2026）</div>
       <div class="b-author">現代創作・馬祖夜海意象</div>
       <div class="b-desc">「烏雲背後還有月亮，孤島上的燈塔仍在守望，潮水一波一波，把幽幽藍光推上海岸」——把馬祖景色與思念寫成歌。</div>
-      <div class="b-link"><a href="https://www.youtube.com/watch?v=MlEGh8B1Vrw" target="_blank" rel="noopener">YouTube 播放 →</a></div>
+      <div class="b-link"><span class="region-tw"><a href="https://www.youtube.com/watch?v=MlEGh8B1Vrw" target="_blank" rel="noopener">YouTube 播放 →</a></span></div>
     </div>
     <div class="book">
       <div class="b-title">福州語《藍眼淚》・賴董芳</div>
@@ -862,6 +971,12 @@ footer li { margin: 3px 0; overflow-wrap: anywhere; }
       <div class="b-author">魏如昀・鳳鳴齋國樂團・瑪斯克表演藝術團</div>
       <div class="b-desc">2025/7/11 在南竿遊客中心登場，結合藍眼淚意象、文創市集與島嶼風情——馬祖夏天最 Chill 的音樂現場。（本行程 8 月造訪，可留意是否有秋季場次）</div>
       <div class="b-link"><a href="https://woman.udn.com/woman/story/123162/8845269" target="_blank" rel="noopener">UDN 報導 →</a></div>
+    </div>
+    <div class="book">
+      <div class="b-title">謝昭華〈我們居住的島嶼〉★詩朗讀</div>
+      <div class="b-author">民視「飛閱文學地景 S11」・馬祖醫生詩人</div>
+      <div class="b-desc">「在我們居住的島嶼／花崗岩縫裡埋藏急切的心事／海岸線曲曲折折地追逐潮水」——以影像朗讀謝昭華的詩，馬祖的島嶼風景配上詩人自己的文字，是最貼近這趟旅程的聲音。</div>
+      <div class="b-link"><span class="region-tw"><a href="https://www.youtube.com/watch?v=FIZ04ItUmUg" target="_blank" rel="noopener">YouTube 觀看 →</a></span></div>
     </div>
   </div>
 
@@ -882,8 +997,8 @@ footer li { margin: 3px 0; overflow-wrap: anywhere; }
     <div class="book">
       <div class="b-title">《失孤》・福州取景</div>
       <div class="b-author">2015・劉德華主演的打拐電影</div>
-      <div class="b-desc">劇組在福州、泉州、莆田拍攝近一個月——福州的街景與閩江橋都在片中出現。劉德華在片中騎著機車穿過的城市，就是你要去的福州。</div>
-      <div class="b-link"><a href="https://fz.lanfw.com/show.php?contentid=262772" target="_blank" rel="noopener">福建取景報導 →</a></div>
+      <div class="b-desc">2014 年 3 月在泉州開機，之後輾轉福州、莆田等地拍攝近兩個月——福州的街景與閩江橋都在片中出現（片中還拍了福州三山座澡堂）。劉德華在片中騎著機車穿過的城市，就是你要去的福州。2021 年故事原型郭剛堂終於找到兒子，電影有了圓滿的後續。</div>
+      <div class="b-link"><a href="https://zh.wikipedia.org/wiki/失孤" target="_blank" rel="noopener">維基百科 →</a></div>
     </div>
     <div class="book">
       <div class="b-title">《幸福草》《獵罪圖鑑2》・福州取景</div>
@@ -948,30 +1063,35 @@ footer li { margin: 3px 0; overflow-wrap: anywhere; }
   </div>
 </section>
 
-<!-- ══════════ 地圖 ══════════ -->
+<!-- ══════════ 地圖（地域分流）══════════ -->
 <section id="map">
   <p class="section-title">Map</p>
-  <h3 class="sec-head">地圖定位</h3>
+  <h3 class="sec-head">地圖定位 <span class="pill plain region-auto-hint" style="font-size:11px;">依網路環境自動切換 Google Maps／高德地圖</span></h3>
   <div class="map-wrap">
-    <iframe title="馬祖東莒地圖" src="https://www.google.com/maps?q=東莒島+連江縣&z=13&hl=zh-TW&output=embed" loading="lazy"></iframe>
+    <iframe class="region-tw" title="馬祖東莒地圖（Google Maps）" src="https://www.google.com/maps?q=東莒島+連江縣&z=13&hl=zh-TW&output=embed" loading="lazy"></iframe>
+    <div class="map-cn-card region-cn">
+      <p><strong>在中國大陸無法直接載入 Google Maps</strong>——請改用高德地圖開啟以下地點（已依行程整理）。</p>
+      <a class="btn" href="https://uri.amap.com/search?keyword=東莒島&city=福州" target="_blank" rel="noopener">🗺️ 在高德地圖開啟東莒島 →</a>
+      <p class="cn-hint">高德 URI 連結可直接在手機／電腦開啟；若無法自動跳轉，搜尋欄輸入地點名稱即可。</p>
+    </div>
   </div>
   <div class="map-points">
-    <div class="map-point"><strong>基隆港西岸旅客碼頭</strong>基隆市港西街 16 號 2 樓・夜航登船<a href="https://www.google.com/maps/search/?api=1&query=基隆港西岸旅客碼頭" target="_blank" rel="noopener">Google Maps →</a></div>
-    <div class="map-point"><strong>南竿福澳港</strong>連江縣南竿鄉・夜航抵達＋東莒船出發<a href="https://www.google.com/maps/search/?api=1&query=福澳港+南竿" target="_blank" rel="noopener">Google Maps →</a></div>
-    <div class="map-point"><strong>北海坑道</strong>南竿鄉鐵板灣畔・日間步道＋夜間搖櫓<a href="https://www.google.com/maps/search/?api=1&query=北海坑道+南竿" target="_blank" rel="noopener">Google Maps →</a></div>
-    <div class="map-point"><strong>八八坑道</strong>南竿鄉牛角嶺下・馬祖酒廠儲酒<a href="https://www.google.com/maps/search/?api=1&query=八八坑道+南竿" target="_blank" rel="noopener">Google Maps →</a></div>
-    <div class="map-point"><strong>東莒猛澳港</strong>北緯 25.957°・東經 119.968°・下船見「同島一命」<a href="https://www.google.com/maps/search/?api=1&query=猛澳港+東莒" target="_blank" rel="noopener">Google Maps →</a></div>
-    <div class="map-point"><strong>東莒島燈塔</strong>東莒島東北角・國定古蹟・1875 年英國人造<a href="https://www.google.com/maps/search/?api=1&query=東莒島燈塔" target="_blank" rel="noopener">Google Maps →</a></div>
-    <div class="map-point"><strong>福正沙灘</strong>東莒・退潮挖花蛤＋晚上踩星沙<a href="https://www.google.com/maps/search/?api=1&query=福正沙灘+東莒" target="_blank" rel="noopener">Google Maps →</a></div>
-    <div class="map-point"><strong>北竿白沙港</strong>連江縣北竿鄉・小三通 10:00 開航<a href="https://www.google.com/maps/search/?api=1&query=白沙港+北竿" target="_blank" rel="noopener">Google Maps →</a></div>
-    <div class="map-point"><strong>福州黃岐港</strong>福建省連江縣・小三通抵達口岸<a href="https://www.google.com/maps/search/?api=1&query=黃岐港+福州連江" target="_blank" rel="noopener">Google Maps →</a></div>
-    <div class="map-point"><strong>三坊七巷・林覺民冰心故居</strong>福州市鼓樓區楊橋東路 17 號・8/21 下午<a href="https://www.google.com/maps/search/?api=1&query=林覺民冰心故居+福州" target="_blank" rel="noopener">Google Maps →</a></div>
-    <div class="map-point"><strong>廈門北站</strong>8/22 高鐵抵達<a href="https://www.google.com/maps/search/?api=1&query=廈門北站" target="_blank" rel="noopener">Google Maps →</a></div>
-    <div class="map-point"><strong>郵輪中心廈鼓碼頭</strong>8/23 鼓浪嶼渡輪出發（台灣旅客主碼頭）<a href="https://www.google.com/maps/search/?api=1&query=郵輪中心廈鼓碼頭+廈門" target="_blank" rel="noopener">Google Maps →</a></div>
-    <div class="map-point"><strong>日光岩</strong>鼓浪嶼制高點・聯票 90 RMB<a href="https://www.google.com/maps/search/?api=1&query=日光岩+鼓浪嶼" target="_blank" rel="noopener">Google Maps →</a></div>
-    <div class="map-point"><strong>南普陀寺</strong>廈門市思明區・免費預約<a href="https://www.google.com/maps/search/?api=1&query=南普陀寺+廈門" target="_blank" rel="noopener">Google Maps →</a></div>
-    <div class="map-point"><strong>廈門大學・魯迅紀念館</strong>集美樓・需預約<a href="https://www.google.com/maps/search/?api=1&query=廈門大學+魯迅紀念館" target="_blank" rel="noopener">Google Maps →</a></div>
-    <div class="map-point"><strong>高崎機場</strong>8/25 返京<a href="https://www.google.com/maps/search/?api=1&query=廈門高崎國際機場" target="_blank" rel="noopener">Google Maps →</a></div>
+    <div class="map-point"><strong>基隆港西岸旅客碼頭</strong>基隆市港西街 16 號 2 樓・夜航登船<a class="region-tw" href="https://www.google.com/maps/search/?api=1&query=基隆港西岸旅客碼頭" target="_blank" rel="noopener">Google Maps →</a><a class="region-cn" href="https://uri.amap.com/search?keyword=基隆港西岸旅客碼頭" target="_blank" rel="noopener">高德地圖 →</a></div>
+    <div class="map-point"><strong>南竿福澳港</strong>連江縣南竿鄉・夜航抵達＋東莒船出發<a class="region-tw" href="https://www.google.com/maps/search/?api=1&query=福澳港+南竿" target="_blank" rel="noopener">Google Maps →</a><a class="region-cn" href="https://uri.amap.com/search?keyword=福澳港" target="_blank" rel="noopener">高德地圖 →</a></div>
+    <div class="map-point"><strong>北海坑道</strong>南竿鄉鐵板灣畔・日間步道＋夜間搖櫓<a class="region-tw" href="https://www.google.com/maps/search/?api=1&query=北海坑道+南竿" target="_blank" rel="noopener">Google Maps →</a><a class="region-cn" href="https://uri.amap.com/search?keyword=北海坑道" target="_blank" rel="noopener">高德地圖 →</a></div>
+    <div class="map-point"><strong>八八坑道</strong>南竿鄉牛角嶺下・馬祖酒廠儲酒<a class="region-tw" href="https://www.google.com/maps/search/?api=1&query=八八坑道+南竿" target="_blank" rel="noopener">Google Maps →</a><a class="region-cn" href="https://uri.amap.com/search?keyword=八八坑道" target="_blank" rel="noopener">高德地圖 →</a></div>
+    <div class="map-point"><strong>東莒猛澳港</strong>北緯 25.957°・東經 119.968°・下船見「同島一命」<a class="region-tw" href="https://www.google.com/maps/search/?api=1&query=猛澳港+東莒" target="_blank" rel="noopener">Google Maps →</a><a class="region-cn" href="https://uri.amap.com/search?keyword=猛澳港" target="_blank" rel="noopener">高德地圖 →</a></div>
+    <div class="map-point"><strong>東莒島燈塔</strong>東莒島東北角・國定古蹟・1875 年英國人造<a class="region-tw" href="https://www.google.com/maps/search/?api=1&query=東莒島燈塔" target="_blank" rel="noopener">Google Maps →</a><a class="region-cn" href="https://uri.amap.com/search?keyword=東莒島燈塔" target="_blank" rel="noopener">高德地圖 →</a></div>
+    <div class="map-point"><strong>福正沙灘</strong>東莒・退潮挖花蛤＋晚上踩星沙<a class="region-tw" href="https://www.google.com/maps/search/?api=1&query=福正沙灘+東莒" target="_blank" rel="noopener">Google Maps →</a><a class="region-cn" href="https://uri.amap.com/search?keyword=福正沙灘" target="_blank" rel="noopener">高德地圖 →</a></div>
+    <div class="map-point"><strong>北竿白沙港</strong>連江縣北竿鄉・小三通 10:00 開航<a class="region-tw" href="https://www.google.com/maps/search/?api=1&query=白沙港+北竿" target="_blank" rel="noopener">Google Maps →</a><a class="region-cn" href="https://uri.amap.com/search?keyword=白沙港" target="_blank" rel="noopener">高德地圖 →</a></div>
+    <div class="map-point"><strong>福州黃岐港</strong>福建省連江縣・小三通抵達口岸<a class="region-tw" href="https://www.google.com/maps/search/?api=1&query=黃岐港+福州連江" target="_blank" rel="noopener">Google Maps →</a><a class="region-cn" href="https://uri.amap.com/search?keyword=黃岐港" target="_blank" rel="noopener">高德地圖 →</a></div>
+    <div class="map-point"><strong>三坊七巷・林覺民冰心故居</strong>福州市鼓樓區楊橋東路 17 號・8/21 下午<a class="region-tw" href="https://www.google.com/maps/search/?api=1&query=林覺民冰心故居+福州" target="_blank" rel="noopener">Google Maps →</a><a class="region-cn" href="https://uri.amap.com/search?keyword=林覺民冰心故居" target="_blank" rel="noopener">高德地圖 →</a></div>
+    <div class="map-point"><strong>廈門北站</strong>8/22 高鐵抵達<a class="region-tw" href="https://www.google.com/maps/search/?api=1&query=廈門北站" target="_blank" rel="noopener">Google Maps →</a><a class="region-cn" href="https://uri.amap.com/search?keyword=廈門北站" target="_blank" rel="noopener">高德地圖 →</a></div>
+    <div class="map-point"><strong>郵輪中心廈鼓碼頭</strong>8/23 鼓浪嶼渡輪出發（台灣旅客主碼頭）<a class="region-tw" href="https://www.google.com/maps/search/?api=1&query=郵輪中心廈鼓碼頭+廈門" target="_blank" rel="noopener">Google Maps →</a><a class="region-cn" href="https://uri.amap.com/search?keyword=廈鼓碼頭" target="_blank" rel="noopener">高德地圖 →</a></div>
+    <div class="map-point"><strong>日光岩</strong>鼓浪嶼制高點・聯票 90 RMB<a class="region-tw" href="https://www.google.com/maps/search/?api=1&query=日光岩+鼓浪嶼" target="_blank" rel="noopener">Google Maps →</a><a class="region-cn" href="https://uri.amap.com/search?keyword=日光岩" target="_blank" rel="noopener">高德地圖 →</a></div>
+    <div class="map-point"><strong>南普陀寺</strong>廈門市思明區・免費預約<a class="region-tw" href="https://www.google.com/maps/search/?api=1&query=南普陀寺+廈門" target="_blank" rel="noopener">Google Maps →</a><a class="region-cn" href="https://uri.amap.com/search?keyword=南普陀寺" target="_blank" rel="noopener">高德地圖 →</a></div>
+    <div class="map-point"><strong>廈門大學・魯迅紀念館</strong>集美樓・需預約<a class="region-tw" href="https://www.google.com/maps/search/?api=1&query=廈門大學+魯迅紀念館" target="_blank" rel="noopener">Google Maps →</a><a class="region-cn" href="https://uri.amap.com/search?keyword=廈門大學" target="_blank" rel="noopener">高德地圖 →</a></div>
+    <div class="map-point"><strong>高崎機場</strong>8/25 返京<a class="region-tw" href="https://www.google.com/maps/search/?api=1&query=廈門高崎國際機場" target="_blank" rel="noopener">Google Maps →</a><a class="region-cn" href="https://uri.amap.com/search?keyword=高崎國際機場" target="_blank" rel="noopener">高德地圖 →</a></div>
   </div>
 </section>
 
@@ -1011,7 +1131,7 @@ footer li { margin: 3px 0; overflow-wrap: anywhere; }
 <section id="checklist">
   <p class="section-title">Checklist</p>
   <h3 class="sec-head">行前清單</h3>
-  <div class="checklist" id="checklist">
+  <div class="checklist" id="checklistBox">
     <label><input type="checkbox"> 訂 8/18 臺馬之星船票（matsuebs.com）＋8/19 早班機備案</label>
     <label><input type="checkbox"> 電話確認住宿：福正民宿 0836-88211（8/19）・福澳窩 0937-883091（8/20）</label>
     <label><input type="checkbox"> 訂 8/19 14:30 南竿→東莒船＋8/20 07:50 回程船位（南北海運 0836-22193）</label>
@@ -1289,7 +1409,7 @@ const QUOTES = {
 
 /* Checklist 本地儲存 */
 (function(){
-  const box = document.getElementById('checklist');
+  const box = document.getElementById('checklistBox');
   if (!box) return;
   const KEY = 'matsu2026-checklist';
   const inputs = box.querySelectorAll('input[type=checkbox]');

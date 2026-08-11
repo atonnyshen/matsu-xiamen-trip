@@ -20,6 +20,11 @@
   font-family: "Söhne", -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", system-ui, sans-serif;
   --serif: "GT Sectra", "Noto Serif TC", "Songti TC", "Times New Roman", serif;
 }
+/* ═══ 地域分流（大陸/台灣）═══ */
+[data-region="cn"] .region-tw { display: none !important; }
+[data-region="tw"] .region-cn { display: none !important; }
+.region-btn { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 999px; padding: 4px 12px; cursor: pointer; white-space: nowrap; }
+.region-btn:hover { background: var(--panel-2); }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--ink); }
@@ -28,14 +33,16 @@ img { max-width: 100%; display: block; }
 a { color: var(--sea); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-.topbar { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 20px; background: color-mix(in srgb, var(--panel) 90%, transparent); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+.topbar { position: sticky; top: 0; z-index: 30; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding: 12px 20px; background: color-mix(in srgb, var(--panel) 90%, transparent); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
 .brand h1 { margin: 0; font-size: 17px; font-family: var(--serif); letter-spacing: 0; }
-.brand p { margin: 2px 0 0; color: var(--muted); font-size: 12px; }
+.brand p { margin: 2px 0 0; color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 60vw; }
 .nav { display: flex; flex-wrap: wrap; gap: 4px; }
 .nav a { font-size: 13px; color: var(--ink); padding: 5px 9px; border-radius: 6px; }
 .nav a:hover { background: var(--panel-2); text-decoration: none; }
 .offline-badge { display: none; font-size: 11px; color: var(--accent-2); border: 1px solid color-mix(in srgb, var(--accent-2) 40%, var(--line)); border-radius: 999px; padding: 2px 8px; white-space: nowrap; }
 .offline-badge.show { display: inline-block; }
+.topbar .region-btn { order: 10; margin-left: auto; }
+.topbar .offline-badge { order: 11; }
 
 .hero { position: relative; min-height: 40vh; display: flex; align-items: flex-end; background: linear-gradient(160deg, var(--sea-deep), var(--sea)); color: #FAF7F2; overflow: hidden; padding-bottom: 0; }
 .hero .inner { position: relative; padding: 40px 28px 40px; max-width: 1200px; margin: 0 auto; width: 100%; }
@@ -91,10 +98,74 @@ footer p { margin: 4px 0; }
 @media (max-width: 760px) {
   .topbar { flex-direction: column; align-items: flex-start; gap: 8px; }
   .nav { width: 100%; overflow-x: auto; }
+  .topbar .region-btn { order: 0; margin-left: 0; }
   main { padding: 0 14px; }
   .item .body { padding-left: 18px; }
 }
 </style>
+<script>
+/* 地域分流：依 IP 自動判斷（大陸/台灣），並提供手動切換
+   mode：使用者選擇（auto/tw/cn）；effective：實際套用（auto 時=偵測結果） */
+(function () {
+  'use strict';
+  var REGION_KEY = 'matsu-region';
+  var SAVED = null;
+  try { SAVED = localStorage.getItem(REGION_KEY); } catch (e) {}
+  var mode = (SAVED === 'tw' || SAVED === 'cn') ? SAVED : 'auto';
+  var detected = null;
+
+  function effective() {
+    if (mode !== 'auto') return mode;
+    return detected || 'tw';
+  }
+
+  function apply() {
+    var r = effective();
+    document.documentElement.setAttribute('data-region', r);
+    var btn = document.getElementById('regionBtn');
+    if (btn) {
+      var label = mode === 'cn' ? '🇨🇳 大陸' : (mode === 'tw' ? '🇹🇼 台灣' : '🌏 自動');
+      btn.textContent = label;
+      var desc = '當前地域：' + (r === 'cn' ? '大陸' : '台灣') + '；模式：' + label + '（點擊切換）';
+      btn.setAttribute('aria-label', desc);
+      btn.setAttribute('title', desc);
+    }
+  }
+
+  function detect() {
+    if (typeof fetch !== 'function') { apply(); return; }
+    var ctrl = new AbortController();
+    var timer = setTimeout(function () { ctrl.abort(); }, 5000);
+    fetch('https://ipapi.co/json/', { mode: 'cors', cache: 'no-store', signal: ctrl.signal })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        var code = String(d.country_code || '').toUpperCase();
+        detected = (code === 'CN') ? 'cn' : 'tw';
+        apply();
+      })
+      .catch(function () {
+        detected = 'tw';
+        apply();
+      })
+      .finally(function () { clearTimeout(timer); });
+  }
+
+  window.__setRegion = function (r) {
+    if (r !== 'tw' && r !== 'cn') r = 'auto';
+    mode = r;
+    try { localStorage.setItem(REGION_KEY, r); } catch (e) {}
+    if (mode === 'auto' && !detected) { detect(); } else { apply(); }
+  };
+
+  window.__cycleRegion = function () {
+    if (mode === 'tw') window.__setRegion('cn');
+    else if (mode === 'cn') window.__setRegion('auto');
+    else window.__setRegion('tw');
+  };
+
+  if (mode === 'auto') { apply(); detect(); } else { apply(); }
+})();
+</script>
 </head>
 <body>
 
@@ -113,6 +184,7 @@ footer p { margin: 4px 0; }
     <a href="#cat7">文化</a>
     <a href="index.html">← 回主行程</a>
   </nav>
+  <button id="regionBtn" class="region-btn" type="button" onclick="window.__cycleRegion()">🌏 自動</button>
   <span class="offline-badge" id="offlineBadge">✓ 已可離線閱讀</span>
 </header>
 
@@ -131,6 +203,7 @@ footer p { margin: 4px 0; }
     <p><strong>① 這趟行程最怕什麼？——「船不開」。</strong>8 月是颱風季，馬祖的飛機和船都可能說停就停。所以我們的行程把 8/21 過海這天設計成「有彈性」：8/20 晚上就住回南竿福澳港旁，8/21 早上 08:30 島際船→白沙 10:00 黃岐船，就算沒趕上，還有下午琅岐線或 8/22 一早——慧婷中午才飛抵廈門，8/22 高鐵南下照樣會合。這就是為什麼清單裡要求你「先訂好備案機票」。</p>
     <p><strong>② 這趟行程第二怕什麼？——「旺季沒房沒票」。</strong>8 月是暑假尾巴，東莒全島民宿加起來不到 20 間，鼓浪嶼船票熱門時段會售罄。所以：住宿現在就打電話、高鐵票今天訂、鼓浪嶼船票提前 3–5 天搶。</p>
     <p><strong>③ 第三怕什麼？——「網路不通、付不了錢」。</strong>馬祖離島訊號不穩，大陸需要翻牆才能用 Google，支付寶/微信沒綁好會寸步難行。所以：這個網站要先開一次讓它存進手機（離線可讀）、人民幣現金帶足、支付工具提前綁定。</p>
+    <p style="margin-top:10px;border-top:1px dashed color-mix(in srgb, var(--warn) 40%, var(--line));padding-top:10px;"><strong>🌏 網路環境小知識：</strong>本網站會依你的 IP 自動分流——在台灣/海外自動用 Google Maps 與 YouTube；在中國大陸自動切換高德地圖與網易雲（頁面右上角可手動切換）。但要注意：大陸的飯店/機場 Wi-Fi 常需要手機號驗證，建議先買好中國 eSIM 或漫遊，才不會在福州落地就斷網。</p>
   </div>
 
   <div class="progress-bar">

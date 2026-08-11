@@ -1,4 +1,4 @@
-/* 馬祖・廈門人文之旅 — Service Worker（離線優先）v2 */
+/* 馬祖・廈門人文之旅 — Service Worker（離線優先）v8 */
 const CACHE = 'matsu2026-v8';
 const ASSETS = [
   './',
@@ -48,7 +48,11 @@ self.addEventListener('fetch', (event) => {
           }
           return response;
         })
-        .catch(() => cached);
+        .catch(() => {
+          // 離線時：navigation 請求回退到首頁（index 快取）
+          if (event.request.mode === 'navigate') return caches.match('./');
+          return cached;
+        });
     })
   );
 });
