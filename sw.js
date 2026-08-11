@@ -1,5 +1,5 @@
-/* 馬祖・廈門人文之旅 — Service Worker（離線優先）v9 */
-const CACHE = 'matsu2026-v9';
+/* 馬祖・廈門人文之旅 — Service Worker（離線優先）v10 */
+const CACHE = 'matsu2026-v10';
 const ASSETS = [
   './',
   './index.html',
@@ -13,7 +13,9 @@ const ASSETS = [
   './img/keelung.jpg',
   './img/kulangsu.jpg',
   './img/xiamen.jpg',
-  './img/xiamen2.jpg'
+  './img/xiamen2.jpg',
+  './img/botanic.jpg',
+  './img/xmu.jpg'
 ];
 
 self.addEventListener('install', (event) => {
