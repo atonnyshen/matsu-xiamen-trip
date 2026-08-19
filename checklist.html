@@ -86,6 +86,17 @@ main { max-width: 960px; margin: 0 auto; padding: 0 24px 40px; }
 .item .body .tip strong { color: var(--warn); }
 .item .body .link { font-size: 12.5px; }
 
+/* 進度總表 */
+.prog { display: flex; flex-direction: column; gap: 8px; margin: 10px 0 6px; }
+.prow { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.prow .pl { flex: 0 0 200px; }
+.prow .pp { flex: 0 0 120px; text-align: right; color: var(--accent-2); font-weight: 700; white-space: nowrap; }
+.prow .bar { flex: 1; height: 8px; background: var(--panel-2); border-radius: 999px; overflow: hidden; }
+.prow .fill { height: 100%; background: linear-gradient(90deg, var(--accent-2), var(--accent)); }
+.prow.total { border-top: 1px dashed var(--line); padding-top: 8px; }
+.prog-note { font-size: 12px; color: var(--muted); margin: 6px 0 0; }
+@media (max-width: 760px) { .prow .pl { flex-basis: 130px; } .prow .pp { flex-basis: 88px; } }
+
 .actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0 30px; }
 .btn { border: 1px solid var(--line); border-radius: 10px; background: var(--panel); color: var(--ink); padding: 10px 18px; cursor: pointer; font-size: 14px; }
 .btn.primary { background: var(--accent-2); color: #FAF7F2; border-color: var(--accent-2); }
@@ -333,12 +344,44 @@ footer p { margin: 4px 0; }
     <button class="btn primary" id="resetAll">重置進度</button>
   </div>
 
+  <!-- ═══════ 進度總表 ═══════ -->
+  <section class="cat" id="catProgress">
+    <div class="cat-head"><span class="no">📊</span><h3>關鍵事項進度（截至 8/19 上午・現場版）</h3><span class="hint">訂票・住宿・預約的完成狀況</span></div>
+    <div class="prog">
+      <div class="prow"><span class="pl">馬祖船票 4 段（8/18–21）</span><div class="bar"><div class="fill" style="width:100%"></div></div><span class="pp">4/4・100% ✅</span></div>
+      <div class="prow"><span class="pl">返京機票（8/25 CA1816）</span><div class="bar"><div class="fill" style="width:100%"></div></div><span class="pp">1/1・100% ✅</span></div>
+      <div class="prow"><span class="pl">住宿 5 晚</span><div class="bar"><div class="fill" style="width:40%"></div></div><span class="pp">2/5・40%</span></div>
+      <div class="prow"><span class="pl">高鐵 8/22（自行處理）</span><div class="bar"><div class="fill" style="width:0%"></div></div><span class="pp">0/1・0%</span></div>
+      <div class="prow"><span class="pl">鼓浪嶼渡輪＋景點（8/23–24）</span><div class="bar"><div class="fill" style="width:0%"></div></div><span class="pp">0/3・0%</span></div>
+      <div class="prow"><span class="pl">免費預約（廈大/南普陀/植物園）</span><div class="bar"><div class="fill" style="width:0%"></div></div><span class="pp">0/3・0%</span></div>
+      <div class="prow"><span class="pl">行程中（搖櫓/機車×2/慧婷出票）</span><div class="bar"><div class="fill" style="width:0%"></div></div><span class="pp">0/4・0%</span></div>
+      <div class="prow total"><span class="pl"><strong>總計（關鍵事項）</strong></span><div class="bar"><div class="fill" style="width:33%"></div></div><span class="pp"><strong>7/21・33%</strong></span></div>
+    </div>
+    <p class="prog-note">打勾請用下方「待辦總覽」；此表為快速總覽（不含證件/行李等基本項目）。頁面頂部完成度為全部項目自動統計。</p>
+  </section>
+
   <!-- ═══════ 0 待辦總覽 ═══════ -->
   <section class="cat" id="cat0">
-    <div class="cat-head"><span class="no">⏳</span><h3>待辦總覽（出發前打勾區）</h3><span class="hint">只列還沒完成的——點左邊小框打勾，進度自動儲存</span></div>
+    <div class="cat-head"><span class="no">⏳</span><h3>待辦總覽（打勾區）</h3><span class="hint">🚨 先做最優先兩項・點左邊小框打勾自動儲存</span></div>
 
     <details class="item">
-      <summary><span class="check"></span><span class="t">⚡ 鼓浪嶼島上民宿 8/23–24（2 晚）</span><span class="when">今晚 8/17</span><span class="chev">›</span></summary>
+      <summary><span class="check"></span><span class="t">🚨 今晚：東莒福正民宿接送＋機車＋晚餐＋藍眼淚詢問</span><span class="when">今天到東莒後</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>15:10 抵東莒猛澳港後<strong>第一件事</strong>：聯絡福正民宿（<strong>0912-575702</strong>／0932-355276）——碼頭免費接送、確認今晚晚餐（民宿可代訂）、<strong>代租機車</strong>（全日 NT$500／半日 NT$300）、詢問今晚藍眼淚狀況。</p>
+        <div class="tip"><strong>小白提醒：</strong>東莒島上店家少，晚餐與機車都要透過民宿安排最穩；藍眼淚以「星沙」為主、碰運氣。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">🚨 8/20 北海坑道夜間搖櫓預約（NT$350）</span><span class="when">最遲 8/20 上午</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p><strong>必須提前電話預約</strong>：0836-22177 或 LINE @gen6594n（免費預約、現場付款）。每梯僅 48 人、8 月旺季易滿，<strong>今晚或明天一早就要打</strong>。18:30 開場、航程 15–20 分鐘。</p>
+        <div class="tip"><strong>小白提醒：</strong>這是全程唯一「沒有預約就進不去」的項目——搖櫓在北海坑道（仁愛村），8/20 白天補逛戰地三寶正好同地。</div>
+      </div>
+    </details>
+
+    <details class="item">
+      <summary><span class="check"></span><span class="t">⚡ 鼓浪嶼島上民宿 8/23–24（2 晚）</span><span class="when">最優先・今天</span><span class="chev">›</span></summary>
       <div class="body">
         <p>Trip.com 搜尋框直接輸入「<strong>鼓浪嶼</strong>」（舊城市編號已失效）；島上老別墅民宿熱門、8 月滿房——<strong>今晚優先訂</strong>。</p>
         <ul>
@@ -350,7 +393,7 @@ footer p { margin: 4px 0; }
     </details>
 
     <details class="item">
-      <summary><span class="check"></span><span class="t">廈門市區住宿 8/22（1 晚）</span><span class="when">8/17–18</span><span class="chev">›</span></summary>
+      <summary><span class="check"></span><span class="t">廈門市區住宿 8/22（1 晚）</span><span class="when">8/19–20</span><span class="chev">›</span></summary>
       <div class="body">
         <p>Trip.com 廈門（cityId=25）：<a class="link" href="https://tw.trip.com/hotels/list?cityId=25&checkin=2026-08-22&checkout=2026-08-23" target="_blank" rel="noopener">8/22 廈門住宿清單 →</a></p>
         <ul>
@@ -361,13 +404,13 @@ footer p { margin: 4px 0; }
     </details>
 
     <details class="item">
-      <summary><span class="check"></span><span class="t">福州住宿 8/21（1 晚）</span><span class="when">8/18</span><span class="chev">›</span></summary>
+      <summary><span class="check"></span><span class="t">福州住宿 8/21（1 晚）</span><span class="when">8/19–20</span><span class="chev">›</span></summary>
       <div class="body">
         <p>三坊七巷周邊：如家精選（東街口）TWD 300 起・亞朵（步行 3 分鐘到宮巷）・三寶賓邸（古厝改建）。Agoda／Booking／Trip.com 比價；8/21 約 15:30 到，住離街區越近越好。</p>
       </div>
     </details>
 
-    <details class="item">
+    <details class="item done">
       <summary><span class="check"></span><span class="t">廈門→北京機票 8/25（CA1816 20:40）</span><span class="when">已購 ✅</span><span class="chev">›</span></summary>
       <div class="body">
         <p>✅ <strong>已購：國航 CA1816，8/25 20:40 高崎 T4 起飛、23:40 抵達北京首都 T3</strong>（飛行約 3 小時）。</p>
@@ -435,7 +478,7 @@ footer p { margin: 4px 0; }
     </details>
 
     <details class="item">
-      <summary><span class="check"></span><span class="t">福澳窩取消 8/19（只留 8/20 一晚）</span><span class="when">8/17–18</span><span class="chev">›</span></summary>
+      <summary><span class="check"></span><span class="t">福澳窩取消 8/19（只留 8/20 一晚）</span><span class="when">8/19 今天</span><span class="chev">›</span></summary>
       <div class="body">
         <p>電話 <strong>0937-883091</strong>（闆娘）或 LINE nene898：取消 8/19 住宿、只留 8/20（NT$800）；<strong>8/19 早上行李仍寄放</strong>（置物櫃）。</p>
       </div>
@@ -449,16 +492,13 @@ footer p { margin: 4px 0; }
     </details>
 
     <details class="item">
-      <summary><span class="check"></span><span class="t">行程中：馬祖機車 8/19–20（南竿＋東莒）</span><span class="when">8/19 抵達時</span><span class="chev">›</span></summary>
+      <summary><span class="check"></span><span class="t">行程中：機車租借（東莒今晚租／南竿 8/20 回程後租）</span><span class="when">東莒抵達時／8/20 回南竿</span><span class="chev">›</span></summary>
       <div class="body">
-        <p>南竿福澳港一出碼頭有租車行（或請福澳窩闆娘代訂 0937-883091）；東莒猛澳港旁租（福正民宿可協助）。需帶<strong>台灣機車駕照正本</strong>；NT$500–600/天含油。</p>
-      </div>
-    </details>
-
-    <details class="item">
-      <summary><span class="check"></span><span class="t">備案（可選）：8/19 松山→南竿立榮早班機</span><span class="when">可退票艙等</span><span class="chev">›</span></summary>
-      <div class="body">
-        <p>8 月颱風季保險：立榮官網訂 8/19 最早班（07:00–09:00），單程 NT$1,888 起；8/18 船有開 → 退掉這張（停航全額退、一般退票扣手續費）。</p>
+        <p><strong>東莒：</strong>猛澳港下船處附近租，或請福正民宿代租（0912-575702）——全日 NT$500／半日 NT$300；<strong>南竿：</strong>8/20 回南竿後租（福澳港旁租車行或福澳窩闆娘代訂 0937-883091）。</p>
+        <ul>
+          <li>需帶<strong>台灣機車駕照正本</strong>；NT$500–600/天含油</li>
+          <li>東莒機車 8/20 07:50 船前還；南竿機車 8/21 中午琅岐船前還</li>
+        </ul>
       </div>
     </details>
   </section>
@@ -524,7 +564,7 @@ footer p { margin: 4px 0; }
       </div>
     </details>
 
-    <details class="item">
+    <details class="item done">
       <summary><span class="check"></span><span class="t">8/18 基隆→南竿 夜航船票（臺馬之星）</span><span class="when">已訂 ✅</span><span class="chev">›</span></summary>
       <div class="body">
         <p>✅ <strong>已訂位付款</strong>（訂單 MZ2608170001431・22:30 開航・經濟艙單人床 NT$1,050）——開航前 1–1.5 小時到基隆港西岸旅客碼頭（港西街 16 號 2 樓）取票報到。</p>
@@ -547,7 +587,7 @@ footer p { margin: 4px 0; }
       </div>
     </details>
 
-    <details class="item">
+    <details class="item done">
       <summary><span class="check"></span><span class="t">8/19 南竿→東莒 14:30 船票</span><span class="when">已訂 ✅</span><span class="chev">›</span></summary>
       <div class="body">
         <p>✅ <strong>已訂位付款</strong>（訂單 MZ2608170001439・14:30 開・東海明珠・NT$250）；8 月雙月先東後西——14:30 直達東莒猛澳港 15:10 到。</p>
@@ -555,7 +595,7 @@ footer p { margin: 4px 0; }
       </div>
     </details>
 
-    <details class="item">
+    <details class="item done">
       <summary><span class="check"></span><span class="t">8/20 東莒→南竿 07:50 船票</span><span class="when">已訂 ✅</span><span class="chev">›</span></summary>
       <div class="body">
         <p>✅ <strong>已訂位付款</strong>（訂單 MZ2608170001443・07:50 開・東海明珠・NT$250）——約 09:10 到福澳港。</p>
@@ -566,7 +606,7 @@ footer p { margin: 4px 0; }
       </div>
     </details>
 
-    <details class="item">
+    <details class="item done">
       <summary><span class="check"></span><span class="t">8/21 南竿→琅岐小三通船位（12:30 金安輪・NT$1,000）</span><span class="when">已訂 ✅</span><span class="chev">›</span></summary>
       <div class="body">
         <p><strong>8/21 過海：</strong>福澳港直航琅岐（金安輪・12:30 開・14:00 抵），不用轉島、不用趕早。</p>
@@ -667,7 +707,7 @@ footer p { margin: 4px 0; }
       </div>
     </details>
 
-    <details class="item">
+    <details class="item done">
       <summary><span class="check"></span><span class="t">8/25 廈門→北京 機票（CA1816 20:40）</span><span class="when">已購 ✅</span><span class="chev">›</span></summary>
       <div class="body">
         <p>✅ <strong>已購：國航 CA1816，8/25 20:40 高崎 T4 → 23:40 北京首都 T3</strong>。白天逛廈大・白城沙灘、15:00 道別後，<strong>17:30 前從市區出發、18:10 前到高崎機場 T4</strong>（30–40 分鐘車程，傍晚車流預留）。</p>
@@ -679,7 +719,7 @@ footer p { margin: 4px 0; }
   <section class="cat" id="cat3">
     <div class="cat-head"><span class="no">03</span><h3>住宿預訂（電話確認最可靠）</h3><span class="hint">東莒民宿少，先搶先贏</span></div>
 
-    <details class="item">
+    <details class="item done">
       <summary><span class="check"></span><span class="t">8/19 東莒：福正民宿（★本行重點）</span><span class="when">已訂 ✅</span><span class="chev">›</span></summary>
       <div class="body">
         <p>雙人房 NT$1,600（現金現場付）✅ 已訂。後方是國定古蹟東犬燈塔、前方福正沙灘，晚上賞藍眼淚踩星沙，含碼頭接送＋早餐。</p>
@@ -692,7 +732,7 @@ footer p { margin: 4px 0; }
       </div>
     </details>
 
-    <details class="item">
+    <details class="item done">
       <summary><span class="check"></span><span class="t">8/20 南竿：福澳窩背包客民宿</span><span class="when">已訂 ✅（取消 8/19 中）</span><span class="chev">›</span></summary>
       <div class="body">
         <p>床位 NT$800，福澳碼頭步行 3–5 分鐘，可代訂機車、藍眼淚諮詢；<strong>8/19 早上先寄放行李、8/20 入住，8/21 中午福澳港直航琅岐超方便</strong>。</p>
@@ -940,7 +980,7 @@ footer p { margin: 4px 0; }
   const items = Array.from(document.querySelectorAll('details.item'));
   const fill = document.getElementById('fill');
   const pct = document.getElementById('pct');
-  const KEY = 'matsu2026-checklist2';
+  const KEY = 'matsu2026-checklist3';
 
   function update() {
     const done = items.filter(i => i.classList.contains('done')).length;
